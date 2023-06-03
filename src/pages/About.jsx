@@ -15,7 +15,7 @@ export default function About() {
 	const { about_heading, bio, tech_stack } = pageData;
 
 	return (
-		<section className="font-cabin">
+		<main className="font-cabin">
 			{isLoaded && (
 				<>
 					<h1>{about_heading}</h1>
@@ -34,6 +34,6 @@ export default function About() {
 					</ul>
 				</>
 			)}
-		</section>
+		</main>
 	);
 }

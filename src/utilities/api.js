@@ -57,7 +57,6 @@ export function getPlaylist(playlistId) {
 					.then(response => {
 						if (response.status === 200) {
 							const playlistData = response.data;
-							console.log('Playlist Data:', playlistData);
 							console.log('Tracks', playlistData.tracks.items);
 						} else {
 							console.error('Error:', response.status, response.data);
