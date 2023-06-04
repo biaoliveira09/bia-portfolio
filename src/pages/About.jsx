@@ -15,7 +15,7 @@ export default function About() {
 	const { about_heading, bio, tech_stack } = pageData;
 
 	return (
-		<main className="mx-11 my-8 flex flex-col items-center">
+		<main className=" mx-11 my-8 flex flex-col">
 			{isLoaded && (
 				<>
 					<h1 className="text-lg">{about_heading}</h1>
