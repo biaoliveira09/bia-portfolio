@@ -15,7 +15,7 @@ export default function About() {
 	const { about_heading, bio, tech_stack } = pageData;
 
 	return (
-		<main className="font-cabin">
+		<main>
 			{isLoaded && (
 				<>
 					<h1>{about_heading}</h1>
@@ -23,10 +23,7 @@ export default function About() {
 					<ul className="flex flex-wrap gap-1">
 						{tech_stack.map(tech => {
 							return (
-								<li
-									key={tech}
-									className="border border-pink-600 bg-pink-600 p-1 px-2 font-medium uppercase text-white"
-								>
+								<li key={tech} className="bg-lime-100 px-1 uppercase">
 									{tech}
 								</li>
 							);

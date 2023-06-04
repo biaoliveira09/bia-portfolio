@@ -26,16 +26,14 @@ export default function Home() {
 			{isLoaded && (
 				<main className="flex flex-col items-center">
 					<section className="intro-section flex h-64 flex-col items-center justify-center">
-						<h1 className="font-righteous text-4xl font-bold lowercase text-pink-600">
-							{short_intro}
-						</h1>
-						<p className=" text-pink-600">{short_bio}</p>
+						<h1 className="text-4xl font-bold ">{short_intro}</h1>
+						<p className=" ">{short_bio}</p>
 						<div className="social-icons m-2 flex gap-3">
 							<a href={github_profile_link}>
-								<FiGithub className="h-10 w-10 text-pink-600" />
+								<FiGithub className="h-10 w-10 " />
 							</a>
 							<a href={linkedin_profile_link}>
-								<FiLinkedin className="h-10 w-10 text-pink-600" />
+								<FiLinkedin className="h-10 w-10 " />
 							</a>
 						</div>
 					</section>

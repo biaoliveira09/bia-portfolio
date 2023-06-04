@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import Header from './components/Header';
+import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {
 	return (
 		<Router>
-			<Header />
+			<Navigation />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="about" element={<About />} />

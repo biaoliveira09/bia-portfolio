@@ -9,7 +9,7 @@ export default function Contact() {
 		// 		<div>Contact</div>
 		// 	</div>
 		// </main>
-		<main className="relative min-h-screen">
+		<main className="relative min-h-screen overflow-x-hidden">
 			<div className="animation-delay-2000 absolute -left-40 top-12 h-64 w-64 animate-blob rounded-full bg-lime-200 opacity-70 blur-lg filter "></div>
 			<div className="animation-delay-4000 absolute top-40 h-72 w-72 animate-blob rounded-full bg-yellow-400 opacity-30 mix-blend-multiply blur-xl filter"></div>
 			<div className="absolute -left-0 bottom-24 h-44 w-44 animate-blob rounded-full bg-gradient-to-r from-pink-400 to-purple-400 opacity-20 blur-lg filter "></div>
