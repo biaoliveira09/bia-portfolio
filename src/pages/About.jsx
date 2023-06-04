@@ -15,15 +15,15 @@ export default function About() {
 	const { about_heading, bio, tech_stack } = pageData;
 
 	return (
-		<main>
+		<main className="mx-11 my-8 flex flex-col items-center">
 			{isLoaded && (
 				<>
-					<h1>{about_heading}</h1>
+					<h1 className="text-lg">{about_heading}</h1>
 					<p>{bio}</p>
 					<ul className="flex flex-wrap gap-1">
 						{tech_stack.map(tech => {
 							return (
-								<li key={tech} className="bg-lime-100 px-1 uppercase">
+								<li key={tech} className="bg-lime-200 px-1 uppercase">
 									{tech}
 								</li>
 							);

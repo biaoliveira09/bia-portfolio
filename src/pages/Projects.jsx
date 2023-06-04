@@ -17,7 +17,7 @@ export default function Projects() {
 	return (
 		<>
 			{isLoaded && (
-				<main className="projects-section flex flex-col items-center gap-4">
+				<main className="projects-section flex flex-col items-center gap-4 lg:flex-row">
 					{projects.map(project => {
 						const { project_name, project_overview } = project.acf;
 						return (
