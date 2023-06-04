@@ -13,8 +13,8 @@ export default {
 				blob: 'blob 9s infinite',
 			},
 			fontFamily: {
-				racing: ['Racing Sans One', 'sans-serif'],
 				righteous: ['Righteous', 'sans-serif'],
+				outfit: ['Outfit', 'sans-serif'],
 			},
 			keyframes: {
 				blob: {
