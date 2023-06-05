@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useNavigationType } from 'react-router-dom';
 
 const API_URL = 'http://localhost:8888/bia-portfolio/wp-json/wp/v2/';
 
@@ -19,6 +20,16 @@ export const getProjects = async () => {
 		return projects;
 	} catch (error) {
 		throw new Error('Failed to retrieve projects');
+	}
+};
+
+export const getTechStack = async () => {
+	try {
+		const response = await fetch(`${API_URL}tech?per_page=50`);
+		const tech = await response.json();
+		return tech;
+	} catch (error) {
+		throw new Error('Failed to retrieve techstack');
 	}
 };
 

@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import { getPages } from './../utilities/api';
+import { getTechStack } from './../utilities/api';
+
 export default function About() {
 	const [pageData, setPageData] = useState([]);
+	const [techStack, setTechStack] = useState([]);
+
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
@@ -12,21 +16,25 @@ export default function About() {
 		});
 	}, []);
 
-	const { about_heading, bio, tech_stack } = pageData;
+	useEffect(() => {
+		getTechStack().then(data => {
+			setTechStack(data);
+			console.log(data);
+			setIsLoaded(true);
+		});
+	}, []);
+
+	const { about_heading, bio } = pageData;
 
 	return (
-		<main className=" mx-11 my-8 flex flex-col">
+		<main className="mx-11 my-8 flex flex-col">
 			{isLoaded && (
 				<>
 					<h1 className="text-lg">{about_heading}</h1>
 					<p>{bio}</p>
-					<ul className="flex flex-wrap gap-1">
-						{tech_stack.map(tech => {
-							return (
-								<li key={tech} className="bg-lime-200 px-1 uppercase">
-									{tech}
-								</li>
-							);
+					<ul>
+						{techStack.map(tech => {
+							return <li key={tech.id}>{tech.title.rendered}</li>;
 						})}
 					</ul>
 				</>

@@ -29,7 +29,7 @@ export default function Home() {
 	return (
 		<>
 			{isLoaded && (
-				<main className="relative flex min-h-screen flex-col items-center overflow-x-hidden font-outfit">
+				<main className="relative flex min-h-screen flex-col items-center overflow-x-hidden">
 					<section className="intro-section z-30 flex h-56 flex-col items-center justify-center">
 						<h1 className="text-4xl font-bold">{short_intro}</h1>
 						<p className="text-xl">{short_bio}</p>
