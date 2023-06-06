@@ -5,13 +5,15 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Blobs from './components/Blobs';
+import Bounce from './components/Bounce';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
 	return (
 		<>
-			<Blobs />
+			{/* <Blobs /> */}
+			<Bounce />
 			<Router>
 				<Navigation />
 				<Routes>

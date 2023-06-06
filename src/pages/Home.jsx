@@ -19,7 +19,7 @@ export default function Home() {
 	useEffect(() => getPlaylist('4iHa1Vqfvh4kLrp8JjbDeO'), []);
 
 	const {
-		short_intro,
+		name,
 		short_bio,
 		github_profile_link,
 		linkedin_profile_link,
@@ -30,10 +30,12 @@ export default function Home() {
 		<>
 			{isLoaded && (
 				<main className="">
-					<section className="intro-section z-30 flex h-56 flex-col items-center justify-center">
-						<h1 className="z-30 text-4xl font-bold">{short_intro}</h1>
-						<p className="z-30 text-xl">{short_bio}</p>
-						<div className="social-icons m-2 flex gap-6">
+					<section className="intro-section font-cast z-30 flex h-64 flex-col items-center justify-center sm:min-h-screen">
+						<h1 className="z-30 font-eight text-4xl lowercase  sm:text-7xl md:text-8xl">
+							{name}
+						</h1>
+						<p className="z-30 text-lg sm:text-xl">{short_bio}</p>
+						<div className="social-icons z-30 m-2 flex gap-6">
 							<a href={github_profile_link}>
 								{/* <FiGithub className="h-10 w-10 " /> */}
 								Github
@@ -45,7 +47,9 @@ export default function Home() {
 							<a href={`mailto:${email_address}`}>Email</a>
 						</div>
 					</section>
-					<Projects />
+					<section className="projects-section flex flex-col items-center sm:min-h-screen">
+						<Projects />
+					</section>
 				</main>
 			)}
 		</>

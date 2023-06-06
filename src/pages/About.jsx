@@ -24,20 +24,32 @@ export default function About() {
 		});
 	}, []);
 
-	const { about_heading, bio } = pageData;
+	const { about_heading, short_intro, bio } = pageData;
 
 	return (
-		<main className="mx-11 my-8 flex flex-col">
+		<main className="z-40 mx-11 my-8 flex flex-col items-center justify-center gap-3">
 			{isLoaded && (
-				<>
-					<h1 className="text-lg">{about_heading}</h1>
-					<p>{bio}</p>
-					<ul>
-						{techStack.map(tech => {
-							return <li key={tech.id}>{tech.title.rendered}</li>;
-						})}
-					</ul>
-				</>
+				<div className="md:w-8/12">
+					<section className="about-intro justify-center sm:min-h-screen">
+						<h1 className="font-eight text-3xl">{short_intro}</h1>
+						<p className="m-1">{bio}</p>
+					</section>
+					<section className="about-skills">
+						<h2 className="font-eight text-2xl">{about_heading}</h2>
+						<ul className="flex flex-wrap gap-2">
+							{techStack.map(tech => {
+								return (
+									<li
+										className="bg-lime-100 px-2 py-1 text-purple-900"
+										key={tech.id}
+									>
+										{tech.title.rendered}
+									</li>
+								);
+							})}
+						</ul>
+					</section>
+				</div>
 			)}
 		</main>
 	);

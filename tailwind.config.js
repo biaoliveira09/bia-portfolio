@@ -15,6 +15,7 @@ export default {
 			fontFamily: {
 				righteous: ['Righteous', 'sans-serif'],
 				outfit: ['Outfit', 'sans-serif'],
+				eight: ['Eight', 'sans-serif'],
 			},
 			keyframes: {
 				blob: {
