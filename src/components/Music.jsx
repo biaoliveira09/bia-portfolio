@@ -27,7 +27,7 @@ export default function Music() {
 	return (
 		isLoaded && (
 			<section className="music">
-				<h2 className="text-2xl font-bold">Music</h2>
+				<h2 className="text-2xl font-bold">Currently Listening To...</h2>
 				<p>
 					Listen to one of my favourite tracks{' '}
 					<span className="font-bold">{randomTrack && randomTrack.name}</span>{' '}
@@ -36,7 +36,7 @@ export default function Music() {
 				</p>
 
 				<button
-					className="m-auto mb-4 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
+					className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
 					onClick={() => setRandomTrack(getRandomTrack(tracks))}
 				>
 					Change Song <FiRefreshCw className="h-5 w-5" />

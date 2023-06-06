@@ -27,6 +27,7 @@ export default function Projects() {
 									key={project.id}
 									project_name={project_name}
 									project_overview={project_overview}
+									project_id={project.id}
 								/>
 							);
 						})}

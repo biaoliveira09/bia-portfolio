@@ -41,10 +41,7 @@ export default function About() {
 						<ul className="flex flex-wrap gap-2">
 							{techStack.map(tech => {
 								return (
-									<li
-										className="bg-lime-100 px-2 py-1 text-purple-900"
-										key={tech.id}
-									>
+									<li className="bg-lime-100 px-2 py-1" key={tech.id}>
 										{tech.title.rendered}
 									</li>
 								);

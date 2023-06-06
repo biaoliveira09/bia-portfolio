@@ -1,4 +1,3 @@
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
 import { getPages } from './../utilities/api';
 import Projects from './Projects';
@@ -32,7 +31,7 @@ export default function Home() {
 							{name}
 						</h1>
 						<p className="z-30 text-lg sm:text-xl">{short_bio}</p>
-						<div className="social-icons z-30 m-2 flex gap-6">
+						<div className="social-icons z-30 m-2 flex gap-6 sm:gap-8">
 							<a href={github_profile_link}>Github</a>
 							<a href={linkedin_profile_link}>LinkedIn</a>
 							<a href={`mailto:${email_address}`}>Email</a>
