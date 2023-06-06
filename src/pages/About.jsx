@@ -30,7 +30,7 @@ export default function About() {
 		<main className="mx-11 my-8 flex flex-col items-center justify-center gap-3">
 			{isLoaded && (
 				<div className="about-content z-30 md:w-8/12">
-					<section className="about-intro justify-center sm:min-h-screen">
+					<section className="about-intro justify-center">
 						<h1 className="text-3xl font-bold">{short_intro}</h1>
 						<p className="m-1">{bio}</p>
 					</section>

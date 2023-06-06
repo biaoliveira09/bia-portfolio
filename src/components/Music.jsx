@@ -20,6 +20,9 @@ export default function Music() {
 	}, [tracks]);
 
 	console.log(randomTrack);
+	// console.log(randomTrack.external_urls.spotify);
+
+	const EMBEDDABLE_URL = 'https://open.spotify.com/embed/track/';
 
 	return (
 		isLoaded && (
@@ -29,9 +32,9 @@ export default function Music() {
 				{randomTrack && (
 					<iframe
 						style={{ borderRadius: '12px' }}
-						src={randomTrack.external_urls.spotify}
+						src={EMBEDDABLE_URL + randomTrack.id}
 						width="100%"
-						height="352"
+						height="200"
 						frameBorder="0"
 						allowFullScreen=""
 						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
