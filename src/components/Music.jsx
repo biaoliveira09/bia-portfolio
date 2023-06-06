@@ -9,12 +9,12 @@ export default function Music() {
 	const [playlist, setPlaylist] = useState([]);
 	const [tracks, setTracks] = useState([]);
 	const [randomTrack, setRandomTrack] = useState([]);
+	const [artists, setArtists] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
 		getPlaylist('4iHa1Vqfvh4kLrp8JjbDeO').then(data => {
 			setPlaylist(data);
-			console.log(data);
 			setTracks(data.tracks.items);
 			setIsLoaded(true);
 		});
@@ -36,10 +36,10 @@ export default function Music() {
 				</p>
 
 				<button
-					className=" m-auto mb-4 flex gap-2 bg-pink-600 px-2 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
+					className="m-auto mb-4 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
 					onClick={() => setRandomTrack(getRandomTrack(tracks))}
 				>
-					Change Song <FiRefreshCw className="h-6 w-6" />
+					Change Song <FiRefreshCw className="h-5 w-5" />
 				</button>
 				{/* {randomTrack.artists.map(artist => {
 					console.log(artist.name);
