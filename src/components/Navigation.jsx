@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 export default function Navigation({ name }) {
 	return (
 		<>
-			<header className="relative flex h-16 justify-around sm:justify-around sm:p-4">
+			<header className="relative flex h-14 justify-around sm:justify-around sm:p-4">
 				<div className="fixed z-50 h-10 w-full px-6 py-2 sm:px-8">
 					<NavLink to="/">{name ? name : 'Bia Oliveira'}</NavLink>
 				</div>

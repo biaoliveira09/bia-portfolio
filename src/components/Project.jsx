@@ -8,7 +8,7 @@ export default function Project({ project_name, project_overview }) {
 					alt="placeholder"
 					className="w-64 rounded shadow-xl transition-transform hover:-translate-y-0.5 hover:shadow-2xl"
 				/>
-				<div className="project-info flex w-64 justify-between text-stone-400">
+				<div className="project-info flex w-64 justify-between ">
 					<h2 className="font-medium">{project_name}</h2>
 					{/* <p>{project_overview}</p> */}
 					<a href="">Details</a>
