@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getPages } from './../utilities/api';
 import { getTechStack } from './../utilities/api';
+import { getPlaylist } from './../utilities/spotify';
 
 export default function About() {
 	const [pageData, setPageData] = useState([]);
@@ -24,6 +25,12 @@ export default function About() {
 		});
 	}, []);
 
+	useEffect(() => {
+		getPlaylist('4iHa1Vqfvh4kLrp8JjbDeO').then(data => {
+			console.log(data.tracks.items);
+		});
+	}, []);
+
 	const { about_heading, short_intro, bio } = pageData;
 
 	return (
@@ -31,11 +38,11 @@ export default function About() {
 			{isLoaded && (
 				<div className="about-content z-30 md:w-8/12">
 					<section className="about-intro justify-center sm:min-h-screen">
-						<h1 className="font-eight text-3xl">{short_intro}</h1>
+						<h1 className="text-3xl font-bold">{short_intro}</h1>
 						<p className="m-1">{bio}</p>
 					</section>
 					<section className="about-skills">
-						<h2 className="font-eight text-2xl">{about_heading}</h2>
+						<h2 className="text-2xl font-bold">{about_heading}</h2>
 						<ul className="flex flex-wrap gap-2">
 							{techStack.map(tech => {
 								return (

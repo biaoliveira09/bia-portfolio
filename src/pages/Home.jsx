@@ -1,7 +1,6 @@
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
 import { getPages } from './../utilities/api';
-import { getPlaylist } from './../utilities/api';
 import Projects from './Projects';
 
 export default function Home() {
@@ -15,8 +14,6 @@ export default function Home() {
 			setIsLoaded(true);
 		});
 	}, []);
-
-	useEffect(() => getPlaylist('4iHa1Vqfvh4kLrp8JjbDeO'), []);
 
 	const {
 		name,

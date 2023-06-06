@@ -2,7 +2,7 @@ import placeholder from '../assets/flixr-placeholder.png';
 export default function Project({ project_name, project_overview }) {
 	return (
 		<>
-			<article className="single-project z-30 flex h-64 w-72 flex-col items-center justify-center rounded-xl border-stone-100 bg-stone-100 shadow-xl">
+			<article className="single-project z-30 flex h-64 w-72 flex-col items-center justify-center rounded-xl border-stone-100 bg-stone-100 shadow-md">
 				<img
 					src={placeholder}
 					alt="placeholder"

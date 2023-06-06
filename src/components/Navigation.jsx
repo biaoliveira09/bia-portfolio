@@ -7,7 +7,7 @@ export default function Navigation({ name }) {
 				<div className="fixed z-50 h-10 w-full px-6 py-2 sm:px-8">
 					<NavLink to="/">{name ? name : 'Bia Oliveira'}</NavLink>
 				</div>
-				<nav className=" fixed bottom-2 z-50 flex items-center gap-10 sm:bottom-auto sm:right-10 sm:top-6">
+				<nav className=" fixed bottom-2 z-50 flex items-center gap-16 sm:bottom-auto sm:right-10 sm:top-6">
 					<NavLink to="about">About</NavLink>
 					<NavLink to="projects">Projects</NavLink>
 					<NavLink to="contact">Contact</NavLink>
