@@ -34,10 +34,8 @@ export default function About() {
 						<h1 className="text-3xl font-bold">{short_intro}</h1>
 						<p className="m-1">{bio}</p>
 					</section>
-					<section className="about-music">
-						<h2 className="text-2xl font-bold">Music</h2>
-						<Music />
-					</section>
+					<Music />
+
 					<section className="about-skills">
 						<h2 className="text-2xl font-bold">{about_heading}</h2>
 						<ul className="flex flex-wrap gap-2">

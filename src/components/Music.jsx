@@ -2,14 +2,18 @@ import { useEffect, useState } from 'react';
 import { getPlaylist } from './../utilities/spotify';
 import { getRandomTrack } from '../utilities/utils';
 
+const EMBEDDABLE_URL = 'https://open.spotify.com/embed/track/';
+
 export default function Music() {
+	const [playlist, setPlaylist] = useState([]);
 	const [tracks, setTracks] = useState([]);
 	const [randomTrack, setRandomTrack] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
 		getPlaylist('4iHa1Vqfvh4kLrp8JjbDeO').then(data => {
-			console.log(data.tracks.items);
+			setPlaylist(data);
+			console.log(data);
 			setTracks(data.tracks.items);
 			setIsLoaded(true);
 		});
@@ -19,16 +23,19 @@ export default function Music() {
 		setRandomTrack(getRandomTrack(tracks));
 	}, [tracks]);
 
-	console.log(randomTrack);
-	// console.log(randomTrack.external_urls.spotify);
-
-	const EMBEDDABLE_URL = 'https://open.spotify.com/embed/track/';
-
 	return (
 		isLoaded && (
-			<div>
-				Music
-				<p>{randomTrack && randomTrack.name}</p>
+			<section className="music">
+				<h2 className="text-2xl font-bold">Music</h2>
+				<p>
+					Listen to one of my favourite tracks{' '}
+					<span className="font-bold">{randomTrack && randomTrack.name}</span>{' '}
+					by ..... randomly selected from my playlist {playlist.name} using the
+					Spotify API. Refresh the page to listen to another track.
+				</p>
+				{/* {randomTrack.artists.map(artist => {
+					console.log(artist.name);
+				})} */}
 				{randomTrack && (
 					<iframe
 						style={{ borderRadius: '12px' }}
@@ -41,7 +48,7 @@ export default function Music() {
 						loading="lazy"
 					></iframe>
 				)}
-			</div>
+			</section>
 		)
 	);
 }
