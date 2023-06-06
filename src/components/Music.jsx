@@ -1,3 +1,4 @@
+import { FiRefreshCw } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 import { getPlaylist } from './../utilities/spotify';
 import { getRandomTrack } from '../utilities/utils';
@@ -31,8 +32,15 @@ export default function Music() {
 					Listen to one of my favourite tracks{' '}
 					<span className="font-bold">{randomTrack && randomTrack.name}</span>{' '}
 					by ..... randomly selected from my playlist {playlist.name} using the
-					Spotify API. Refresh the page to listen to another track.
+					Spotify API.
 				</p>
+
+				<button
+					className=" m-auto mb-4 flex gap-2 bg-pink-600 px-2 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
+					onClick={() => setRandomTrack(getRandomTrack(tracks))}
+				>
+					Change Song <FiRefreshCw className="h-6 w-6" />
+				</button>
 				{/* {randomTrack.artists.map(artist => {
 					console.log(artist.name);
 				})} */}
