@@ -27,9 +27,9 @@ export default function About() {
 	const { about_heading, short_intro, bio } = pageData;
 
 	return (
-		<main className="z-40 mx-11 my-8 flex flex-col items-center justify-center gap-3">
+		<main className="mx-11 my-8 flex flex-col items-center justify-center gap-3">
 			{isLoaded && (
-				<div className="md:w-8/12">
+				<div className="about-content z-30 md:w-8/12">
 					<section className="about-intro justify-center sm:min-h-screen">
 						<h1 className="font-eight text-3xl">{short_intro}</h1>
 						<p className="m-1">{bio}</p>
