@@ -26,7 +26,7 @@ export default function Music() {
 
 	return (
 		isLoaded && (
-			<section className="music">
+			<section className="music my-20">
 				<h2 className="text-2xl font-bold">Currently Listening To...</h2>
 				<p>
 					Listen to one of my favourite tracks{' '}

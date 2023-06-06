@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import ProjectDetails from './pages/ProjectDetails';
 import Bounce from './components/Bounce';
 import { getPages } from './utilities/api';
 
@@ -38,6 +39,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="about" element={<About />} />
 					<Route path="projects" element={<Projects />} />
+					<Route path="projects/:project_id" element={<ProjectDetails />} />
 					<Route path="contact" element={<Contact />} />
 				</Routes>
 			</Router>

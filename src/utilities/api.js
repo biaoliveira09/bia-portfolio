@@ -29,3 +29,13 @@ export const getTechStack = async () => {
 		throw new Error('Failed to retrieve techstack');
 	}
 };
+
+export const getProjectData = async id => {
+	try {
+		const response = await fetch(`${API_URL}projects/${id}`);
+		const projects = await response.json();
+		return projects;
+	} catch (error) {
+		throw new Error('Failed to retrieve project details');
+	}
+};

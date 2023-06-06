@@ -27,27 +27,26 @@ export default function About() {
 	const { about_heading, short_intro, bio } = pageData;
 
 	return (
-		<main className="mx-11 my-8 flex flex-col items-center justify-center gap-3">
+		<main className="mx-11 flex flex-col items-center justify-center gap-3">
 			{isLoaded && (
 				<div className="about-content z-30 md:w-8/12">
-					<section className="about-intro justify-center">
+					<section className="about-intro flex h-screen flex-col justify-center">
 						<h1 className="text-3xl font-bold">{short_intro}</h1>
 						<p className="m-1">{bio}</p>
-					</section>
-					<Music />
-
-					<section className="about-skills">
+						{/* <section className="about-skills"> */}
 						<h2 className="text-2xl font-bold">{about_heading}</h2>
 						<ul className="flex flex-wrap gap-2">
 							{techStack.map(tech => {
 								return (
-									<li className="bg-lime-100 px-2 py-1" key={tech.id}>
+									<li className="bg-lime-100 px-2 py-1 uppercase" key={tech.id}>
 										{tech.title.rendered}
 									</li>
 								);
 							})}
 						</ul>
 					</section>
+					{/* </section> */}
+					<Music />
 				</div>
 			)}
 		</main>
