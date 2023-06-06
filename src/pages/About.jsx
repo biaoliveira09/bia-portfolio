@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { getPages } from './../utilities/api';
-import { getTechStack } from './../utilities/api';
-import { getPlaylist } from './../utilities/spotify';
+import { getPages, getTechStack } from './../utilities/api';
+import Music from './../components/Music';
 
 export default function About() {
 	const [pageData, setPageData] = useState([]);
@@ -12,7 +11,7 @@ export default function About() {
 	useEffect(() => {
 		getPages(20).then(data => {
 			setPageData(data.acf);
-			console.log(data.acf);
+			// console.log(data.acf);
 			setIsLoaded(true);
 		});
 	}, []);
@@ -20,14 +19,8 @@ export default function About() {
 	useEffect(() => {
 		getTechStack().then(data => {
 			setTechStack(data);
-			console.log(data);
+			// console.log(data);
 			setIsLoaded(true);
-		});
-	}, []);
-
-	useEffect(() => {
-		getPlaylist('4iHa1Vqfvh4kLrp8JjbDeO').then(data => {
-			console.log(data.tracks.items);
 		});
 	}, []);
 
@@ -40,6 +33,10 @@ export default function About() {
 					<section className="about-intro justify-center sm:min-h-screen">
 						<h1 className="text-3xl font-bold">{short_intro}</h1>
 						<p className="m-1">{bio}</p>
+					</section>
+					<section className="about-music">
+						<h2 className="text-2xl font-bold">Music</h2>
+						<Music />
 					</section>
 					<section className="about-skills">
 						<h2 className="text-2xl font-bold">{about_heading}</h2>
