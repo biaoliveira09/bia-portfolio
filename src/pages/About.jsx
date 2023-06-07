@@ -1,28 +1,37 @@
 import { useState, useEffect } from 'react';
 import { getPages, getTechStack } from './../utilities/api';
 import Music from './../components/Music';
+import TechStack from './../components/TechStack';
 
 export default function About() {
 	const [pageData, setPageData] = useState([]);
-	const [techStack, setTechStack] = useState([]);
-
+	// const [techStack, setTechStack] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
+
+	// const [chosenCategory, setChosenCategory] = useState('all');
+
+	// function handleCategoryClick(e) {
+	// 	const category = e.target.id;
+	// 	setChosenCategory(category);
+	// 	console.log(category);
+	// }
+
+	// const DEV_CATEGORY = 5;
+	// const DESIGN_CATEGORY = 6;
 
 	useEffect(() => {
 		getPages(20).then(data => {
 			setPageData(data.acf);
-			// console.log(data.acf);
 			setIsLoaded(true);
 		});
 	}, []);
 
-	useEffect(() => {
-		getTechStack().then(data => {
-			setTechStack(data);
-			console.log(data);
-			setIsLoaded(true);
-		});
-	}, []);
+	// useEffect(() => {
+	// 	getTechStack().then(data => {
+	// 		setTechStack(data);
+	// 		setIsLoaded(true);
+	// 	});
+	// }, []);
 
 	const { about_heading, short_intro, bio } = pageData;
 
@@ -35,31 +44,8 @@ export default function About() {
 						<p className="m-1">{bio}</p>
 					</div>
 					<div className="about-skills">
-						<h2 className="text-2xl font-bold">{about_heading}</h2>
-						<ul className="flex flex-wrap gap-2">
-							{techStack.map(tech => {
-								console.log(tech.tech_category);
-								if (tech.tech_category.includes(6)) {
-									return (
-										<li
-											className="bg-lime-100 px-2 py-1 uppercase"
-											key={tech.id}
-										>
-											{tech.title.rendered}
-										</li>
-									);
-								} else if (tech.tech_category.includes(5)) {
-									return (
-										<li
-											className="bg-pink-100 px-2 py-1 uppercase"
-											key={tech.id}
-										>
-											{tech.title.rendered}
-										</li>
-									);
-								}
-							})}
-						</ul>
+						<h2 className="mb-4 text-2xl font-bold">{about_heading}</h2>
+						<TechStack />
 					</div>
 					<Music />
 				</section>

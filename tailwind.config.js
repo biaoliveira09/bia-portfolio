@@ -17,6 +17,9 @@ export default {
 				outfit: ['Outfit', 'sans-serif'],
 				eight: ['Eight', 'sans-serif'],
 			},
+			colors: {
+				translucentyellow: 'rgba(255, 238, 153, .3)',
+			},
 			keyframes: {
 				blob: {
 					'0%': {

@@ -40,8 +40,8 @@ export async function getPlaylist(id) {
 
 // run
 // (async () => {
-// 	const artistId = '0OdUWJ0sBjDrqHygGUXeCF';
-// 	const artist = await getArtist(artistId);
+// 	const playlistId = '0OdUWJ0sBjDrqHygGUXeCF';
+// 	const playlist = await getPlaylist(playlistId);
 
-// 	console.log(artist);
+// 	console.log(playlist);
 // })();

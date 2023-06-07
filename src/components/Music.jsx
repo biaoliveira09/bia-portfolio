@@ -16,6 +16,7 @@ export default function Music() {
 		getPlaylist('4iHa1Vqfvh4kLrp8JjbDeO').then(data => {
 			setPlaylist(data);
 			setTracks(data.tracks.items);
+			console.log(data);
 			setIsLoaded(true);
 		});
 	}, []);
