@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProjectData } from '../utilities/api';
+import ProjectsSlick from '../components/ProjectsSlick';
 
 export default function ProjectDetails() {
 	const { project_id } = useParams();
@@ -30,7 +31,7 @@ export default function ProjectDetails() {
 
 	return (
 		isLoaded && (
-			<main className="project-details m-20 flex flex-col">
+			<main className="project-details m-20 flex flex-col items-center">
 				<div className="project-info z-40">
 					<h1>{project_name}</h1>
 					<p>{project_overview}</p>
@@ -49,6 +50,7 @@ export default function ProjectDetails() {
 						</a>
 					</div>
 				</div>
+				<ProjectsSlick />
 			</main>
 		)
 	);

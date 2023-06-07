@@ -5,7 +5,7 @@ export default function TechStack() {
 	const [techStack, setTechStack] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	const [chosenCategory, setChosenCategory] = useState('all');
+	const [chosenCategory, setChosenCategory] = useState('');
 
 	function handleCategoryClick(e) {
 		const category = e.target.id;
@@ -75,15 +75,23 @@ export default function TechStack() {
 			<div className="skills-container bg-translucentyellow p-4">
 				<ul className="flex flex-wrap gap-2">
 					{techStack.map(tech => {
-						if (tech.tech_category.includes(DESIGN_CATEGORY)) {
+						// if (tech.tech_category.includes(DESIGN_CATEGORY)) {
+						// 	return (
+						// 		<li className="bg-lime-100 px-2 py-1 uppercase" key={tech.id}>
+						// 			{tech.title.rendered}
+						// 		</li>
+						// 	);
+						// } else if (tech.tech_category.includes(DEV_CATEGORY)) {
+						// 	return (
+						// 		<li className="bg-pink-100 px-2 py-1 uppercase" key={tech.id}>
+						// 			{tech.title.rendered}
+						// 		</li>
+						// 	);
+						// }
+						console.log(techStack);
+						if (tech.tech_category.includes(chosenCategory)) {
 							return (
 								<li className="bg-lime-100 px-2 py-1 uppercase" key={tech.id}>
-									{tech.title.rendered}
-								</li>
-							);
-						} else if (tech.tech_category.includes(DEV_CATEGORY)) {
-							return (
-								<li className="bg-pink-100 px-2 py-1 uppercase" key={tech.id}>
 									{tech.title.rendered}
 								</li>
 							);
