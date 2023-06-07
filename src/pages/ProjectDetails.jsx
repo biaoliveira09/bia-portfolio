@@ -32,19 +32,19 @@ export default function ProjectDetails() {
 	return (
 		isLoaded && (
 			<main className="project-details m-20 flex flex-col items-center">
-				<div className="project-info z-40">
+				<div className="project-container z-40 w-8/12  rounded-lg bg-translucent p-5">
 					<h1>{project_name}</h1>
 					<p>{project_overview}</p>
 					<div className="flex flex-wrap gap-2">
 						<a
 							href={`${github_repository_url}`}
-							className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md"
+							className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md hover:bg-violet-400"
 						>
 							GitHub Repository
 						</a>
 						<a
 							href={`${live_preview_url}}`}
-							className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md"
+							className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md  hover:bg-violet-400"
 						>
 							Live Site
 						</a>
