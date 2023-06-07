@@ -17,7 +17,10 @@ export default function Projects() {
 	return (
 		<>
 			{isLoaded && (
-				<main className="projects-section z-30 flex flex-col flex-wrap items-center gap-8">
+				<main
+					id="projects"
+					className="projects-section z-30 flex flex-col flex-wrap items-center gap-8"
+				>
 					<h2 className="text-2xl font-bold">Projects</h2>
 					<div className="projects-wrapper flex flex-wrap items-center justify-center gap-4 sm:mx-10 lg:flex-row">
 						{projects.map(project => {

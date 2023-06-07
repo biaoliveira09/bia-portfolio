@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getTechStack } from './../utilities/api';
+import { BiCodeAlt } from 'react-icons/bi';
+import { MdOutlineDesignServices } from 'react-icons/md';
 
 export default function TechStack() {
 	const [techStack, setTechStack] = useState([]);
@@ -60,7 +62,7 @@ export default function TechStack() {
 				</button>
 				<button
 					id={DEV_CATEGORY}
-					className={`border border-pink-700 px-2 py-1 uppercase ${
+					className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
 						chosenCategory === DEV_CATEGORY.toString()
 							? 'bg-pink-700 text-stone-50'
 							: 'border-pink-700 bg-transparent text-pink-700'
@@ -68,10 +70,11 @@ export default function TechStack() {
 					onClick={handleCategoryClick}
 				>
 					Development
+					<BiCodeAlt className="h-5 w-5" />
 				</button>
 				<button
 					id={DESIGN_CATEGORY}
-					className={`border border-pink-700 px-2 py-1 uppercase ${
+					className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
 						chosenCategory === DESIGN_CATEGORY.toString()
 							? 'bg-pink-700 text-stone-50'
 							: 'border-pink-700 bg-transparent text-pink-700'
@@ -79,6 +82,7 @@ export default function TechStack() {
 					onClick={handleCategoryClick}
 				>
 					Design
+					<MdOutlineDesignServices className="h-5 w-5" />
 				</button>
 			</div>
 			<div className="skills-container p-4">

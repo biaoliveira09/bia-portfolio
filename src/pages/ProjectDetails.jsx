@@ -40,7 +40,7 @@ export default function ProjectDetails() {
 							href={`${github_repository_url}`}
 							className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md"
 						>
-							Github Repository
+							GitHub Repository
 						</a>
 						<a
 							href={`${live_preview_url}}`}
