@@ -19,7 +19,7 @@ export default function About() {
 	useEffect(() => {
 		getTechStack().then(data => {
 			setTechStack(data);
-			// console.log(data);
+			console.log(data);
 			setIsLoaded(true);
 		});
 	}, []);
@@ -29,25 +29,40 @@ export default function About() {
 	return (
 		<main className="mx-11 flex flex-col items-center justify-center gap-3">
 			{isLoaded && (
-				<div className="about-content z-30 md:w-8/12">
-					<section className="about-intro flex h-screen flex-col justify-center">
+				<section className="about-content z-30 h-screen md:w-8/12">
+					<div className="about-intro flex flex-col justify-center">
 						<h1 className="text-3xl font-bold">{short_intro}</h1>
 						<p className="m-1">{bio}</p>
-						{/* <section className="about-skills"> */}
+					</div>
+					<div className="about-skills">
 						<h2 className="text-2xl font-bold">{about_heading}</h2>
 						<ul className="flex flex-wrap gap-2">
 							{techStack.map(tech => {
-								return (
-									<li className="bg-lime-100 px-2 py-1 uppercase" key={tech.id}>
-										{tech.title.rendered}
-									</li>
-								);
+								console.log(tech.tech_category);
+								if (tech.tech_category.includes(6)) {
+									return (
+										<li
+											className="bg-lime-100 px-2 py-1 uppercase"
+											key={tech.id}
+										>
+											{tech.title.rendered}
+										</li>
+									);
+								} else if (tech.tech_category.includes(5)) {
+									return (
+										<li
+											className="bg-pink-100 px-2 py-1 uppercase"
+											key={tech.id}
+										>
+											{tech.title.rendered}
+										</li>
+									);
+								}
 							})}
 						</ul>
-					</section>
-					{/* </section> */}
+					</div>
 					<Music />
-				</div>
+				</section>
 			)}
 		</main>
 	);
