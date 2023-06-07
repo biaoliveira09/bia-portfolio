@@ -21,13 +21,28 @@ export default function Navigation({
 					{/* <Link to="contact">Contact</Link> */}
 				</nav>
 				<nav className="social-nav fixed hidden gap-4 sm:bottom-2 sm:right-10 sm:z-50 sm:flex sm:items-center">
-					<a href={linkedin_profile_link} className="hover:text-amber-500">
+					<a
+						href={linkedin_profile_link}
+						className="hover:text-amber-500"
+						target="_blank"
+						rel="noreferrer"
+					>
 						<BsLinkedin className="h-5 w-5" />
 					</a>
-					<a href={github_profile_link} className="hover:text-amber-500">
+					<a
+						href={github_profile_link}
+						className="hover:text-amber-500"
+						target="_blank"
+						rel="noreferrer"
+					>
 						<BsGithub className="h-5 w-5" />
 					</a>
-					<a href={`mailto:${email_address}`} className="hover:text-amber-500">
+					<a
+						href={`mailto:${email_address}`}
+						className="hover:text-amber-500"
+						target="_blank"
+						rel="noreferrer"
+					>
 						<MdEmail className="h-6 w-6" />
 					</a>
 				</nav>

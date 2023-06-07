@@ -23,7 +23,7 @@ export default function TechStack() {
 		getTechStack().then(data => {
 			setTechStack(data);
 			setIsLoaded(true);
-			setDisplayTech(data);
+			setDisplayTech(shuffle(data));
 		});
 	}, []);
 

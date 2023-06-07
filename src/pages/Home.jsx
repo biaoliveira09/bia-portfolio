@@ -32,9 +32,19 @@ export default function Home() {
 						</h1>
 						<p className="z-30 text-lg sm:text-xl md:text-2xl">{short_bio}</p>
 						<div className="social-links z-30 m-2 flex gap-6 sm:hidden">
-							<a href={github_profile_link}>GitHub</a>
-							<a href={linkedin_profile_link}>LinkedIn</a>
-							<a href={`mailto:${email_address}`}>Email</a>
+							<a href={github_profile_link} target="_blank" rel="noreferrer">
+								GitHub
+							</a>
+							<a href={linkedin_profile_link} target="_blank" rel="noreferrer">
+								LinkedIn
+							</a>
+							<a
+								href={`mailto:${email_address}`}
+								target="_blank"
+								rel="noreferrer"
+							>
+								Email
+							</a>
 						</div>
 					</section>
 					<section className="projects-section flex flex-col items-center sm:min-h-screen">

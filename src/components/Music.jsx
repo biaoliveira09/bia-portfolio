@@ -17,8 +17,11 @@ export default function Music() {
 			setPlaylist(data);
 			setTracks(data.tracks.items);
 			setIsLoaded(true);
+			console.log(data.external_urls.spotify);
 		});
 	}, []);
+
+	const { name, external_urls } = playlist;
 
 	useEffect(() => {
 		setRandomTrack(getRandomTrack(tracks));
@@ -30,8 +33,6 @@ export default function Music() {
 		}
 	}, [randomTrack]);
 
-	console.log(artists);
-
 	return (
 		isLoaded && (
 			<section className="music my-20 h-5/6">
@@ -40,7 +41,14 @@ export default function Music() {
 					<p>
 						Listen to one of my favourite tracks{' '}
 						<span className="font-bold">{randomTrack && randomTrack.name}</span>{' '}
-						by {artists} randomly selected from my playlist {playlist.name}{' '}
+						by {artists} randomly selected from my playlist{' '}
+						<a
+							href={external_urls.spotify}
+							className="underline"
+							target="_blank"
+						>
+							{name}
+						</a>{' '}
 						using the Spotify API.
 					</p>
 
