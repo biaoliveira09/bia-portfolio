@@ -49,7 +49,7 @@ export default function TechStack() {
 			<div className="category-buttons mb-4 flex flex-wrap gap-2">
 				<button
 					id="all"
-					className={`border border-pink-700  px-3 py-1 uppercase ${
+					className={`border border-pink-700  px-2 py-1 uppercase ${
 						chosenCategory === 'all'
 							? 'bg-pink-700 text-stone-50'
 							: 'border-pink-700 bg-transparent text-pink-700'
@@ -60,7 +60,7 @@ export default function TechStack() {
 				</button>
 				<button
 					id={DEV_CATEGORY}
-					className={`border border-pink-700 px-3 py-1 uppercase ${
+					className={`border border-pink-700 px-2 py-1 uppercase ${
 						chosenCategory === DEV_CATEGORY.toString()
 							? 'bg-pink-700 text-stone-50'
 							: 'border-pink-700 bg-transparent text-pink-700'
@@ -71,7 +71,7 @@ export default function TechStack() {
 				</button>
 				<button
 					id={DESIGN_CATEGORY}
-					className={`border border-pink-700 px-3 py-1 uppercase ${
+					className={`border border-pink-700 px-2 py-1 uppercase ${
 						chosenCategory === DESIGN_CATEGORY.toString()
 							? 'bg-pink-700 text-stone-50'
 							: 'border-pink-700 bg-transparent text-pink-700'
@@ -81,14 +81,14 @@ export default function TechStack() {
 					Design
 				</button>
 			</div>
-			<div className="skills-container bg-translucentyellow p-4">
+			<div className="skills-container p-4">
 				<ul className="flex flex-wrap gap-2">
 					{displayTech.map(tech => (
 						<li
 							className={`${
 								tech.tech_category.includes(DESIGN_CATEGORY)
-									? 'bg-lime-100'
-									: 'bg-pink-100'
+									? 'bg-amber-100'
+									: 'bg-violet-100'
 							} px-2 py-1 uppercase`}
 							key={tech.id}
 						>

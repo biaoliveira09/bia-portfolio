@@ -17,7 +17,7 @@ export default function Navigation({
 				</div>
 				<nav className="site-nav fixed bottom-2 z-50 flex items-center gap-16 sm:bottom-auto sm:right-10 sm:top-6">
 					<NavLink to="about">About</NavLink>
-					<NavLink to="projects">Projects</NavLink>
+					{/* <NavLink to="projects">Projects</NavLink> */}
 					{/* <NavLink to="contact">Contact</NavLink> */}
 				</nav>
 				<nav className="social-nav fixed hidden gap-4 sm:bottom-2 sm:right-10 sm:z-50 sm:flex sm:items-center">

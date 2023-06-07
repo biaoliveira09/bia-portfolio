@@ -18,7 +18,7 @@ export default {
 				eight: ['Eight', 'sans-serif'],
 			},
 			colors: {
-				translucentyellow: 'rgba(255, 238, 153, .3)',
+				translucentyellow: 'rgba(255, 238, 153, 0.2)',
 			},
 			keyframes: {
 				blob: {

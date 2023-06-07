@@ -5,3 +5,10 @@ export function getRandomTrack(tracks) {
 	const randomIndex = Math.floor(Math.random() * tracks.length);
 	return tracks[randomIndex].track;
 }
+
+export function getTrackArtists(track) {
+	if (track && track.artists) {
+		return track.artists.map(artist => artist.name).join(', ');
+	}
+	return '';
+}
