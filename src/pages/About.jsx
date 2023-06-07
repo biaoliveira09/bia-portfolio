@@ -19,12 +19,12 @@ export default function About() {
 	return (
 		<main className="mx-11 flex flex-col items-center justify-center gap-3">
 			{isLoaded && (
-				<section className="about-content z-30 h-screen md:w-8/12">
-					<div className="about-intro flex flex-col justify-center">
+				<section className="about-content z-30 h-screen md:w-8/12 lg:w-7/12">
+					<div className="about-intro flex flex-col justify-center sm:h-screen">
 						<h1 className="text-3xl font-bold">{short_intro}</h1>
 						<p className="m-1">{bio}</p>
 					</div>
-					<div className="about-skills">
+					<div className="about-skills flex flex-col sm:h-5/6">
 						<h2 className="mb-4 text-2xl font-bold">{about_heading}</h2>
 						<TechStack />
 					</div>

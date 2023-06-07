@@ -9,32 +9,15 @@ export default {
 			xl: '1280px',
 		},
 		extend: {
-			animation: {
-				blob: 'blob 9s infinite',
-			},
 			fontFamily: {
 				righteous: ['Righteous', 'sans-serif'],
 				outfit: ['Outfit', 'sans-serif'],
 				eight: ['Eight', 'sans-serif'],
 			},
 			colors: {
-				translucentyellow: 'rgba(255, 238, 153, 0.2)',
-			},
-			keyframes: {
-				blob: {
-					'0%': {
-						transform: 'translate(0px, 0px) scale(1)',
-					},
-					'33%': {
-						transform: 'translate(30px, -50px) scale(1.1)',
-					},
-					'66%': {
-						transform: 'translate(-20px, 20px) scale(0.9)',
-					},
-					'100%': {
-						transform: 'translate(0px, 0px) scale(1)',
-					},
-				},
+				translucent: 'rgba(250, 250, 249, 0.3)',
+				lesstranslucent: 'rgba(250, 250, 249, 0.7)',
+				translucentpink: 'rgba(252, 231, 243, 0.3)',
 			},
 		},
 	},

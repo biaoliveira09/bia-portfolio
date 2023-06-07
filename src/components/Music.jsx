@@ -34,9 +34,9 @@ export default function Music() {
 
 	return (
 		isLoaded && (
-			<section className="music my-20">
+			<section className="music my-20 h-5/6">
 				<h2 className="pb-3 text-2xl font-bold">Currently Listening To...</h2>
-				<div className="rounded-xl bg-translucentyellow px-7 py-5 pb-0">
+				<div className="rounded-xl bg-translucent  px-7 pb-0 pt-8 shadow">
 					<p>
 						Listen to one of my favourite tracks{' '}
 						<span className="font-bold">{randomTrack && randomTrack.name}</span>{' '}

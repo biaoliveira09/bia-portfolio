@@ -17,12 +17,9 @@ export default function Projects() {
 	return (
 		<>
 			{isLoaded && (
-				<main
-					id="projects"
-					className="projects-section z-30 flex flex-col flex-wrap items-center gap-8"
-				>
-					<h2 className="text-2xl font-bold">Projects</h2>
-					<div className="projects-wrapper flex flex-wrap items-center justify-center gap-4 sm:mx-10 lg:flex-row">
+				<section className="projects-section z-30 flex h-screen flex-col items-center justify-center">
+					<h2 className="z-30 mb-3 text-2xl font-bold">Projects</h2>
+					<div className="projects-wrapper flex flex-col flex-wrap items-center justify-center gap-4 sm:mx-10 md:flex-row">
 						{projects.map(project => {
 							const { project_name, project_overview } = project.acf;
 							return (
@@ -35,7 +32,7 @@ export default function Projects() {
 							);
 						})}
 					</div>
-				</main>
+				</section>
 			)}
 		</>
 	);

@@ -25,12 +25,12 @@ export default function Home() {
 	return (
 		<>
 			{isLoaded && (
-				<main className="">
-					<section className="intro-section font-cast z-30 flex h-64 flex-col items-center justify-center sm:min-h-screen">
-						<h1 className="z-30 font-eight text-4xl lowercase  sm:text-7xl md:text-8xl">
+				<main>
+					<section className="intro-section font-cast z-30 flex h-96 flex-col items-center justify-center sm:min-h-screen">
+						<h1 className="z-30 font-eight text-4xl lowercase  sm:text-6xl md:text-7xl">
 							{name}
 						</h1>
-						<p className="z-30 text-lg sm:text-xl">{short_bio}</p>
+						<p className="z-30 text-lg sm:text-xl md:text-2xl">{short_bio}</p>
 						<div className="social-icons z-30 m-2 flex gap-6 sm:gap-8">
 							<a href={github_profile_link}>GitHub</a>
 							<a href={linkedin_profile_link}>LinkedIn</a>

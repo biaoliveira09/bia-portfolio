@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 export default function ProjectsSlick() {
 	const settings = {
 		dots: false,
+		arrows: true,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 2,
