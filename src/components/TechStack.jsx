@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { getTechStack } from './../utilities/api';
 import { BiCodeAlt } from 'react-icons/bi';
 import { MdOutlineDesignServices } from 'react-icons/md';
+import { shuffle } from './../utilities/utils';
 
 export default function TechStack() {
 	const [techStack, setTechStack] = useState([]);
