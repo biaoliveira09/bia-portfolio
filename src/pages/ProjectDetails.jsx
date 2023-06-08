@@ -25,6 +25,7 @@ export default function ProjectDetails() {
 	const {
 		project_name,
 		project_overview,
+		project_screenshot,
 		tech_stack,
 		github_repository_url,
 		live_preview_url,
@@ -37,6 +38,13 @@ export default function ProjectDetails() {
 			<main className="project-details m-20 flex flex-col items-center">
 				<div className="project-container z-40 flex flex-col items-center rounded-lg bg-translucent p-5 shadow lg:w-8/12">
 					<h1>{project_name}</h1>
+					{project_screenshot && (
+						<img
+							src={project_screenshot.url}
+							alt={project_screenshot.alt}
+							className="w-11/12 shadow-lg "
+						/>
+					)}
 					<p>{project_overview}</p>
 					<div className="project-links flex flex-wrap justify-center gap-2">
 						<a

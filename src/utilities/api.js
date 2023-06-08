@@ -42,7 +42,9 @@ export const getInterests = async () => {
 
 export const getProjectData = async id => {
 	try {
-		const response = await fetch(`${API_URL}projects/${id}`);
+		const response = await fetch(
+			`${API_URL}projects/${id}/?acf_format=standard`
+		);
 		const projects = await response.json();
 		return projects;
 	} catch (error) {
