@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getProjectData } from '../utilities/api';
 import OtherProjectsCarousel from '../components/OtherProjectsCarousel';
 import ProjectInfo from '../components/ProjectInfo';
-import placeholder from './../../public/placeholder.png';
+import placeholder from './../assets/placeholder.png';
 
 export default function ProjectDetails() {
 	const { project_id } = useParams();
@@ -57,13 +57,13 @@ export default function ProjectDetails() {
 					<p>{project_overview}</p>
 					<div className="project-links flex flex-wrap justify-center gap-2">
 						<a
-							href={`${github_repository_url}`}
+							href={github_repository_url}
 							className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md hover:bg-violet-400"
 						>
 							GitHub Repository
 						</a>
 						<a
-							href={`${live_preview_url}}`}
+							href={live_preview_url}
 							className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md  hover:bg-violet-400"
 						>
 							Live Site

@@ -1,7 +1,7 @@
 import { getProjects } from '../utilities/api';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import placeholder from './../../public/placeholder.png';
+import placeholder from './../assets/placeholder.png';
 
 export default function OtherProjectsCarousel() {
 	const [projects, setProjects] = useState([]);

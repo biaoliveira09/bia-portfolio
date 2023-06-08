@@ -32,16 +32,20 @@ export default function About() {
 				<section className="about-content z-30 h-screen md:w-8/12 lg:w-7/12">
 					<div className="about-intro flex flex-col justify-center sm:h-screen">
 						<h1 className="text-3xl font-bold">{short_intro}</h1>
-						<h2 className="text-md font-bold uppercase">{about_heading}</h2>
+						<h2 className="text-md  font-medium uppercase">{about_heading}</h2>
 						<p className="m-1">{bio}</p>
-						<h2 className="text-md font-bold uppercase">
+						<div className="about-skills flex flex-col sm:h-5/6">
+							<h2 className="mb-4 text-2xl font-bold">{skills_heading}</h2>
+							<TechStack />
+						</div>
+						{/* <h2 className="text-md font-bold uppercase">
 							{highlights.education}
 						</h2>
 						<p>{highlights.ba}</p>
 						<p>{highlights.certificate}</p>
 						<h2 className="text-md font-bold uppercase">
 							{highlights.interests}
-						</h2>
+						</h2> */}
 						<ul className="flex flex-wrap gap-2">
 							{interests.map(interest => {
 								if (interest.interest_category.includes(8)) {
@@ -65,10 +69,6 @@ export default function About() {
 								}
 							})}
 						</ul>
-					</div>
-					<div className="about-skills flex flex-col sm:h-5/6">
-						<h2 className="mb-4 text-2xl font-bold">{skills_heading}</h2>
-						<TechStack />
 					</div>
 					<Music />
 				</section>

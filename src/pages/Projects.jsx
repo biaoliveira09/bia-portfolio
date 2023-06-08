@@ -17,7 +17,7 @@ export default function Projects() {
 	return (
 		<>
 			{isLoaded && (
-				<section className="projects-section z-30 flex h-screen flex-col items-center justify-center">
+				<section className="projects-section z-30 flex h-fit flex-col items-center justify-center">
 					<h2 className="z-30 mb-3 text-2xl font-bold">Projects</h2>
 					<div className="projects-wrapper flex flex-col flex-wrap items-center justify-center gap-4 sm:mx-10 md:flex-row">
 						{projects.map(project => {

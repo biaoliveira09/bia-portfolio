@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getPages } from './../utilities/api';
 import Projects from './Projects';
+import About from './About';
 
 export default function Home() {
 	const [pageData, setPageData] = useState([]);
@@ -25,7 +26,7 @@ export default function Home() {
 		<>
 			{isLoaded && (
 				<main>
-					<section className="intro-section font-cast z-30 flex h-96 flex-col items-center justify-center sm:min-h-screen">
+					<section className="intro-section font-cast z-30 flex h-72 flex-col items-center justify-center sm:min-h-screen">
 						<h1 className="z-30 font-eight text-4xl lowercase  sm:text-6xl md:text-7xl">
 							{name}
 						</h1>
@@ -49,6 +50,7 @@ export default function Home() {
 					<section className="projects-section flex flex-col items-center sm:min-h-screen">
 						<Projects />
 					</section>
+					<About />
 				</main>
 			)}
 		</>

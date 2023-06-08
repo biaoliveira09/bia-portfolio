@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import placeholder from './../../public/placeholder.png';
+import placeholder from './../assets/placeholder.png';
 
 export default function Project({
 	project_name,
