@@ -21,8 +21,12 @@ export default function Projects() {
 					<h2 className="z-30 mb-3 text-2xl font-bold">Projects</h2>
 					<div className="projects-wrapper flex flex-col flex-wrap items-center justify-center gap-4 sm:mx-10 md:flex-row">
 						{projects.map(project => {
-							const { project_name, project_overview, project_screenshot } =
-								project.acf;
+							const {
+								project_name,
+								project_overview,
+								project_screenshot,
+								tech_stack,
+							} = project.acf;
 							return (
 								<Project
 									key={project.id}
@@ -30,6 +34,7 @@ export default function Projects() {
 									project_overview={project_overview}
 									project_id={project.id}
 									project_screenshot={project_screenshot}
+									tech_stack={tech_stack}
 								/>
 							);
 						})}

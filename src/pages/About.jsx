@@ -38,14 +38,6 @@ export default function About() {
 							<h2 className="mb-4 text-2xl font-bold">{skills_heading}</h2>
 							<TechStack />
 						</div>
-						{/* <h2 className="text-md font-bold uppercase">
-							{highlights.education}
-						</h2>
-						<p>{highlights.ba}</p>
-						<p>{highlights.certificate}</p>
-						<h2 className="text-md font-bold uppercase">
-							{highlights.interests}
-						</h2> */}
 						<ul className="flex flex-wrap gap-2">
 							{interests.map(interest => {
 								if (interest.interest_category.includes(8)) {

@@ -26,7 +26,7 @@ export default function Home() {
 		<>
 			{isLoaded && (
 				<main>
-					<section className="intro-section font-cast z-30 flex h-72 flex-col items-center justify-center sm:min-h-screen">
+					<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-64">
 						<h1 className="z-30 font-eight text-4xl lowercase  sm:text-6xl md:text-7xl">
 							{name}
 						</h1>
