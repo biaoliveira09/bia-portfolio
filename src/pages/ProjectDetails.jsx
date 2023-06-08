@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getProjectData } from '../utilities/api';
 import ProjectsSlick from '../components/ProjectsSlick';
 import ProjectInfo from '../components/ProjectInfo';
+import placeholder from './../../public/placeholder.png';
 
 export default function ProjectDetails() {
 	const { project_id } = useParams();
@@ -36,13 +37,19 @@ export default function ProjectDetails() {
 	return (
 		isLoaded && (
 			<main className="project-details m-20 flex flex-col items-center">
-				<div className="project-container z-40 flex flex-col items-center rounded-lg bg-translucent p-5 shadow lg:w-8/12">
+				<div className="project-container z-20 flex flex-col items-center gap-7 rounded-lg bg-translucent p-6 md:p-10 lg:w-8/12">
 					<h1>{project_name}</h1>
-					{project_screenshot && (
+					{project_screenshot ? (
 						<img
 							src={project_screenshot.url}
 							alt={project_screenshot.alt}
-							className="w-11/12 shadow-lg "
+							className="w-64 shadow-lg sm:w-96 md:w-9/12 lg:w-11/12 "
+						/>
+					) : (
+						<img
+							src={placeholder}
+							alt="placeholder"
+							className="w-64 shadow-lg sm:w-96 md:w-9/12 lg:w-11/12"
 						/>
 					)}
 					<p>{project_overview}</p>
@@ -71,8 +78,8 @@ export default function ProjectDetails() {
 						</ul>
 					</div>
 					<ProjectInfo projectData={projectData} />
-					<ProjectsSlick />
 				</div>
+				<ProjectsSlick />
 			</main>
 		)
 	);

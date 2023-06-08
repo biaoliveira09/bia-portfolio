@@ -2,7 +2,7 @@ export default function ProjectInfo(projectData) {
 	console.log(projectData);
 	const { highlights, process } = projectData;
 	return (
-		<section className="flex flex-col justify-center gap-3">
+		<section className="flex w-full flex-col justify-center gap-3 md:w-11/12">
 			<div className="collapse-plus collapse bg-translucentviolet">
 				<input type="radio" name="my-accordion-3" checked="checked" />
 				<div className="collapse-title text-xl font-medium">Highlights</div>

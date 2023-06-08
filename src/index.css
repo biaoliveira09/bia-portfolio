@@ -361,3 +361,23 @@ body {
 	transform-origin: 9vw 19vh;
 	box-shadow: 72vmin 0 9.63230333831568vmin currentColor;
 }
+
+::-webkit-scrollbar {
+	width: 0.625rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #fafaf9;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #fce7f3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #ddd6fe;
+}
+
+::-webkit-scrollbar-thumb:active {
+	background-color: #c4b5fd;
+}

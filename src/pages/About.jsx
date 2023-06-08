@@ -39,14 +39,6 @@ export default function About() {
 						</h2>
 						<p>{highlights.ba}</p>
 						<p>{highlights.certificate}</p>
-						{/* <h2 className="text-md font-bold uppercase">
-							{highlights.interests}
-						</h2>
-						<ul>
-							{highlights.interest_options.map(interest => (
-								<li key={interest}>{interest}</li>
-							))}
-						</ul> */}
 						<h2 className="text-md font-bold uppercase">
 							{highlights.interests}
 						</h2>
