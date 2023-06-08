@@ -16,7 +16,6 @@ export default function TechStack() {
 	function handleCategoryClick(e) {
 		const category = e.target.id;
 		setChosenCategory(category);
-		console.log(category);
 	}
 
 	useEffect(() => {

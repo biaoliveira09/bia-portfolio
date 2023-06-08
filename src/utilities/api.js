@@ -12,7 +12,7 @@ export const getPages = async id => {
 
 export const getProjects = async () => {
 	try {
-		const response = await fetch(`${API_URL}projects`);
+		const response = await fetch(`${API_URL}projects/?acf_format=standard`);
 		const projects = await response.json();
 		return projects;
 	} catch (error) {
@@ -27,6 +27,16 @@ export const getTechStack = async () => {
 		return tech;
 	} catch (error) {
 		throw new Error('Failed to retrieve techstack');
+	}
+};
+
+export const getInterests = async () => {
+	try {
+		const response = await fetch(`${API_URL}interests?per_page=50`);
+		const interests = await response.json();
+		return interests;
+	} catch (error) {
+		throw new Error('Failed to retrieve interests');
 	}
 };
 

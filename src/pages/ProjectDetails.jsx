@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProjectData } from '../utilities/api';
 import ProjectsSlick from '../components/ProjectsSlick';
+import ProjectInfo from '../components/ProjectInfo';
 
 export default function ProjectDetails() {
 	const { project_id } = useParams();
@@ -27,15 +28,17 @@ export default function ProjectDetails() {
 		tech_stack,
 		github_repository_url,
 		live_preview_url,
+		process,
+		highlights,
 	} = projectData;
 
 	return (
 		isLoaded && (
 			<main className="project-details m-20 flex flex-col items-center">
-				<div className="project-container z-40 w-8/12  rounded-lg bg-translucent p-5">
+				<div className="project-container z-40 flex flex-col items-center rounded-lg bg-translucent p-5 shadow lg:w-8/12">
 					<h1>{project_name}</h1>
 					<p>{project_overview}</p>
-					<div className="flex flex-wrap gap-2">
+					<div className="project-links flex flex-wrap justify-center gap-2">
 						<a
 							href={`${github_repository_url}`}
 							className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md hover:bg-violet-400"
@@ -49,8 +52,19 @@ export default function ProjectDetails() {
 							Live Site
 						</a>
 					</div>
+					<div className="tech-used flex justify-center">
+						<ul className="flex flex-wrap gap-2">
+							{tech_stack &&
+								tech_stack.map(tech => (
+									<li key={tech} className="bg-amber-100 px-2 py-1 uppercase">
+										{tech}
+									</li>
+								))}
+						</ul>
+					</div>
+					<ProjectInfo projectData={projectData} />
+					<ProjectsSlick />
 				</div>
-				<ProjectsSlick />
 			</main>
 		)
 	);

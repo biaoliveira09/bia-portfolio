@@ -44,8 +44,9 @@ export default function Music() {
 						by {artists} randomly selected from my playlist{' '}
 						<a
 							href={external_urls.spotify}
-							className="underline"
+							className="underline hover:text-orange-500"
 							target="_blank"
+							rel="noreferrer"
 						>
 							{name}
 						</a>{' '}

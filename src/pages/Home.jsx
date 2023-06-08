@@ -9,7 +9,6 @@ export default function Home() {
 	useEffect(() => {
 		getPages(20).then(data => {
 			setPageData(data.acf);
-			console.log(data.acf);
 			setIsLoaded(true);
 		});
 	}, []);
