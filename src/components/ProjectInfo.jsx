@@ -1,4 +1,4 @@
-export default function ProjectInfo(projectData) {
+export default function ProjectInfo({ projectData }) {
 	console.log(projectData);
 	const { highlights, process } = projectData;
 	return (

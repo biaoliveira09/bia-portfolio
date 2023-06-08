@@ -14,13 +14,13 @@ export default function Project({
 						<img
 							src={project_screenshot.url}
 							alt={project_screenshot.alt}
-							className="mx-auto w-64 rounded shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl sm:w-96 md:w-9/12 lg:w-11/12" // Added "mx-auto" class to center the image horizontally
+							className="mx-auto w-64 rounded shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl sm:w-96 md:w-9/12 lg:w-11/12"
 						/>
 					) : (
 						<img
 							src={placeholder}
 							alt="placeholder"
-							className="mx-auto w-64 rounded shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl sm:w-96 md:w-9/12 lg:w-11/12" // Added "mx-auto" class to center the image horizontally
+							className="mx-auto w-64 rounded shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl sm:w-96 md:w-9/12 lg:w-11/12"
 						/>
 					)}
 				</Link>
