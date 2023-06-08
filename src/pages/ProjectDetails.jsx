@@ -73,7 +73,10 @@ export default function ProjectDetails() {
 						<ul className="flex flex-wrap gap-2">
 							{tech_stack &&
 								tech_stack.map(tech => (
-									<li key={tech} className="bg-amber-100 px-2 py-1 uppercase">
+									<li
+										key={tech}
+										className="bg-orange-100 px-2 py-1 text-sm uppercase"
+									>
 										{tech}
 									</li>
 								))}
