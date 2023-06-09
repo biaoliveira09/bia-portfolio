@@ -1,5 +1,4 @@
 export default function ProjectInfo({ projectData }) {
-	console.log(projectData);
 	const { highlights, process } = projectData;
 	return (
 		<section className="flex w-full flex-col justify-center gap-3 md:w-11/12">

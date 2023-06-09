@@ -1,13 +1,15 @@
+import { useQuery } from '@tanstack/react-query';
 import { getPages, getInterests } from '../utilities/api';
+import { FaAsterisk } from 'react-icons/fa';
 import Music from './Music';
 import TechStack from './TechStack';
-import { FaAsterisk } from 'react-icons/fa';
-import { useQuery } from '@tanstack/react-query';
+
+const ABOUT_PAGE_ID = 20;
 
 export default function About() {
 	const pagesQuery = useQuery({
-		queryKey: ['pages', 20],
-		queryFn: () => getPages(20),
+		queryKey: ['pages', ABOUT_PAGE_ID],
+		queryFn: () => getPages(ABOUT_PAGE_ID),
 	});
 
 	const interestsQuery = useQuery({
