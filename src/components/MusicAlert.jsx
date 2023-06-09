@@ -22,7 +22,7 @@ export default function MusicAlert({ track_name, artists }) {
 		>
 			<div className="flex items-center overflow-hidden">
 				<a href="/#music">
-					<FaAsterisk className="mx-5 h-10 w-10 text-stone-50 hover:animate-spin hover:text-pink-700" />
+					<FaAsterisk className="mx-5 h-10 w-10 text-stone-50 hover:animate-spin active:text-pink-700" />
 				</a>
 				{expanded && (
 					<div className="track-info">

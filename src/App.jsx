@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
-// import About from './pages/About';
-import Contact from './pages/Contact';
-import Projects from './pages/Projects';
 import ProjectDetails from './pages/ProjectDetails';
 import Bounce from './components/Bounce';
 import { getPages } from './utilities/api';
+import Footer from './components/Footer';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -37,12 +35,10 @@ function App() {
 				/>
 				<Routes>
 					<Route path="/" element={<Home />} />
-					{/* <Route path="about" element={<About />} /> */}
-					{/* <Route path="projects" element={<Projects />} /> */}
 					<Route path="projects/:project_id" element={<ProjectDetails />} />
-					<Route path="contact" element={<Contact />} />
 				</Routes>
 			</Router>
+			<Footer />
 		</>
 	);
 }

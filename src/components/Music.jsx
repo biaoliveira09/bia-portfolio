@@ -38,7 +38,7 @@ export default function Music() {
 	return (
 		isLoaded && (
 			<>
-				<section id="music" className="music my-20 h-5/6">
+				<section id="music" className="music my-20 h-3/4">
 					<h2 className="pb-3 text-2xl font-bold">Currently Listening To...</h2>
 					<div className="rounded-xl bg-translucent  px-7 pb-0 pt-8 shadow">
 						<p>

@@ -32,17 +32,20 @@ export default function About() {
 		>
 			{isLoaded && (
 				<div className="about-content z-30 h-screen justify-center md:w-8/12 lg:w-7/12">
-					<h1 className="text-3xl font-bold">{short_intro}</h1>
+					<h1 className="mb-1 text-3xl font-bold">{short_intro}</h1>
 					<h2 className="text-md font-medium uppercase">{about_heading}</h2>
-					<p className="m-1">{bio}</p>
+					<p className="my-4">{bio}</p>
 					<TechStack skills_heading={skills_heading} />
 					<div className="interests-section my-2 flex flex-col">
 						<h2 className="mb-1 text-2xl font-bold">I like:</h2>
-						<ul className="flex flex-wrap gap-3">
+						<ul className="flex flex-wrap gap-2">
 							{interests.map(interest => {
 								if (interest.interest_category.includes(8)) {
 									return (
-										<li key={interest.id} className="flex items-center gap-1">
+										<li
+											key={interest.id}
+											className="flex items-center gap-2 rounded-full border border-pink-700 px-3 py-1"
+										>
 											{interest.title.rendered}
 											<button
 												className="tooltip-primary tooltip tooltip-bottom"
@@ -54,8 +57,11 @@ export default function About() {
 									);
 								} else {
 									return (
-										<li key={interest.id} className="flex items-center gap-1">
-											{interest.title.rendered},
+										<li
+											key={interest.id}
+											className="flex items-center rounded-full border border-pink-700 px-3 py-1"
+										>
+											{interest.title.rendered}
 										</li>
 									);
 								}

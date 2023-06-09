@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getPages } from './../utilities/api';
-import Projects from './Projects';
+import Projects from '../components/Projects';
 import About from '../components/About';
 
 export default function Home() {
