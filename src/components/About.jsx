@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getPages, getInterests } from '../utilities/api';
+import { getPages, getPostsData } from '../utilities/api';
 import { FaAsterisk } from 'react-icons/fa';
 import Music from './Music';
 import TechStack from './TechStack';
@@ -14,7 +14,7 @@ export default function About() {
 
 	const interestsQuery = useQuery({
 		queryKey: ['interests'],
-		queryFn: getInterests,
+		queryFn: () => getPostsData('interests'),
 	});
 
 	if (interestsQuery.isLoading) return <p>Loading...</p>;

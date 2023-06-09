@@ -1,5 +1,3 @@
-// require('dotenv').config();
-
 /**
  * Get access token from Spotify API
  *
@@ -37,11 +35,3 @@ export async function getPlaylist(id) {
 	});
 	return await r.json();
 }
-
-// run
-// (async () => {
-// 	const playlistId = '0OdUWJ0sBjDrqHygGUXeCF';
-// 	const playlist = await getPlaylist(playlistId);
-
-// 	console.log(playlist);
-// })();

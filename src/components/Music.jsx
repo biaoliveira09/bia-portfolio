@@ -2,7 +2,6 @@ import { FiRefreshCw } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
 import { getPlaylist } from './../utilities/spotify';
 import { getRandomTrack, getTrackArtists } from '../utilities/utils';
-import { FaAsterisk } from 'react-icons/fa';
 import MusicAlert from './MusicAlert';
 
 const EMBEDDABLE_URL = 'https://open.spotify.com/embed/track/';

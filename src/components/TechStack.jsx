@@ -18,6 +18,7 @@ export default function TechStack({ skills_heading }) {
 		console.log(category);
 	}
 
+	// TODO: refector to use useQuery!!!!!!!!!!!!
 	useEffect(() => {
 		getTechStack().then(data => {
 			setTechStack(data);
