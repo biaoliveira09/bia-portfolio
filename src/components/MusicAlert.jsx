@@ -14,19 +14,19 @@ export default function MusicAlert({ track_name, artists }) {
 
 	return (
 		<div
-			className={`fixed bottom-16 right-0 hidden h-20 rounded-full bg-pink-200 transition-all duration-300 md:flex ${
-				expanded ? 'md:w-1/3 lg:w-1/4' : 'md:w-1/6 lg:w-1/12'
+			className={`fixed bottom-16 right-0 hidden h-20 rounded-full bg-pink-700 transition-all duration-300 md:flex ${
+				expanded ? 'hover:bg-orange-400 md:w-1/3 lg:w-1/4' : 'md:w-28'
 			}`}
 			onMouseEnter={handleHover}
 			onMouseLeave={handleMouseLeave}
 		>
 			<div className="flex items-center overflow-hidden">
 				<a href="/#music">
-					<FaAsterisk className="mx-5 h-10 w-10 text-orange-400 hover:animate-spin lg:h-8 lg:w-8" />
+					<FaAsterisk className="mx-5 h-10 w-10 text-stone-50 hover:animate-spin hover:text-pink-700" />
 				</a>
 				{expanded && (
 					<div className="track-info">
-						<p className="mx-auto text-xs md:w-36 lg:w-48 lg:text-sm">
+						<p className="mx-auto text-xs text-stone-50 md:w-8/12 lg:w-11/12 lg:p-1 lg:pr-8 xl:text-sm">
 							Currently listening to{' '}
 							<span className="font-bold">{track_name}</span> by {artists}
 						</p>
