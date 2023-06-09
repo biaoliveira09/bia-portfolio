@@ -4,6 +4,7 @@ import { getProjectData } from '../utilities/api';
 import OtherProjectsCarousel from '../components/OtherProjectsCarousel';
 import ProjectInfo from '../components/ProjectInfo';
 import placeholder from './../assets/placeholder.png';
+import Carousel from '../components/Carousel';
 
 export default function ProjectDetails() {
 	const { project_id } = useParams();
@@ -83,12 +84,13 @@ export default function ProjectDetails() {
 						</ul>
 					</div>
 					<ProjectInfo projectData={projectData} />
-					<section className="other-projects z-30 flex items-center">
-						{/* <h2 className="text-md font-bold sm:text-lg lg:text-xl">
+					<section className="other-projects z-30 flex flex-col items-center">
+						<h2 className="text-md m-4 font-bold sm:text-lg lg:text-xl">
 							See Other Projects
-						</h2> */}
+						</h2>
 
-						{/* <OtherProjectsCarousel /> */}
+						{/* <OtherProjectsCarousel projectdetails_name={project_name} /> */}
+						<Carousel projectdetails_name={project_name} />
 					</section>
 				</div>
 			</main>

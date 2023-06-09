@@ -1,8 +1,13 @@
 import daisyui from 'daisyui';
+import flowbite from '@flowbite/tailwindcss-flowbite';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+	content: [
+		'./index.html',
+		'./src/**/*.{js,ts,jsx,tsx}',
+		'./node_modules/flowbite/**/*.js',
+	],
 	theme: {
 		screens: {
 			sm: '640px',
@@ -23,5 +28,5 @@ export default {
 			},
 		},
 	},
-	plugins: [daisyui],
+	plugins: [daisyui,  require('flowbite/plugin')],
 };

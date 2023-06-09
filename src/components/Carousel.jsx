@@ -1,0 +1,120 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import placeholder from './../assets/placeholder.png';
+import { getProjects } from '../utilities/api';
+
+export default function Carousel({ projectdetails_name }) {
+	const [projects, setProjects] = useState([]);
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [currentIndex, setCurrentIndex] = useState(0);
+
+	useEffect(() => {
+		getProjects().then(data => {
+			setProjects(data);
+			setIsLoaded(true);
+		});
+	}, []);
+
+	const handlePrevClick = () => {
+		setCurrentIndex(prevIndex => prevIndex - 1);
+	};
+
+	const handleNextClick = () => {
+		setCurrentIndex(prevIndex => prevIndex + 1);
+	};
+
+	return (
+		<div>
+			<div
+				id="controls-carousel"
+				className="relative w-full"
+				data-carousel="static"
+			>
+				<div
+					className="flex space-x-4 overflow-x-hidden duration-700 ease-in-out"
+					data-carousel-item
+				>
+					{isLoaded &&
+						projects.slice(currentIndex, currentIndex + 2).map(project => {
+							const { project_name, project_screenshot } = project.acf;
+							if (project_name !== projectdetails_name) {
+								return (
+									<div className="carousel-item" key={project.id}>
+										<Link to={`/projects/${project.id}`}>
+											{project_screenshot ? (
+												<img
+													src={project_screenshot.url}
+													alt={project_screenshot.alt}
+													className="rounded-box mx-auto h-40 w-64 shadow-lg"
+												/>
+											) : (
+												<img
+													src={placeholder}
+													alt="placeholder"
+													className="rounded-box mx-auto h-40 w-64 shadow-lg"
+												/>
+											)}
+											<h2 className="m-auto font-medium">{project_name}</h2>
+										</Link>
+									</div>
+								);
+							}
+							return null;
+						})}
+				</div>
+				<button
+					type="button"
+					className="group absolute left-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
+					data-carousel-prev
+					onClick={handlePrevClick}
+					disabled={currentIndex === 0}
+				>
+					<span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/60 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
+						<svg
+							aria-hidden="true"
+							className="h-6 w-6 text-white dark:text-gray-800"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
+								d="M15 19l-7-7 7-7"
+							></path>
+						</svg>
+						<span className="sr-only">Previous</span>
+					</span>
+				</button>
+				<button
+					type="button"
+					className="group absolute right-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
+					data-carousel-next
+					onClick={handleNextClick}
+					disabled={currentIndex >= projects.length - 2}
+				>
+					<span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/60 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
+						<svg
+							aria-hidden="true"
+							className="h-6 w-6 text-white dark:text-gray-800"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
+								d="M9 5l7 7-7 7"
+							></path>
+						</svg>
+						<span className="sr-only">Next</span>
+					</span>
+				</button>
+			</div>
+		</div>
+	);
+}
