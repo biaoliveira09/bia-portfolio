@@ -381,3 +381,16 @@ body {
 ::-webkit-scrollbar-thumb:active {
 	background-color: #c4b5fd;
 }
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* .fade-in {
+	animation: fadeIn 0.9s ease-in;
+} */

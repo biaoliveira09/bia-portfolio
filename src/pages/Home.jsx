@@ -26,11 +26,13 @@ export default function Home() {
 		<>
 			{isLoaded && (
 				<main>
-					<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-64">
-						<h1 className="z-30 font-eight text-4xl lowercase  sm:text-6xl md:text-7xl">
+					<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-64 lg:h-screen">
+						<h1 className="fade-in z-30 font-eight text-4xl lowercase sm:text-6xl md:text-7xl">
 							{name}
 						</h1>
-						<p className="z-30 text-lg sm:text-xl md:text-2xl">{short_bio}</p>
+						<p className=" fade-in z-30 text-lg sm:text-xl md:text-2xl">
+							{short_bio}
+						</p>
 						<div className="social-links z-30 m-2 flex gap-6 sm:hidden">
 							<a href={github_profile_link} target="_blank" rel="noreferrer">
 								GitHub

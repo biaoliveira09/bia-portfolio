@@ -39,10 +39,9 @@ export default function Project({
 							);
 						})}
 					</ul>
-					{/* <p>{project_overview}</p> */}
 					<Link
 						to={`/projects/${project_id}`}
-						className="mt-4 hover:text-amber-600"
+						className="mt-3 w-56 rounded-lg px-2 py-1 text-center text-sm font-medium transition-colors hover:bg-translucentpink"
 					>
 						Details
 					</Link>
