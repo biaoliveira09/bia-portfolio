@@ -28,7 +28,9 @@ export default function MusicAlert({ track_name, artists }) {
 					<div className="track-info">
 						<p className="mx-auto text-xs text-stone-50 md:w-8/12 lg:w-11/12 lg:p-1 lg:pr-8 xl:text-sm">
 							Currently listening to{' '}
-							<span className="font-bold">{track_name}</span> by {artists}
+							<a href="/#music" className="underline">
+								<span className="font-bold">{track_name}</span> by {artists}
+							</a>
 						</p>
 					</div>
 				)}
