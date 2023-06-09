@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getPlaylist } from './../utilities/spotify';
 import { getRandomTrack, getTrackArtists } from '../utilities/utils';
 import { FaAsterisk } from 'react-icons/fa';
+import MusicAlert from './MusicAlert';
 
 const EMBEDDABLE_URL = 'https://open.spotify.com/embed/track/';
 
@@ -77,21 +78,10 @@ export default function Music() {
 						)}
 					</div>
 				</section>
-				<div className="music-intro absolute bottom-12 right-12 hidden p-1 text-sm opacity-90 md:block">
-					<a href="/#music">
-						<div className="align-start flex gap-1">
-							<FaAsterisk className="h-4 w-4 text-orange-400 hover:animate-spin" />
-							<p className="text-right">
-								Currently listening to{' '}
-								<span className="font-bold">
-									{randomTrack && randomTrack.name}
-								</span>{' '}
-								<br />
-								by {artists}
-							</p>
-						</div>
-					</a>
-				</div>
+				<MusicAlert
+					track_name={randomTrack && randomTrack.name}
+					artists={artists}
+				/>
 			</>
 		)
 	);

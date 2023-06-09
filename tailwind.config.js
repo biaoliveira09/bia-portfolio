@@ -1,6 +1,3 @@
-import daisyui from 'daisyui';
-import flowbite from '@flowbite/tailwindcss-flowbite';
-
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: [
@@ -28,5 +25,5 @@ export default {
 			},
 		},
 	},
-	plugins: [daisyui,  require('flowbite/plugin')],
+	plugins: [require('daisyui'), require('flowbite/plugin')],
 };
