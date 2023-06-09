@@ -49,9 +49,7 @@ export default function Home() {
 							</a>
 						</div>
 					</section>
-					<section className="projects-section flex flex-col items-center sm:min-h-screen">
-						<Projects />
-					</section>
+					<Projects />
 					<About />
 				</main>
 			)}
