@@ -54,7 +54,7 @@ export default function ProjectDetails() {
 							className="w-64 shadow-lg sm:w-96 md:w-9/12 lg:w-11/12"
 						/>
 					)}
-					<p>{project_overview}</p>
+					<p className="max-w-prose">{project_overview}</p>
 					<div className="project-links flex flex-wrap justify-center gap-2">
 						<a
 							href={github_repository_url}
@@ -84,11 +84,11 @@ export default function ProjectDetails() {
 					</div>
 					<ProjectInfo projectData={projectData} />
 					<section className="other-projects z-30 flex items-center">
-						<h2 className="text-md font-bold sm:text-lg lg:text-xl">
+						{/* <h2 className="text-md font-bold sm:text-lg lg:text-xl">
 							See Other Projects
-						</h2>
+						</h2> */}
 
-						<OtherProjectsCarousel />
+						{/* <OtherProjectsCarousel /> */}
 					</section>
 				</div>
 			</main>

@@ -16,7 +16,7 @@ export default function OtherProjectsCarousel() {
 	}, []);
 
 	return (
-		<div className="carousel-center carousel rounded-box z-30 max-w-xl space-x-4 bg-lesstranslucent p-4">
+		<div className="carousel-center carousel rounded-box z-30 space-x-4 bg-lesstranslucent p-4">
 			{isLoaded &&
 				projects.map(project => {
 					const { project_name, project_screenshot } = project.acf;

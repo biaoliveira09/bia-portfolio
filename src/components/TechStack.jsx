@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getTechStack } from './../utilities/api';
 import { BiCodeAlt } from 'react-icons/bi';
 import { MdOutlineDesignServices } from 'react-icons/md';
-import { shuffle } from './../utilities/utils';
+// import { shuffle } from './../utilities/utils';
 
 export default function TechStack() {
 	const [techStack, setTechStack] = useState([]);
@@ -23,7 +23,7 @@ export default function TechStack() {
 		getTechStack().then(data => {
 			setTechStack(data);
 			setIsLoaded(true);
-			setDisplayTech(shuffle(data));
+			setDisplayTech(data);
 		});
 	}, []);
 
@@ -93,7 +93,7 @@ export default function TechStack() {
 							className={`${
 								tech.tech_category.includes(DESIGN_CATEGORY)
 									? 'bg-amber-100'
-									: 'bg-blue-100'
+									: 'bg-violet-100'
 							} px-2 py-1 uppercase`}
 							key={tech.id}
 						>
