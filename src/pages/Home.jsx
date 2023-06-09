@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getPages } from './../utilities/api';
 import Projects from './Projects';
-import About from './About';
+import About from '../components/About';
 
 export default function Home() {
 	const [pageData, setPageData] = useState([]);

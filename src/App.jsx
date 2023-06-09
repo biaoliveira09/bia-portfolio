@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
-import About from './pages/About';
+// import About from './pages/About';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import ProjectDetails from './pages/ProjectDetails';
@@ -37,7 +37,7 @@ function App() {
 				/>
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="about" element={<About />} />
+					{/* <Route path="about" element={<About />} /> */}
 					<Route path="projects" element={<Projects />} />
 					<Route path="projects/:project_id" element={<ProjectDetails />} />
 					<Route path="contact" element={<Contact />} />

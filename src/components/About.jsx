@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { getPages, getInterests } from './../utilities/api';
-import Music from './../components/Music';
-import TechStack from './../components/TechStack';
+import { getPages, getInterests } from '../utilities/api';
+import Music from './Music';
+import TechStack from './TechStack';
 import { FaAsterisk } from 'react-icons/fa';
 
 export default function About() {
@@ -26,17 +26,18 @@ export default function About() {
 	const { about_heading, short_intro, bio, skills_heading } = pageData;
 
 	return (
-		<main className="mx-11 flex flex-col items-center justify-center gap-3">
+		<section
+			id="about"
+			className="mx-11 flex flex-col items-center   justify-center gap-3 sm:h-screen"
+		>
 			{isLoaded && (
-				<section className="about-content z-30 h-screen md:w-8/12 lg:w-7/12">
-					<div className="about-intro flex flex-col justify-center sm:h-screen">
-						<h1 className="text-3xl font-bold">{short_intro}</h1>
-						<h2 className="text-md font-medium uppercase">{about_heading}</h2>
-						<p className="m-1">{bio}</p>
-						<div className="about-skills flex flex-col sm:h-5/6">
-							<h2 className="mb-4 text-3xl font-bold">{skills_heading}</h2>
-							<TechStack />
-						</div>
+				<div className="about-content z-30 flex h-screen flex-col justify-center md:w-8/12 lg:w-7/12">
+					<h1 className="text-3xl font-bold">{short_intro}</h1>
+					<h2 className="text-md font-medium uppercase">{about_heading}</h2>
+					<p className="m-1">{bio}</p>
+					<div className="about-skills flex flex-col sm:h-5/6">
+						<h2 className="mb-4 text-3xl font-bold">{skills_heading}</h2>
+						<TechStack />
 						<h2 className="mb-4 text-2xl font-bold">I like:</h2>
 						<ul className="flex flex-wrap gap-2">
 							{interests.map(interest => {
@@ -63,8 +64,8 @@ export default function About() {
 						</ul>
 					</div>
 					<Music />
-				</section>
+				</div>
 			)}
-		</main>
+		</section>
 	);
 }
