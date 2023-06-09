@@ -48,7 +48,7 @@ export default function About() {
 												className="tooltip-primary tooltip tooltip-bottom"
 												data-tip="Pandemic hobby. The kind you neglect once things go back to normal."
 											>
-												<FaAsterisk className=" text-purple-600" />
+												<FaAsterisk className="text-purple-600" />
 											</button>
 										</li>
 									);
