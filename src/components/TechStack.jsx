@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import { getTechStack } from './../utilities/api';
 import { BiCodeAlt } from 'react-icons/bi';
 import { MdOutlineDesignServices } from 'react-icons/md';
-// import { shuffle } from './../utilities/utils';
 
-export default function TechStack() {
+export default function TechStack({ skills_heading }) {
 	const [techStack, setTechStack] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [displayTech, setDisplayTech] = useState(techStack);
@@ -48,43 +47,46 @@ export default function TechStack() {
 	}, [chosenCategory]);
 
 	return (
-		<section className="techstack-section">
-			<div className="category-buttons mb-4 flex items-center justify-center gap-2">
-				<button
-					id="all"
-					className={`border border-pink-700  px-2 py-1 uppercase ${
-						chosenCategory === 'all'
-							? 'bg-pink-700 text-stone-50 shadow'
-							: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
-					}`}
-					onClick={handleCategoryClick}
-				>
-					All
-				</button>
-				<button
-					id={DEV_CATEGORY}
-					className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
-						chosenCategory === DEV_CATEGORY.toString()
-							? 'bg-pink-700 text-stone-50 shadow'
-							: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
-					}`}
-					onClick={handleCategoryClick}
-				>
-					Development
-					<BiCodeAlt className="h-5 w-5" />
-				</button>
-				<button
-					id={DESIGN_CATEGORY}
-					className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
-						chosenCategory === DESIGN_CATEGORY.toString()
-							? 'bg-pink-700 text-stone-50 shadow'
-							: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
-					}`}
-					onClick={handleCategoryClick}
-				>
-					Design
-					<MdOutlineDesignServices className="h-5 w-5" />
-				</button>
+		<section className="techstack-section mb-7 mt-10">
+			<div className="controls-container flex flex-col items-center justify-between sm:flex-row">
+				<h2 className="mb-4 text-2xl font-bold">{skills_heading}</h2>
+				<div className="category-buttons mb-4 flex items-baseline justify-between gap-2">
+					<button
+						id="all"
+						className={`border border-pink-700  px-2 py-1 uppercase ${
+							chosenCategory === 'all'
+								? 'bg-pink-700 text-stone-50 shadow'
+								: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
+						}`}
+						onClick={handleCategoryClick}
+					>
+						All
+					</button>
+					<button
+						id={DEV_CATEGORY}
+						className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
+							chosenCategory === DEV_CATEGORY.toString()
+								? 'bg-pink-700 text-stone-50 shadow'
+								: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
+						}`}
+						onClick={handleCategoryClick}
+					>
+						Development
+						<BiCodeAlt className="h-5 w-5" />
+					</button>
+					<button
+						id={DESIGN_CATEGORY}
+						className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
+							chosenCategory === DESIGN_CATEGORY.toString()
+								? 'bg-pink-700 text-stone-50 shadow'
+								: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
+						}`}
+						onClick={handleCategoryClick}
+					>
+						Design
+						<MdOutlineDesignServices className="h-5 w-5" />
+					</button>
+				</div>
 			</div>
 			<div className="skills-container rounded-lg bg-translucent p-4 shadow">
 				<ul className="flex flex-wrap gap-2">

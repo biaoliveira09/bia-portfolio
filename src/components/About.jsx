@@ -28,17 +28,16 @@ export default function About() {
 	return (
 		<section
 			id="about"
-			className="mx-11 flex flex-col items-center   justify-center gap-3 sm:h-screen"
+			className="mx-11 flex h-screen flex-col items-center justify-center gap-3"
 		>
 			{isLoaded && (
-				<div className="about-content z-30 flex h-screen flex-col justify-center md:w-8/12 lg:w-7/12">
+				<div className="about-content z-30 h-screen justify-center md:w-8/12 lg:w-7/12">
 					<h1 className="text-3xl font-bold">{short_intro}</h1>
 					<h2 className="text-md font-medium uppercase">{about_heading}</h2>
 					<p className="m-1">{bio}</p>
-					<div className="about-skills flex flex-col sm:h-5/6">
-						<h2 className="mb-4 text-3xl font-bold">{skills_heading}</h2>
-						<TechStack />
-						<h2 className="mb-4 text-2xl font-bold">I like:</h2>
+					<TechStack skills_heading={skills_heading} />
+					<div className="interests-section my-2 flex flex-col">
+						<h2 className="mb-1 text-2xl font-bold">I like:</h2>
 						<ul className="flex flex-wrap gap-2">
 							{interests.map(interest => {
 								if (interest.interest_category.includes(8)) {
