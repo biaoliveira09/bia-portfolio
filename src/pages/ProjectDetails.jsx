@@ -76,7 +76,7 @@ export default function ProjectDetails() {
 								tech_stack.map(tech => (
 									<li
 										key={tech}
-										className="bg-orange-100 px-2 py-1 text-sm uppercase"
+										className="bg-violet-100 px-2 py-1 text-sm uppercase"
 									>
 										{tech}
 									</li>
