@@ -37,7 +37,7 @@ export default function ProjectDetails() {
 
 	return (
 		isLoaded && (
-			<main className="project-details m-20 flex flex-col items-center">
+			<main className="project-details m-7 flex flex-col items-center sm:m-20">
 				<div className="project-container z-20 flex flex-col items-center gap-7 rounded-lg bg-translucent p-6 md:p-10 lg:w-8/12">
 					<h1 className="text-lg font-bold sm:text-xl lg:text-2xl">
 						{project_name}
@@ -70,8 +70,8 @@ export default function ProjectDetails() {
 							Live Site
 						</a>
 					</div>
-					<div className="tech-used flex justify-center">
-						<ul className="flex flex-wrap gap-2">
+					<div className="tech-used flex">
+						<ul className="flex flex-wrap justify-center gap-2">
 							{tech_stack &&
 								tech_stack.map(tech => (
 									<li

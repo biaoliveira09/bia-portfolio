@@ -13,7 +13,7 @@ export default function Music() {
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
-		getPlaylist('4iHa1Vqfvh4kLrp8JjbDeO').then(data => {
+		getPlaylist('2LCjcpXT8LRmsZfJk2QRYe').then(data => {
 			setPlaylist(data);
 			setTracks(data.tracks.items);
 			setIsLoaded(true);

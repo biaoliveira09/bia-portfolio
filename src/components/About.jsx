@@ -38,7 +38,7 @@ export default function About() {
 					<TechStack skills_heading={skills_heading} />
 					<div className="interests-section my-2 flex flex-col">
 						<h2 className="mb-1 text-2xl font-bold">I like:</h2>
-						<ul className="flex flex-wrap gap-2">
+						<ul className="flex flex-wrap gap-3">
 							{interests.map(interest => {
 								if (interest.interest_category.includes(8)) {
 									return (
@@ -55,7 +55,7 @@ export default function About() {
 								} else {
 									return (
 										<li key={interest.id} className="flex items-center gap-1">
-											{interest.title.rendered}
+											{interest.title.rendered},
 										</li>
 									);
 								}
