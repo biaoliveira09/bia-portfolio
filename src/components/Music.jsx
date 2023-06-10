@@ -15,19 +15,25 @@ export default function Music({ playlistId }) {
 	const [playlistName, setPlaylistName] = useState('');
 	const [playlistExternalUrls, setPlaylistExternalUrls] = useState({});
 
-	const playlistQuery = useQuery({
+	const {
+		isLoading,
+		isError,
+		isSuccess,
+		data: playlistData,
+		error,
+	} = useQuery({
 		queryKey: ['playlist', playlistId],
 		queryFn: () => getPlaylist(playlistId),
 	});
 
 	useEffect(() => {
-		if (playlistQuery.isSuccess) {
-			const { name, external_urls } = playlistQuery.data;
+		if (isSuccess) {
+			const { name, external_urls } = playlistData;
 			setPlaylistName(name);
 			setPlaylistExternalUrls(external_urls);
-			setTracks(playlistQuery.data.tracks.items);
+			setTracks(playlistData.tracks.items);
 		}
-	}, [playlistQuery.data, playlistQuery.isSuccess]);
+	}, [playlistData, isSuccess]);
 
 	useEffect(() => {
 		if (tracks) {
@@ -41,58 +47,67 @@ export default function Music({ playlistId }) {
 		setRandomTrack(getRandomTrack(tracks));
 	};
 
-	if (playlistQuery.isLoading) {
+	if (isLoading) {
 		return <div>Loading...</div>;
 	}
-	return (
-		<>
-			<Reveal>
-				<section id="music" className="music my-20 h-1/2 sm:h-1/4 md:h-3/4">
-					<h2 className="pb-3 text-2xl font-bold">Currently Listening To...</h2>
-					<div className="rounded-xl bg-translucent  px-7 pb-0 pt-8 shadow">
-						<p>
-							Listen to one of my favourite tracks{' '}
-							<span className="font-bold">
-								{randomTrack && randomTrack.name}
-							</span>{' '}
-							by {artists} randomly selected from my playlist{' '}
-							<a
-								href={playlistExternalUrls.spotify}
-								className="underline hover:text-orange-500"
-								target="_blank"
-								rel="noreferrer"
+
+	if (isError) {
+		return <div>Error: {error.message}</div>;
+	}
+
+	if (isSuccess) {
+		return (
+			<>
+				<Reveal>
+					<section id="music" className="music my-20 h-1/2 sm:h-1/4 md:h-3/4">
+						<h2 className="pb-3 text-2xl font-bold">
+							Currently Listening To...
+						</h2>
+						<div className="rounded-xl bg-translucent  px-7 pb-0 pt-8 shadow">
+							<p>
+								Listen to one of my favourite tracks{' '}
+								<span className="font-bold">
+									{randomTrack && randomTrack.name}
+								</span>{' '}
+								by {artists} randomly selected from my playlist{' '}
+								<a
+									href={playlistExternalUrls.spotify}
+									className="underline hover:text-orange-500"
+									target="_blank"
+									rel="noreferrer"
+								>
+									{playlistName}
+								</a>{' '}
+								using the Spotify API.
+							</p>
+
+							<button
+								className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
+								onClick={handleChangeSongClick}
 							>
-								{playlistName}
-							</a>{' '}
-							using the Spotify API.
-						</p>
+								Change Song <FiRefreshCw className="h-5 w-5" />
+							</button>
+							{randomTrack && (
+								<iframe
+									style={{ borderRadius: '12px' }}
+									src={EMBEDDABLE_URL + randomTrack.id}
+									width="100%"
+									height="200"
+									frameBorder="0"
+									allowFullScreen=""
+									allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+									loading="lazy"
+								></iframe>
+							)}
+						</div>
+					</section>
+				</Reveal>
 
-						<button
-							className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
-							onClick={handleChangeSongClick}
-						>
-							Change Song <FiRefreshCw className="h-5 w-5" />
-						</button>
-						{randomTrack && (
-							<iframe
-								style={{ borderRadius: '12px' }}
-								src={EMBEDDABLE_URL + randomTrack.id}
-								width="100%"
-								height="200"
-								frameBorder="0"
-								allowFullScreen=""
-								allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-								loading="lazy"
-							></iframe>
-						)}
-					</div>
-				</section>
-			</Reveal>
-
-			<MusicAlert
-				track_name={randomTrack && randomTrack.name}
-				artists={artists}
-			/>
-		</>
-	);
+				<MusicAlert
+					track_name={randomTrack && randomTrack.name}
+					artists={artists}
+				/>
+			</>
+		);
+	}
 }

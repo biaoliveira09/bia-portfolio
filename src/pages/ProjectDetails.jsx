@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { getProjectData } from '../utilities/api';
-import OtherProjectsCarousel from '../components/OtherProjectsCarousel';
 import ProjectInfo from '../components/ProjectInfo';
 import placeholder from './../assets/placeholder.png';
 import Carousel from '../components/Carousel';

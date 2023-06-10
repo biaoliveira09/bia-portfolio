@@ -4,8 +4,22 @@ import placeholder from './../assets/placeholder.png';
 import { useProjects } from './Projects';
 
 export default function Carousel() {
-	const { data: projects } = useProjects();
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const {
+		isLoading,
+		isSuccess,
+		isError,
+		error,
+		data: projects,
+	} = useProjects();
+
+	if (isLoading) {
+		return <div>Loading...</div>;
+	}
+
+	if (isError) {
+		return <div>Error: {error.message}</div>;
+	}
 
 	const handlePrevClick = () => {
 		setCurrentIndex(prevIndex => Math.max(prevIndex - 1, 0));
@@ -15,7 +29,7 @@ export default function Carousel() {
 		setCurrentIndex(prevIndex => Math.min(prevIndex + 1, projects.length - 2));
 	};
 
-	if (projects && projects.length > 0) {
+	if (isSuccess) {
 		return (
 			<div
 				id="controls-carousel"
