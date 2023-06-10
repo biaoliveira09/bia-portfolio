@@ -2,6 +2,9 @@ import { useQuery } from '@tanstack/react-query';
 import Project from './Project';
 import { getProjects } from '../utilities/api';
 
+export const useProjects = () =>
+	useQuery(['projects'], getProjects, { staleTime: 5 * 60 * 1000 });
+
 export default function Projects() {
 	const projectsQuery = useQuery({
 		queryKey: ['projects'],

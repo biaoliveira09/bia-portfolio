@@ -1,19 +1,11 @@
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import placeholder from './../assets/placeholder.png';
-import { getProjects } from '../utilities/api';
+import { useProjects } from './Projects';
 
 export default function Carousel() {
-	const [projects, setProjects] = useState([]);
-	const [isLoaded, setIsLoaded] = useState(false);
+	const { data: projects } = useProjects();
 	const [currentIndex, setCurrentIndex] = useState(0);
-
-	useEffect(() => {
-		getProjects().then(data => {
-			setProjects(data);
-			setIsLoaded(true);
-		});
-	}, []);
 
 	const handlePrevClick = () => {
 		setCurrentIndex(prevIndex => Math.max(prevIndex - 1, 0));
@@ -22,7 +14,8 @@ export default function Carousel() {
 	const handleNextClick = () => {
 		setCurrentIndex(prevIndex => Math.min(prevIndex + 1, projects.length - 2));
 	};
-	if (projects.length > 0) {
+
+	if (projects && projects.length > 0) {
 		return (
 			<div
 				id="controls-carousel"
@@ -33,30 +26,29 @@ export default function Carousel() {
 					className="flex space-x-4 overflow-x-hidden duration-700 ease-in-out"
 					data-carousel-item
 				>
-					{isLoaded &&
-						projects.slice(currentIndex, currentIndex + 2).map(project => {
-							const { project_name, project_screenshot } = project.acf;
-							return (
-								<div className="carousel-item" key={project.id}>
-									<Link to={`/projects/${project.id}`}>
-										{project_screenshot ? (
-											<img
-												src={project_screenshot.url}
-												alt={project_screenshot.alt}
-												className="rounded-box mx-auto h-40 w-64 shadow-lg"
-											/>
-										) : (
-											<img
-												src={placeholder}
-												alt="placeholder"
-												className="rounded-box mx-auto h-40 w-64 shadow-lg"
-											/>
-										)}
-										<h2 className="m-auto font-medium">{project_name}</h2>
-									</Link>
-								</div>
-							);
-						})}
+					{projects.slice(currentIndex, currentIndex + 2).map(project => {
+						const { project_name, project_screenshot } = project.acf;
+						return (
+							<div className="carousel-item" key={project.id}>
+								<Link to={`/projects/${project.id}`}>
+									{project_screenshot ? (
+										<img
+											src={project_screenshot.url}
+											alt={project_screenshot.alt}
+											className="rounded-box mx-auto h-40 w-64 shadow-lg"
+										/>
+									) : (
+										<img
+											src={placeholder}
+											alt="placeholder"
+											className="rounded-box mx-auto h-40 w-64 shadow-lg"
+										/>
+									)}
+									<h2 className="m-auto font-medium">{project_name}</h2>
+								</Link>
+							</div>
+						);
+					})}
 				</div>
 				{currentIndex > 0 && (
 					<button
@@ -115,4 +107,6 @@ export default function Carousel() {
 			</div>
 		);
 	}
+
+	return null;
 }
