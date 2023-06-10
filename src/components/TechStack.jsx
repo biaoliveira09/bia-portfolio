@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useState, useEffect } from 'react';
-import { getTechStack } from './../utilities/api';
+import { getPostsData } from './../utilities/api';
 import { BiCodeAlt } from 'react-icons/bi';
 import { MdOutlineDesignServices } from 'react-icons/md';
 
@@ -19,7 +19,7 @@ export default function TechStack({ skills_heading }) {
 
 	const techStackQuery = useQuery({
 		queryKey: ['techStack'],
-		queryFn: getTechStack,
+		queryFn: () => getPostsData('tech'),
 	});
 
 	useEffect(() => {
@@ -27,7 +27,7 @@ export default function TechStack({ skills_heading }) {
 			setTechStack(techStackQuery.data);
 			setDisplayTech(techStackQuery.data);
 		}
-	}, [techStackQuery.data]);
+	}, [techStackQuery.data, techStackQuery.isSuccess]);
 
 	function sortTechStack() {
 		if (!techStack || techStack.length === 0) {

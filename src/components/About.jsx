@@ -1,16 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import { getPages, getPostsData } from '../utilities/api';
+import { getPostsData } from '../utilities/api';
 import { FaAsterisk } from 'react-icons/fa';
 import Music from './Music';
 import TechStack from './TechStack';
 
-const ABOUT_PAGE_ID = 20;
+import { useAbout } from '../pages/Home';
 
 export default function About() {
-	const pagesQuery = useQuery({
-		queryKey: ['pages', ABOUT_PAGE_ID],
-		queryFn: () => getPages(ABOUT_PAGE_ID),
-	});
+	const { data: about } = useAbout();
 
 	const interestsQuery = useQuery({
 		queryKey: ['interests'],
@@ -20,11 +17,8 @@ export default function About() {
 	if (interestsQuery.isLoading) return <p>Loading...</p>;
 	if (interestsQuery.isError) return <p>Error!!!</p>;
 
-	if (pagesQuery.isLoading) return <p>Loading...</p>;
-	if (pagesQuery.isError) return <p>Error!!!</p>;
-
 	const { about_heading, short_intro, bio, skills_heading, playlist_id } =
-		pagesQuery.data.acf;
+		about.acf;
 
 	return (
 		<section

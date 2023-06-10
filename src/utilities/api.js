@@ -26,31 +26,9 @@ export const getPostsData = async type => {
 		const tech = await response.json();
 		return tech;
 	} catch (error) {
-		throw new Error('Failed to retrieve techstack');
+		throw new Error('Failed to retrieve posts data');
 	}
 };
-
-// TODO: Refactor to use getPostsData
-
-export const getTechStack = async () => {
-	try {
-		const response = await fetch(`${API_URL}tech?per_page=50`);
-		const tech = await response.json();
-		return tech;
-	} catch (error) {
-		throw new Error('Failed to retrieve techstack');
-	}
-};
-
-// export const getInterests = async () => {
-// 	try {
-// 		const response = await fetch(`${API_URL}interests?per_page=50`);
-// 		const interests = await response.json();
-// 		return interests;
-// 	} catch (error) {
-// 		throw new Error('Failed to retrieve interests');
-// 	}
-// };
 
 export const getProjectData = async id => {
 	try {
