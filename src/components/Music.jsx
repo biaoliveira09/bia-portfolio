@@ -1,87 +1,92 @@
+import { useQuery } from '@tanstack/react-query';
 import { FiRefreshCw } from 'react-icons/fi';
 import { useEffect, useState } from 'react';
-import { getPlaylist } from './../utilities/spotify';
+import { getPlaylist } from '../utilities/spotify';
 import { getRandomTrack, getTrackArtists } from '../utilities/utils';
 import MusicAlert from './MusicAlert';
 
 const EMBEDDABLE_URL = 'https://open.spotify.com/embed/track/';
 
 export default function Music({ playlistId }) {
-	const [playlist, setPlaylist] = useState([]);
-	const [tracks, setTracks] = useState([]);
 	const [randomTrack, setRandomTrack] = useState([]);
 	const [artists, setArtists] = useState('');
-	const [isLoaded, setIsLoaded] = useState(false);
+	const [tracks, setTracks] = useState([]);
+	const [playlistName, setPlaylistName] = useState('');
+	const [playlistExternalUrls, setPlaylistExternalUrls] = useState({});
+
+	const playlistQuery = useQuery({
+		queryKey: ['playlist', playlistId],
+		queryFn: () => getPlaylist(playlistId),
+	});
 
 	useEffect(() => {
-		getPlaylist(playlistId).then(data => {
-			setPlaylist(data);
-			setTracks(data.tracks.items);
-			setIsLoaded(true);
-			console.log(data.external_urls.spotify);
-		});
-	}, []);
-
-	const { name, external_urls } = playlist;
+		if (playlistQuery.isSuccess) {
+			const { name, external_urls } = playlistQuery.data;
+			setPlaylistName(name);
+			setPlaylistExternalUrls(external_urls);
+			setTracks(playlistQuery.data.tracks.items);
+		}
+	}, [playlistQuery.data, playlistQuery.isSuccess]);
 
 	useEffect(() => {
-		setRandomTrack(getRandomTrack(tracks));
+		if (tracks) {
+			const newRandomTrack = getRandomTrack(tracks);
+			setRandomTrack(newRandomTrack);
+			setArtists(getTrackArtists(newRandomTrack));
+		}
 	}, [tracks]);
 
-	useEffect(() => {
-		if (randomTrack) {
-			setArtists(getTrackArtists(randomTrack));
-		}
-	}, [randomTrack]);
+	const handleChangeSongClick = () => {
+		setRandomTrack(getRandomTrack(tracks));
+	};
 
+	if (playlistQuery.isLoading) {
+		return <div>Loading...</div>;
+	}
 	return (
-		isLoaded && (
-			<>
-				<section id="music" className="music my-20 h-1/2 sm:h-1/4 md:h-3/4">
-					<h2 className="pb-3 text-2xl font-bold">Currently Listening To...</h2>
-					<div className="rounded-xl bg-translucent  px-7 pb-0 pt-8 shadow">
-						<p>
-							Listen to one of my favourite tracks{' '}
-							<span className="font-bold">
-								{randomTrack && randomTrack.name}
-							</span>{' '}
-							by {artists} randomly selected from my playlist{' '}
-							<a
-								href={external_urls.spotify}
-								className="underline hover:text-orange-500"
-								target="_blank"
-								rel="noreferrer"
-							>
-								{name}
-							</a>{' '}
-							using the Spotify API.
-						</p>
-
-						<button
-							className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
-							onClick={() => setRandomTrack(getRandomTrack(tracks))}
+		<>
+			<section id="music" className="music my-20 h-1/2 sm:h-1/4 md:h-3/4">
+				<h2 className="pb-3 text-2xl font-bold">Currently Listening To...</h2>
+				<div className="rounded-xl bg-translucent  px-7 pb-0 pt-8 shadow">
+					<p>
+						Listen to one of my favourite tracks{' '}
+						<span className="font-bold">{randomTrack && randomTrack.name}</span>{' '}
+						by {artists} randomly selected from my playlist{' '}
+						<a
+							href={playlistExternalUrls.spotify}
+							className="underline hover:text-orange-500"
+							target="_blank"
+							rel="noreferrer"
 						>
-							Change Song <FiRefreshCw className="h-5 w-5" />
-						</button>
-						{randomTrack && (
-							<iframe
-								style={{ borderRadius: '12px' }}
-								src={EMBEDDABLE_URL + randomTrack.id}
-								width="100%"
-								height="200"
-								frameBorder="0"
-								allowFullScreen=""
-								allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-								loading="lazy"
-							></iframe>
-						)}
-					</div>
-				</section>
-				<MusicAlert
-					track_name={randomTrack && randomTrack.name}
-					artists={artists}
-				/>
-			</>
-		)
+							{playlistName}
+						</a>{' '}
+						using the Spotify API.
+					</p>
+
+					<button
+						className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
+						onClick={handleChangeSongClick}
+					>
+						Change Song <FiRefreshCw className="h-5 w-5" />
+					</button>
+					{randomTrack && (
+						<iframe
+							style={{ borderRadius: '12px' }}
+							src={EMBEDDABLE_URL + randomTrack.id}
+							width="100%"
+							height="200"
+							frameBorder="0"
+							allowFullScreen=""
+							allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+							loading="lazy"
+						></iframe>
+					)}
+				</div>
+			</section>
+			<MusicAlert
+				track_name={randomTrack && randomTrack.name}
+				artists={artists}
+			/>
+		</>
 	);
 }
