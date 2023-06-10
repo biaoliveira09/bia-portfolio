@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import { useState, useEffect } from 'react';
 import { getTechStack } from './../utilities/api';
 import { BiCodeAlt } from 'react-icons/bi';
@@ -5,7 +6,6 @@ import { MdOutlineDesignServices } from 'react-icons/md';
 
 export default function TechStack({ skills_heading }) {
 	const [techStack, setTechStack] = useState([]);
-	const [isLoaded, setIsLoaded] = useState(false);
 	const [displayTech, setDisplayTech] = useState(techStack);
 	const [chosenCategory, setChosenCategory] = useState('all');
 
@@ -15,31 +15,36 @@ export default function TechStack({ skills_heading }) {
 	function handleCategoryClick(e) {
 		const category = e.target.id;
 		setChosenCategory(category);
-		console.log(category);
 	}
 
-	// TODO: refector to use useQuery!!!!!!!!!!!!
+	const techStackQuery = useQuery({
+		queryKey: ['techStack'],
+		queryFn: getTechStack,
+	});
+
 	useEffect(() => {
-		getTechStack().then(data => {
-			setTechStack(data);
-			setIsLoaded(true);
-			setDisplayTech(data);
-		});
-	}, []);
+		if (techStackQuery.isSuccess) {
+			setTechStack(techStackQuery.data);
+			setDisplayTech(techStackQuery.data);
+		}
+	}, [techStackQuery.data]);
 
 	function sortTechStack() {
+		if (!techStack || techStack.length === 0) {
+			return [];
+		}
+
 		if (chosenCategory === 'all') {
 			return techStack;
-		} else if (chosenCategory === DEV_CATEGORY.toString()) {
-			const devTech = techStack.filter(tech =>
-				tech.tech_category.includes(DEV_CATEGORY)
+		} else {
+			const category =
+				chosenCategory === DEV_CATEGORY.toString()
+					? DEV_CATEGORY
+					: DESIGN_CATEGORY;
+			const filteredTech = techStack.filter(tech =>
+				tech.tech_category.includes(category)
 			);
-			return devTech;
-		} else if (chosenCategory === DESIGN_CATEGORY.toString()) {
-			const desTech = techStack.filter(tech =>
-				tech.tech_category.includes(DESIGN_CATEGORY)
-			);
-			return desTech;
+			return filteredTech;
 		}
 	}
 
@@ -91,19 +96,18 @@ export default function TechStack({ skills_heading }) {
 			</div>
 			<div className="skills-container rounded-lg bg-translucent p-4 shadow">
 				<ul className="flex flex-wrap gap-2">
-					{displayTech &&
-						displayTech.map(tech => (
-							<li
-								className={`${
-									tech.tech_category.includes(DESIGN_CATEGORY)
-										? 'bg-amber-100'
-										: 'bg-violet-100'
-								} px-2 py-1 uppercase`}
-								key={tech.id}
-							>
-								{tech.title.rendered}
-							</li>
-						))}
+					{displayTech.map(tech => (
+						<li
+							className={`${
+								tech.tech_category.includes(DESIGN_CATEGORY)
+									? 'bg-amber-100'
+									: 'bg-violet-100'
+							} px-2 py-1 uppercase`}
+							key={tech.id}
+						>
+							{tech.title.rendered}
+						</li>
+					))}
 				</ul>
 			</div>
 		</section>
