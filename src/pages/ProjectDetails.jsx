@@ -86,9 +86,9 @@ export default function ProjectDetails() {
 						<ProjectInfo projectData={projectDetailsQuery.data} />
 						<section className="other-projects z-30 flex flex-col items-center">
 							<h2 className="text-md m-4 font-bold sm:text-lg lg:text-xl">
-								See Other Projects
+								View All Projects
 							</h2>
-							<Carousel projectdetails_name={project_name} />
+							<Carousel />
 						</section>
 					</div>
 				</main>

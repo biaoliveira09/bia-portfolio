@@ -23,7 +23,7 @@ export default function About() {
 	if (pagesQuery.isLoading) return <p>Loading...</p>;
 	if (pagesQuery.isError) return <p>Error!!!</p>;
 
-	const { about_heading, short_intro, bio, skills_heading } =
+	const { about_heading, short_intro, bio, skills_heading, playlist_id } =
 		pagesQuery.data.acf;
 
 	return (
@@ -31,7 +31,7 @@ export default function About() {
 			id="about"
 			className="mx-11 flex h-screen flex-col items-center justify-center gap-3"
 		>
-			<div className="about-content z-30 h-screen justify-center md:w-8/12 lg:w-7/12">
+			<div className="about-content z-30 h-screen justify-center sm:w-10/12 md:w-8/12 lg:w-7/12">
 				<h1 className="mb-1 text-3xl font-bold">{short_intro}</h1>
 				<h2 className="text-md font-medium uppercase">{about_heading}</h2>
 				<p className="my-4">{bio}</p>
@@ -68,7 +68,7 @@ export default function About() {
 						})}
 					</ul>
 				</div>
-				<Music />
+				<Music playlistId={playlist_id} />
 			</div>
 		</section>
 	);

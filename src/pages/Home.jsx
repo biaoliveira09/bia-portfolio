@@ -26,7 +26,7 @@ export default function Home() {
 		<>
 			{isLoaded && (
 				<main className="flex flex-col overflow-x-hidden">
-					<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-64 md:h-screen">
+					<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-96 md:h-screen">
 						<h1 className="fade-in z-30 font-eight text-4xl lowercase sm:text-6xl md:text-7xl">
 							{name}
 						</h1>

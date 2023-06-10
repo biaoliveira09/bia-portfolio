@@ -6,7 +6,7 @@ import MusicAlert from './MusicAlert';
 
 const EMBEDDABLE_URL = 'https://open.spotify.com/embed/track/';
 
-export default function Music() {
+export default function Music({ playlistId }) {
 	const [playlist, setPlaylist] = useState([]);
 	const [tracks, setTracks] = useState([]);
 	const [randomTrack, setRandomTrack] = useState([]);
@@ -14,7 +14,7 @@ export default function Music() {
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
-		getPlaylist('2LCjcpXT8LRmsZfJk2QRYe').then(data => {
+		getPlaylist(playlistId).then(data => {
 			setPlaylist(data);
 			setTracks(data.tracks.items);
 			setIsLoaded(true);
@@ -37,7 +37,7 @@ export default function Music() {
 	return (
 		isLoaded && (
 			<>
-				<section id="music" className="music my-20 h-3/4">
+				<section id="music" className="music my-20 h-1/2 sm:h-1/4 md:h-3/4">
 					<h2 className="pb-3 text-2xl font-bold">Currently Listening To...</h2>
 					<div className="rounded-xl bg-translucent  px-7 pb-0 pt-8 shadow">
 						<p>

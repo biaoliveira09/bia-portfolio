@@ -91,18 +91,19 @@ export default function TechStack({ skills_heading }) {
 			</div>
 			<div className="skills-container rounded-lg bg-translucent p-4 shadow">
 				<ul className="flex flex-wrap gap-2">
-					{displayTech.map(tech => (
-						<li
-							className={`${
-								tech.tech_category.includes(DESIGN_CATEGORY)
-									? 'bg-amber-100'
-									: 'bg-violet-100'
-							} px-2 py-1 uppercase`}
-							key={tech.id}
-						>
-							{tech.title.rendered}
-						</li>
-					))}
+					{displayTech &&
+						displayTech.map(tech => (
+							<li
+								className={`${
+									tech.tech_category.includes(DESIGN_CATEGORY)
+										? 'bg-amber-100'
+										: 'bg-violet-100'
+								} px-2 py-1 uppercase`}
+								key={tech.id}
+							>
+								{tech.title.rendered}
+							</li>
+						))}
 				</ul>
 			</div>
 		</section>

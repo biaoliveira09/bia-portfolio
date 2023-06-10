@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import placeholder from './../assets/placeholder.png';
 import { getProjects } from '../utilities/api';
 
-export default function Carousel({ projectdetails_name }) {
+export default function Carousel() {
 	const [projects, setProjects] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,29 +36,26 @@ export default function Carousel({ projectdetails_name }) {
 					{isLoaded &&
 						projects.slice(currentIndex, currentIndex + 2).map(project => {
 							const { project_name, project_screenshot } = project.acf;
-							if (project_name !== projectdetails_name) {
-								return (
-									<div className="carousel-item" key={project.id}>
-										<Link to={`/projects/${project.id}`}>
-											{project_screenshot ? (
-												<img
-													src={project_screenshot.url}
-													alt={project_screenshot.alt}
-													className="rounded-box mx-auto h-40 w-64 shadow-lg"
-												/>
-											) : (
-												<img
-													src={placeholder}
-													alt="placeholder"
-													className="rounded-box mx-auto h-40 w-64 shadow-lg"
-												/>
-											)}
-											<h2 className="m-auto font-medium">{project_name}</h2>
-										</Link>
-									</div>
-								);
-							}
-							return null;
+							return (
+								<div className="carousel-item" key={project.id}>
+									<Link to={`/projects/${project.id}`}>
+										{project_screenshot ? (
+											<img
+												src={project_screenshot.url}
+												alt={project_screenshot.alt}
+												className="rounded-box mx-auto h-40 w-64 shadow-lg"
+											/>
+										) : (
+											<img
+												src={placeholder}
+												alt="placeholder"
+												className="rounded-box mx-auto h-40 w-64 shadow-lg"
+											/>
+										)}
+										<h2 className="m-auto font-medium">{project_name}</h2>
+									</Link>
+								</div>
+							);
 						})}
 				</div>
 				{currentIndex > 0 && (
