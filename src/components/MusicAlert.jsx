@@ -14,7 +14,7 @@ export default function MusicAlert({ track_name, artists }) {
 
 	return (
 		<div
-			className={`fixed bottom-16 right-0 hidden h-20 rounded-full bg-pink-700 transition-all duration-300 md:flex ${
+			className={`fixed bottom-16 right-0 hidden h-20 max-w-sm rounded-full bg-pink-700 transition-all duration-300 md:flex ${
 				expanded ? 'hover:bg-orange-400 md:w-1/3 lg:w-1/4' : 'md:w-28'
 			}`}
 			onMouseEnter={handleHover}
