@@ -41,7 +41,9 @@ export default function Projects() {
 					className="projects-section z-30 flex h-fit flex-col items-center justify-center sm:min-h-screen"
 				>
 					<Reveal>
-						<h2 className="z-30 mb-3 text-2xl font-bold">Projects</h2>
+						<h2 className="z-30 mb-3 text-2xl font-bold sm:mb-6 md:mb-10">
+							Projects
+						</h2>
 					</Reveal>
 					<div className="projects-wrapper flex flex-col flex-wrap items-center justify-center gap-4 sm:mx-10 md:flex-row">
 						{projects.map(project => {
