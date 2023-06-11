@@ -38,7 +38,7 @@ export default function Projects() {
 			<>
 				<section
 					id="projects"
-					className="projects-section z-30 mb-24 flex h-fit flex-col items-center justify-center sm:min-h-screen"
+					className="projects-section z-30 flex h-fit flex-col items-center justify-center sm:min-h-screen"
 				>
 					<Reveal>
 						<h2 className="z-30 mb-3 text-2xl font-bold">Projects</h2>

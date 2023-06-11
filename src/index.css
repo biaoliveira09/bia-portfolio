@@ -44,7 +44,7 @@ body {
 	animation-duration: 27;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-	opacity: 0.5;
+	opacity: 0.45;
 }
 
 .background span:nth-child(0) {
@@ -363,6 +363,10 @@ body {
 	box-shadow: 72vmin 0 9.63230333831568vmin currentColor;
 }
 
+/***** 
+**** scrollbar styling
+*****/
+
 ::-webkit-scrollbar {
 	width: 0.625rem;
 }
@@ -382,16 +386,3 @@ body {
 ::-webkit-scrollbar-thumb:active {
 	background-color: #c4b5fd;
 }
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-/* .fade-in {
-	animation: fadeIn 0.9s ease-in;
-} */

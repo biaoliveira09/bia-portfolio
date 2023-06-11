@@ -5,6 +5,8 @@ import ProjectDetails from './pages/ProjectDetails';
 import Bounce from './components/Bounce';
 import { getPages } from './utilities/api';
 import Footer from './components/Footer';
+// import { useQuery } from 'react-query';
+import { getPostsData } from './utilities/api';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -38,7 +40,7 @@ function App() {
 					<Route path="projects/:project_id" element={<ProjectDetails />} />
 				</Routes>
 			</Router>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

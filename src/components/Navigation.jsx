@@ -19,7 +19,7 @@ export default function Navigation({
 					<a href="/#about">About</a>
 					<a href="/#projects">Projects</a>
 				</nav>
-				<nav className="social-nav fixed hidden gap-4 sm:bottom-2 sm:right-10 sm:z-50 sm:flex sm:items-center">
+				<nav className="social-nav fixed hidden gap-5 sm:bottom-2 sm:right-10 sm:z-50 sm:flex sm:items-center">
 					<a
 						href={linkedin_profile_link}
 						className="hover:text-amber-500"

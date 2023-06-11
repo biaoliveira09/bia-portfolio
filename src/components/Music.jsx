@@ -47,6 +47,12 @@ export default function Music({ playlistId }) {
 		setRandomTrack(getRandomTrack(tracks));
 	};
 
+	useEffect(() => {
+		if (randomTrack) {
+			setArtists(getTrackArtists(randomTrack));
+		}
+	}, [randomTrack]);
+
 	if (isLoading) {
 		return <div>Loading...</div>;
 	}
@@ -59,7 +65,10 @@ export default function Music({ playlistId }) {
 		return (
 			<>
 				<Reveal>
-					<section id="music" className="music my-20 h-1/2 sm:h-1/4 md:h-3/4">
+					<section
+						id="music"
+						className="music my-20 h-1/2 sm:h-1/4 md:h-3/4 lg:h-5/6 "
+					>
 						<h2 className="pb-3 text-2xl font-bold">
 							Currently Listening To...
 						</h2>
