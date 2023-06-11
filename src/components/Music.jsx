@@ -65,7 +65,7 @@ export default function Music({ playlistId }) {
 		return (
 			<>
 				<Reveal>
-					<section id="music" className="music mb-20 h-screen">
+					<section id="music" className="music mb-20 h-5/6 sm:h-5/6">
 						<h2 className="pb-3 text-2xl font-bold">
 							Currently Listening To...
 						</h2>

@@ -52,7 +52,7 @@ export default function About() {
 				className="mx-11 mt-24 flex flex-col items-center justify-center gap-3 xl:w-9/12 "
 			>
 				<div className="about-content z-30 h-screen justify-center sm:w-10/12 md:w-8/12 lg:w-7/12">
-					<div className="about-intro flex flex-col justify-center sm:min-h-full">
+					<div className="about-intro flex flex-col justify-center sm:min-w-full">
 						<Reveal>
 							<h1 className="mb-1 text-3xl font-bold">{short_intro}</h1>
 							<h2 className="text-md font-medium uppercase">{about_heading}</h2>
@@ -62,7 +62,7 @@ export default function About() {
 							<TechStack skills_heading={skills_heading} />
 						</Reveal>
 					</div>
-					<div className="more-about-me-section my-20 flex flex-col gap-9 sm:min-w-full">
+					<div className="more-about-me-section my-20 flex flex-col gap-9 sm:min-w-full sm:gap-12">
 						<Reveal>
 							<h2 className="mb-1 text-2xl font-bold">
 								{more_about_me_heading}
