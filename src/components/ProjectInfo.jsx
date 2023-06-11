@@ -1,5 +1,4 @@
-export default function ProjectInfo({ projectData }) {
-	const { highlights, process } = projectData;
+export default function ProjectInfo({ highlights, process }) {
 	return (
 		<section className="flex w-full flex-col justify-center gap-3 md:w-11/12">
 			<div className="collapse-plus collapse bg-translucentviolet">

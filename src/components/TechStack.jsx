@@ -17,17 +17,23 @@ export default function TechStack({ skills_heading }) {
 		setChosenCategory(category);
 	}
 
-	const techStackQuery = useQuery({
+	const {
+		isSuccess,
+		isLoading,
+		isError,
+		data: techStackData,
+		error,
+	} = useQuery({
 		queryKey: ['techStack'],
 		queryFn: () => getPostsData('tech'),
 	});
 
 	useEffect(() => {
-		if (techStackQuery.isSuccess) {
-			setTechStack(techStackQuery.data);
-			setDisplayTech(techStackQuery.data);
+		if (isSuccess) {
+			setTechStack(techStackData);
+			setDisplayTech(techStackData);
 		}
-	}, [techStackQuery.data, techStackQuery.isSuccess]);
+	}, [techStackData, isSuccess]);
 
 	function sortTechStack() {
 		if (!techStack || techStack.length === 0) {
@@ -52,64 +58,74 @@ export default function TechStack({ skills_heading }) {
 		setDisplayTech(sortTechStack());
 	}, [chosenCategory]);
 
-	return (
-		<section className="techstack-section mb-8 mt-10 lg:h-48">
-			<div className="controls-container flex flex-col items-center justify-between lg:flex-row">
-				<h2 className="mb-4 text-2xl font-bold">{skills_heading}</h2>
-				<div className="category-buttons mb-4 flex items-baseline justify-between gap-2">
-					<button
-						id="all"
-						className={`border border-pink-700  px-2 py-1 uppercase ${
-							chosenCategory === 'all'
-								? 'bg-pink-700 text-stone-50 shadow'
-								: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
-						}`}
-						onClick={handleCategoryClick}
-					>
-						All
-					</button>
-					<button
-						id={DEV_CATEGORY}
-						className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
-							chosenCategory === DEV_CATEGORY.toString()
-								? 'bg-pink-700 text-stone-50 shadow'
-								: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
-						}`}
-						onClick={handleCategoryClick}
-					>
-						Development
-						<BiCodeAlt className="h-5 w-5" />
-					</button>
-					<button
-						id={DESIGN_CATEGORY}
-						className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
-							chosenCategory === DESIGN_CATEGORY.toString()
-								? 'bg-pink-700 text-stone-50 shadow'
-								: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
-						}`}
-						onClick={handleCategoryClick}
-					>
-						Design
-						<MdOutlineDesignServices className="h-5 w-5" />
-					</button>
-				</div>
-			</div>
-			<div className="skills-container rounded-lg bg-translucent p-4 shadow">
-				<ul className="flex flex-wrap gap-2">
-					{displayTech.map(tech => (
-						<li
-							className={`${
-								tech.tech_category.includes(DESIGN_CATEGORY)
-									? 'bg-amber-100'
-									: 'bg-violet-100'
-							} px-2 py-1 uppercase`}
-							key={tech.id}
+	if (isLoading) {
+		return <p>Loading...</p>;
+	}
+
+	if (isError) {
+		return <p>Error: {error.message}</p>;
+	}
+
+	if (isSuccess) {
+		return (
+			<section className="techstack-section mb-8 mt-10 lg:h-48">
+				<div className="controls-container flex flex-col items-center justify-between lg:flex-row">
+					<h2 className="mb-4 text-2xl font-bold">{skills_heading}</h2>
+					<div className="category-buttons mb-4 flex items-baseline justify-between gap-2">
+						<button
+							id="all"
+							className={`border border-pink-700  px-2 py-1 uppercase ${
+								chosenCategory === 'all'
+									? 'bg-pink-700 text-stone-50 shadow'
+									: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
+							}`}
+							onClick={handleCategoryClick}
 						>
-							{tech.title.rendered}
-						</li>
-					))}
-				</ul>
-			</div>
-		</section>
-	);
+							All
+						</button>
+						<button
+							id={DEV_CATEGORY}
+							className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
+								chosenCategory === DEV_CATEGORY.toString()
+									? 'bg-pink-700 text-stone-50 shadow'
+									: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
+							}`}
+							onClick={handleCategoryClick}
+						>
+							Development
+							<BiCodeAlt className="h-5 w-5" />
+						</button>
+						<button
+							id={DESIGN_CATEGORY}
+							className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
+								chosenCategory === DESIGN_CATEGORY.toString()
+									? 'bg-pink-700 text-stone-50 shadow'
+									: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
+							}`}
+							onClick={handleCategoryClick}
+						>
+							Design
+							<MdOutlineDesignServices className="h-5 w-5" />
+						</button>
+					</div>
+				</div>
+				<div className="skills-container rounded-lg bg-translucent p-4 shadow">
+					<ul className="flex flex-wrap gap-2">
+						{displayTech.map(tech => (
+							<li
+								className={`${
+									tech.tech_category.includes(DESIGN_CATEGORY)
+										? 'bg-amber-100'
+										: 'bg-violet-100'
+								} px-2 py-1 uppercase`}
+								key={tech.id}
+							>
+								{tech.title.rendered}
+							</li>
+						))}
+					</ul>
+				</div>
+			</section>
+		);
+	}
 }

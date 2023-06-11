@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { getProjectData } from '../utilities/api';
@@ -8,34 +7,40 @@ import Carousel from '../components/Carousel';
 
 export default function ProjectDetails() {
 	const { project_id } = useParams();
-	const [projectData, setProjectData] = useState({});
 
-	const projectDetailsQuery = useQuery({
+	const {
+		isLoading,
+		isError,
+		isSuccess,
+		data: project,
+		error,
+	} = useQuery({
 		queryKey: ['project', project_id],
 		queryFn: () => getProjectData(project_id),
 	});
 
-	useEffect(() => {
-		if (projectDetailsQuery.isSuccess) {
-			setProjectData(projectDetailsQuery.data.acf);
-		}
-	}, [projectDetailsQuery.isSuccess]);
+	if (isLoading) {
+		return <p>Loading...</p>;
+	}
 
-	const {
-		project_name,
-		project_overview,
-		project_screenshot,
-		tech_stack,
-		github_repository_url,
-		live_preview_url,
-		process,
-		highlights,
-	} = projectData;
+	if (isError) {
+		return <p>Error: {error.message}</p>;
+	}
 
-	return (
-		<>
-			{projectDetailsQuery.isLoading && <p>Loading...</p>}
-			{projectDetailsQuery.isSuccess && (
+	if (isSuccess) {
+		const {
+			project_name,
+			project_overview,
+			project_screenshot,
+			tech_stack,
+			github_repository_url,
+			live_preview_url,
+			process,
+			highlights,
+		} = project.acf;
+
+		return (
+			<>
 				<main className="project-details m-7 flex flex-col items-center sm:m-20">
 					<div className="project-container z-20 flex flex-col items-center gap-7 rounded-lg bg-translucent p-6 md:p-10 lg:w-8/12">
 						<h1 className="text-lg font-bold sm:text-xl lg:text-2xl">
@@ -82,7 +87,7 @@ export default function ProjectDetails() {
 									))}
 							</ul>
 						</div>
-						<ProjectInfo projectData={projectDetailsQuery.data} />
+						<ProjectInfo projectData={project} />
 						<section className="other-projects z-30 flex flex-col items-center">
 							<h2 className="text-md m-4 font-bold sm:text-lg lg:text-xl">
 								View All Projects
@@ -91,7 +96,7 @@ export default function ProjectDetails() {
 						</section>
 					</div>
 				</main>
-			)}
-		</>
-	);
+			</>
+		);
+	}
 }
