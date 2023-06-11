@@ -40,7 +40,7 @@ export default function About() {
 		return (
 			<section
 				id="about"
-				className="mx-11 flex h-screen flex-col items-center justify-center gap-3"
+				className="mx-11 flex h-screen flex-col items-center justify-center gap-3 xl:w-9/12 "
 			>
 				<div className="about-content z-30 h-screen justify-center sm:w-10/12 md:w-8/12 lg:w-7/12">
 					<Reveal>
