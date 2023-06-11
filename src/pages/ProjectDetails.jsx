@@ -41,7 +41,7 @@ export default function ProjectDetails() {
 
 		return (
 			<>
-				<main className="project-details m-7 flex flex-col items-center sm:m-20">
+				<main className="project-details m-7 mb-12 flex flex-col items-center sm:m-20">
 					<div className="project-container z-20 flex flex-col items-center gap-7 rounded-lg bg-translucent p-6 md:p-10 lg:w-8/12">
 						<h1 className="text-lg font-bold sm:text-xl lg:text-2xl">
 							{project_name}

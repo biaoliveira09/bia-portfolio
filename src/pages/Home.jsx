@@ -1,27 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
-import { getPages } from './../utilities/api';
 import Projects from '../components/Projects';
 import About from '../components/About';
 import Reveal from '../utilities/Reveal';
+import { useAbout } from './../App';
 
-const ABOUT_PAGE_ID = 20;
-
-export const useAbout = () => {
-	const query = useQuery(
-		['pages', ABOUT_PAGE_ID],
-		() => getPages(ABOUT_PAGE_ID),
-		{
-			staleTime: 5 * 60 * 1000,
-		}
-	);
-	return {
-		isLoading: query.isLoading,
-		isError: query.isError,
-		isSuccess: query.isSuccess,
-		data: query.data,
-		error: query.error,
-	};
-};
 export default function Home() {
 	const { isLoading, isError, isSuccess, data, error } = useAbout();
 

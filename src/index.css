@@ -2,8 +2,6 @@
 
 @import url('https://use.typekit.net/lox7jir.css');
 
-@import 'react-alice-carousel/lib/alice-carousel.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
