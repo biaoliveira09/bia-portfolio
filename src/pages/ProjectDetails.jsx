@@ -35,8 +35,7 @@ export default function ProjectDetails() {
 			tech_stack,
 			github_repository_url,
 			live_preview_url,
-			process,
-			highlights,
+			project_info,
 		} = project.acf;
 
 		return (
@@ -87,7 +86,7 @@ export default function ProjectDetails() {
 									))}
 							</ul>
 						</div>
-						<ProjectInfo projectData={project} />
+						<ProjectInfo project_info={project_info} />
 						<section className="other-projects z-30 flex flex-col items-center">
 							<h2 className="text-md m-4 font-bold sm:text-lg lg:text-xl">
 								View All Projects

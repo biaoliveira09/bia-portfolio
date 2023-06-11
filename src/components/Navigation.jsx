@@ -15,7 +15,7 @@ export default function Navigation({
 				<div className="fixed z-50 h-10 w-full px-6 py-2 sm:px-8">
 					<Link to="/">{name}</Link>
 				</div>
-				<nav className="site-nav fixed bottom-2 z-50 flex items-center gap-16 sm:bottom-auto sm:right-10 sm:top-6">
+				<nav className="site-nav sm:text-md fixed bottom-4 z-50 flex items-center gap-20 text-lg sm:bottom-auto sm:right-10 sm:top-6 sm:gap-16">
 					<a href="/#about">About</a>
 					<a href="/#projects">Projects</a>
 				</nav>
@@ -49,7 +49,7 @@ export default function Navigation({
 			<div className="fixed left-0 right-0 top-0 z-40 h-11 w-full border-t bg-white sm:h-16 sm:w-full"></div>
 			<div className="border-left fixed left-0 top-0 z-40 h-full w-6 bg-white sm:w-8"></div>
 			<div className="border-right fixed right-0 top-0 z-40 h-full w-6 bg-white sm:w-8"></div>
-			<div className="border-bottom fixed bottom-0 left-0 right-0 z-40 h-10 bg-white"></div>
+			<div className="border-bottom fixed bottom-0 left-0 right-0 z-40 h-14 bg-white sm:h-10"></div>
 		</>
 	);
 }

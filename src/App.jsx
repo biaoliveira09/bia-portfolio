@@ -48,7 +48,7 @@ export default function App() {
 			contactInfo.acf;
 		return (
 			<>
-				{/* <Bounce /> */}
+				<Bounce />
 				<Router>
 					<Navigation
 						name={name}

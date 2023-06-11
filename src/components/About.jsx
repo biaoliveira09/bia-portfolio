@@ -44,6 +44,7 @@ export default function About() {
 			more_about_me,
 			interests_heading,
 			playlist_id,
+			contact_heading,
 		} = aboutQuery.data.acf;
 
 		return (
@@ -101,7 +102,7 @@ export default function About() {
 								})}
 							</ul>
 						</Reveal>
-						<Contact />
+						<Contact contact_heading={contact_heading} />
 					</div>
 					<Music playlistId={playlist_id} />
 				</div>

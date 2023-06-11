@@ -1,29 +1,48 @@
-export default function ProjectInfo({ highlights, process }) {
+import { useState } from 'react';
+export default function ProjectInfo({ project_info }) {
+	const { highlights, highlights_text, process, process_text } = project_info;
+	const [openItem, setOpenItem] = useState(0);
+
+	const handleToggle = index => {
+		setOpenItem(openItem === index ? null : index);
+	};
 	return (
-		<section className="flex w-full flex-col justify-center gap-3 md:w-11/12">
-			<div className="collapse-plus collapse bg-translucentviolet">
-				<input type="radio" name="my-accordion-3" checked="checked" />
-				<div className="collapse-title text-xl font-medium">Highlights</div>
-				<div className="collapse-content">
-					<p>{highlights}</p>
-				</div>
+		<div className="join-vertical join w-full sm:w-5/6">
+			<div className="collapse-arrow join-item collapse bg-translucentviolet ">
+				<input
+					type="radio"
+					name="my-accordion-4"
+					id="my-accordion-0"
+					checked={openItem === 0}
+					readOnly
+				/>
+				<label
+					htmlFor="my-accordion-0"
+					className="collapse-title cursor-pointer text-xl font-medium"
+					onClick={() => handleToggle(0)}
+				>
+					{highlights}
+				</label>
+				<div className="collapse-content">{highlights_text}</div>
 			</div>
-			<div className="collapse-plus collapse bg-translucentviolet">
-				<input type="radio" name="my-accordion-3" />
-				<div className="collapse-title text-xl font-medium">Process</div>
-				<div className="collapse-content">
-					<p>{process}</p>
-				</div>
+
+			<div className="collapse-arrow join-item collapse bg-translucentviolet">
+				<input
+					type="radio"
+					name="my-accordion-4"
+					id="my-accordion-1"
+					checked={openItem === 1}
+					readOnly
+				/>
+				<label
+					htmlFor="my-accordion-1"
+					className="collapse-title cursor-pointer text-xl font-medium"
+					onClick={() => handleToggle(1)}
+				>
+					{process}
+				</label>
+				<div className="collapse-content">{process_text}</div>
 			</div>
-			<div className="collapse-plus collapse bg-translucentviolet">
-				<input type="radio" name="my-accordion-3" />
-				<div className="collapse-title text-xl font-medium">
-					Click to open this one and close others
-				</div>
-				<div className="collapse-content">
-					<p>hello</p>
-				</div>
-			</div>
-		</section>
+		</div>
 	);
 }
