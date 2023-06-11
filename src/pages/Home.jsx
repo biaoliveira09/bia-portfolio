@@ -44,7 +44,7 @@ export default function Home() {
 
 		return (
 			<>
-				<main className="flex flex-col overflow-x-hidden">
+				<main className="flex flex-col items-center overflow-x-hidden">
 					<Reveal>
 						<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-96 md:h-screen">
 							<h1 className="fade-in z-30 font-eight text-4xl lowercase sm:text-6xl md:text-7xl">
