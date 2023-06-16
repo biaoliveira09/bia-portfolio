@@ -15,9 +15,13 @@ export default function Navigation({
 				<div className="fixed z-50 h-10 w-full px-6 py-2 sm:px-8">
 					<Link to="/">{name}</Link>
 				</div>
-				<nav className="site-nav sm:text-md fixed bottom-4 z-50 flex items-center gap-20 text-lg sm:bottom-auto sm:right-10 sm:top-6 sm:gap-16">
-					<a href="/#about">About</a>
-					<a href="/#projects">Projects</a>
+				<nav className="site-nav fixed bottom-4 z-50 flex items-center gap-20 text-lg sm:bottom-auto sm:right-10 sm:top-6 sm:gap-16 sm:text-base ">
+					<a href="/#about" className="hover:text-amber-500">
+						About
+					</a>
+					<a href="/#projects" className="hover:text-amber-500">
+						Projects
+					</a>
 				</nav>
 				<nav className="social-nav fixed hidden gap-5 sm:bottom-2 sm:right-10 sm:z-50 sm:flex sm:items-center">
 					<a
@@ -38,7 +42,7 @@ export default function Navigation({
 					</a>
 					<a
 						href={`mailto:${email_address}`}
-						className="hover:text-amber-500"
+						className="flex gap-1 hover:text-amber-500"
 						target="_blank"
 						rel="noreferrer"
 					>

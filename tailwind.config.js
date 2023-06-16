@@ -22,6 +22,7 @@ export default {
 			},
 			colors: {
 				translucent: 'rgba(250, 250, 249, 0.3)',
+				kindatranslucent: 'rgba(250, 250, 249, 0.45)',
 				lesstranslucent: 'rgba(250, 250, 249, 0.7)',
 				translucentpink: 'rgba(252, 231, 243, 0.3)',
 				translucentviolet: 'rgba(221, 214, 254, 0.4)',

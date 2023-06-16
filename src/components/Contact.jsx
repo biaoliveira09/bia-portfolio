@@ -4,14 +4,18 @@ export default function Contact({ contact_heading }) {
 		<>
 			<Reveal>
 				<section className="contact">
-					<h2 className="mb-1 text-2xl font-bold">{contact_heading}</h2>
+					<div className="flex justify-between">
+						<h2 className="mb-1 text-2xl font-bold">{contact_heading}</h2>
+						<a href="" className="text-2xl">
+							bia@biaoliveira.com
+						</a>
+					</div>
 					<div className="social-links mx-2 flex items-center justify-around gap-10">
-						<a href="">Copy Email</a>
 						<a href="" target="_blank" rel="noreferrer">
-							GitHub
+							Check out my GitHub
 						</a>
 						<a href="" target="_blank" rel="noreferrer">
-							LinkedIn
+							Connect with me on LinkedIn
 						</a>
 					</div>
 				</section>
