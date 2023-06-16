@@ -9,19 +9,19 @@ export default function Project({
 }) {
 	return (
 		<>
-			<article className="single-project z-30 flex h-80 w-72 flex-col items-center justify-center rounded-xl border-stone-100 bg-lesstranslucent shadow">
+			<article className="single-project z-30 flex h-96 w-96 flex-col items-center justify-center rounded-xl border-stone-100 bg-lesstranslucent shadow">
 				<Link to={`/projects/${project_id}`}>
 					{project_screenshot ? (
 						<img
 							src={project_screenshot.url}
 							alt={project_screenshot.alt}
-							className="mx-auto h-36 w-64 rounded shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl sm:w-64 md:w-9/12 lg:w-11/12"
+							className="mx-auto h-48 w-80 rounded shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
 						/>
 					) : (
 						<img
 							src={placeholder}
 							alt="placeholder"
-							className="mx-auto h-36 w-64 rounded shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl sm:w-64 md:w-9/12 lg:w-11/12"
+							className="mx-auto h-48 w-80 rounded shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
 						/>
 					)}
 				</Link>
