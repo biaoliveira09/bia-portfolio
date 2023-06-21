@@ -7,8 +7,8 @@ export default function ProjectInfo({ project_info }) {
 		setOpenItem(openItem === index ? null : index);
 	};
 	return (
-		<div className="join-vertical join w-full sm:w-5/6">
-			<div className="collapse-arrow join-item collapse bg-translucentviolet ">
+		<div className="join-vertical join  w-full">
+			<div className="collapse-arrow join-item collapse bg-translucentviolet">
 				<input
 					type="radio"
 					name="my-accordion-4"
@@ -23,7 +23,12 @@ export default function ProjectInfo({ project_info }) {
 				>
 					{highlights}
 				</label>
-				<div className="collapse-content">{highlights_text}</div>
+				<div className="collapse-content">
+					{highlights_text} Lorem ipsum dolor sit amet consectetur adipisicing
+					elit. Nihil, sint recusandae, doloremque at tenetur neque beatae
+					doloribus magnam atque explicabo, possimus quisquam aliquam facilis
+					non. Deleniti cupiditate consequatur non officia.
+				</div>
 			</div>
 
 			<div className="collapse-arrow join-item collapse bg-translucentviolet">

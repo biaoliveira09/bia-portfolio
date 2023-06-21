@@ -74,7 +74,7 @@ export default function Carousel() {
 						<span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
 							<svg
 								aria-hidden="true"
-								className="h-6 w-6 text-white dark:text-gray-800"
+								className="h-6 w-6 text-pink-600 dark:text-gray-800"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -101,7 +101,7 @@ export default function Carousel() {
 						<span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70">
 							<svg
 								aria-hidden="true"
-								className="h-6 w-6 text-white dark:text-gray-800"
+								className="h-6 w-6  text-pink-600 dark:text-gray-800"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
