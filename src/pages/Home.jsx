@@ -1,5 +1,6 @@
 import Projects from '../components/Projects';
 import About from '../components/About';
+import Music from '../components/Music';
 import Reveal from '../utilities/Reveal';
 import { useAbout } from './../App';
 
@@ -21,11 +22,12 @@ export default function Home() {
 			github_profile_link,
 			linkedin_profile_link,
 			email_address,
+			playlist_id,
 		} = data.acf;
 
 		return (
 			<>
-				<main className="flex flex-col items-center">
+				<main className="z-30 flex flex-col items-center overflow-hidden">
 					<Reveal>
 						<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-96 md:h-screen">
 							<h1 className="fade-in z-30 text-4xl font-bold lowercase sm:text-6xl md:text-7xl">
@@ -56,7 +58,10 @@ export default function Home() {
 						</section>
 					</Reveal>
 					<Projects />
-					<About />
+					<div className="z-30 flex w-11/12 flex-col items-center sm:w-10/12 md:w-9/12 lg:w-7/12 xl:w-6/12">
+						<About />
+						<Music playlistId={playlist_id} />
+					</div>
 				</main>
 			</>
 		);
