@@ -6,7 +6,7 @@ import { MdOutlineDesignServices } from 'react-icons/md';
 
 export default function TechStack({ skills_heading }) {
 	const [techStack, setTechStack] = useState([]);
-	const [displayTech, setDisplayTech] = useState(techStack);
+	const [displayTech, setDisplayTech] = useState([]);
 	const [chosenCategory, setChosenCategory] = useState('all');
 
 	const DEV_CATEGORY = 5;
@@ -31,23 +31,23 @@ export default function TechStack({ skills_heading }) {
 	useEffect(() => {
 		if (isSuccess) {
 			setTechStack(techStackData);
-			setDisplayTech(techStackData);
 		}
 	}, [techStackData, isSuccess]);
 
+	useEffect(() => {
+		setDisplayTech(techStack);
+	}, [techStack]);
+
 	function sortTechStack() {
-		if (chosenCategory === 'all') {
-			return techStack;
-		} else {
-			const category =
-				chosenCategory === DEV_CATEGORY.toString()
-					? DEV_CATEGORY
-					: DESIGN_CATEGORY;
-			const filteredTech = techStack.filter(tech =>
-				tech.tech_category.includes(category)
-			);
-			return filteredTech;
-		}
+		return chosenCategory === 'all'
+			? techStack
+			: techStack.filter(tech =>
+					tech.tech_category.includes(
+						chosenCategory === DEV_CATEGORY.toString()
+							? DEV_CATEGORY
+							: DESIGN_CATEGORY
+					)
+			  );
 	}
 
 	useEffect(() => {

@@ -54,13 +54,13 @@ export default function ProjectDetails() {
 								<img
 									src={project_screenshot.url}
 									alt={project_screenshot.alt}
-									className="w-64 bg-violet-50 shadow-lg sm:w-96 md:w-9/12 lg:w-11/12"
+									className="w-64 rounded bg-violet-50 shadow-lg sm:w-96 md:w-9/12 lg:w-11/12"
 								/>
 							) : (
 								<img
 									src={placeholder}
 									alt="placeholder"
-									className="w-64 shadow-lg sm:w-96 md:w-9/12 lg:w-11/12"
+									className="w-64 rounded shadow-lg sm:w-96 md:w-9/12 lg:w-11/12"
 								/>
 							)}
 						</Reveal>
