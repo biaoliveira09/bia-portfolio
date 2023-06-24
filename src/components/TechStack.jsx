@@ -19,7 +19,7 @@ export default function TechStack({ skills_heading }) {
 
 	const {
 		isSuccess,
-		isLoading,
+		// isLoading,
 		isError,
 		data: techStackData,
 		error,
@@ -36,10 +36,6 @@ export default function TechStack({ skills_heading }) {
 	}, [techStackData, isSuccess]);
 
 	function sortTechStack() {
-		if (!techStack || techStack.length === 0) {
-			return [];
-		}
-
 		if (chosenCategory === 'all') {
 			return techStack;
 		} else {

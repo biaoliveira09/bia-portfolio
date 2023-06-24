@@ -18,7 +18,7 @@ export const useProjects = () => {
 
 export default function Projects() {
 	const {
-		isLoading,
+		// isLoading,
 		isError,
 		isSuccess,
 		data: projects,

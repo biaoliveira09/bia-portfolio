@@ -6,16 +6,16 @@ import { useProjects } from './Projects';
 export default function Carousel() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const {
-		isLoading,
+		// isLoading,
 		isSuccess,
 		isError,
 		error,
 		data: projects,
 	} = useProjects();
 
-	if (isLoading) {
-		return <div>Loading...</div>;
-	}
+	// if (isLoading) {
+	// 	return <div>Loading...</div>;
+	// }
 
 	if (isError) {
 		return <div>Error: {error.message}</div>;
@@ -49,7 +49,7 @@ export default function Carousel() {
 										<img
 											src={project_screenshot.url}
 											alt={project_screenshot.alt}
-											className="rounded-box mx-auto h-40 w-64 shadow-lg"
+											className="rounded-box mx-auto h-40 w-64 bg-violet-50 shadow-lg"
 										/>
 									) : (
 										<img

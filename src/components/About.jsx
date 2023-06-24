@@ -13,7 +13,7 @@ export default function About() {
 		queryFn: () => getPostsData('interests'),
 	});
 
-	const isLoading = aboutQuery.isLoading || interestsQuery.isLoading;
+	// const isLoading = aboutQuery.isLoading || interestsQuery.isLoading;
 	const isError = aboutQuery.isError || interestsQuery.isError;
 	const isSuccess = aboutQuery.isSuccess && interestsQuery.isSuccess;
 	const interestsError = interestsQuery.error;

@@ -14,14 +14,12 @@ export default function Music({ playlistId }) {
 	const [tracks, setTracks] = useState([]);
 	const [playlistName, setPlaylistName] = useState('');
 	const [playlistExternalUrls, setPlaylistExternalUrls] = useState({});
-	const [recentlyPlayed, setRecentlyPlayed] = useState([{}]);
+	const [recentlyPlayed, setRecentlyPlayed] = useState([]);
 
 	const {
-		isLoading,
 		isError,
 		isSuccess,
 		data: playlistData,
-		error,
 	} = useQuery({
 		queryKey: ['playlist', playlistId],
 		queryFn: () => getPlaylist(playlistId),
@@ -54,32 +52,28 @@ export default function Music({ playlistId }) {
 			return !playedTrack || playedTrack.timestamp < oneHourAgo;
 		});
 		if (availableTracks.length === 0) {
-			// reset recentlyPlayed
-			setRecentlyPlayed([{}]);
+			setRecentlyPlayed([]);
 			return;
 		}
 
 		const newRandomTrack = getRandomTrack(availableTracks);
 		setRandomTrack(newRandomTrack);
-
-		// set timeplayed and save it and track id to recentlyPlayed
-		const timestamp = Date.now();
-		setRecentlyPlayed(prev => [...prev, { id: newRandomTrack.id, timestamp }]);
-		console.log(recentlyPlayed);
 	};
 
 	useEffect(() => {
-		if (randomTrack) {
+		if (randomTrack && randomTrack.id) {
 			setArtists(getTrackArtists(randomTrack));
+
+			setRecentlyPlayed(prev => [
+				...prev,
+				{ id: randomTrack.id, timestamp: Date.now() },
+			]);
+			console.log(recentlyPlayed);
 		}
 	}, [randomTrack]);
 
-	// if (isLoading) {
-	// 	return <div>Loading...</div>;
-	// }
-
 	if (isError) {
-		return <div>Error: {error.message}</div>;
+		return;
 	}
 
 	if (isSuccess) {
@@ -112,7 +106,7 @@ export default function Music({ playlistId }) {
 							</p>
 
 							<button
-								className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-orange-400"
+								className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
 								onClick={handleChangeSongClick}
 							>
 								Change Song <FiRefreshCw className="h-5 w-5" />

@@ -42,7 +42,7 @@ export default function ProjectDetails() {
 		return (
 			<>
 				<main className="project-details m-7 mb-12 flex flex-col items-center sm:m-20">
-					<div className="project-container z-20 flex flex-col items-center gap-7 rounded-2xl bg-kindatranslucent p-6 md:p-10 lg:w-8/12">
+					<div className="project-container bg-kindatranslucent z-20 flex flex-col items-center gap-7 rounded-2xl p-6 md:p-10 lg:w-8/12">
 						<Reveal>
 							<h1 className="text-lg font-bold sm:text-xl lg:text-2xl">
 								{project_name}
@@ -54,7 +54,7 @@ export default function ProjectDetails() {
 								<img
 									src={project_screenshot.url}
 									alt={project_screenshot.alt}
-									className="w-64 shadow-lg sm:w-96 md:w-9/12 lg:w-11/12 "
+									className="w-64 bg-violet-50 shadow-lg sm:w-96 md:w-9/12 lg:w-11/12"
 								/>
 							) : (
 								<img

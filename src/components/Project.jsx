@@ -15,7 +15,7 @@ export default function Project({
 						<img
 							src={project_screenshot.url}
 							alt={project_screenshot.alt}
-							className="mx-auto h-48 w-80 rounded shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
+							className="mx-auto h-48 w-80 rounded bg-violet-50 shadow-lg transition-transform hover:-translate-y-0.5 hover:shadow-xl"
 						/>
 					) : (
 						<img
@@ -32,7 +32,7 @@ export default function Project({
 							return (
 								<li
 									key={tech}
-									className=" bg-violet-100 px-0.5 py-0.5 text-sm uppercase"
+									className=" bg-orange-100 px-0.5 py-0.5 text-sm uppercase"
 								>
 									{tech}
 								</li>
