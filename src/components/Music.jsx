@@ -14,6 +14,7 @@ export default function Music({ playlistId }) {
 	const [tracks, setTracks] = useState([]);
 	const [playlistName, setPlaylistName] = useState('');
 	const [playlistExternalUrls, setPlaylistExternalUrls] = useState({});
+	const [recentlyPlayed, setRecentlyPlayed] = useState([{}]);
 
 	const {
 		isLoading,
@@ -44,7 +45,27 @@ export default function Music({ playlistId }) {
 	}, [tracks]);
 
 	const handleChangeSongClick = () => {
-		setRandomTrack(getRandomTrack(tracks));
+		const oneHourAgo = Date.now() - 3600000;
+		const availableTracks = tracks.filter(track => {
+			const trackId = track.track.id;
+			const playedTrack = recentlyPlayed.find(
+				playedTrack => playedTrack.id === trackId
+			);
+			return !playedTrack || playedTrack.timestamp < oneHourAgo;
+		});
+		if (availableTracks.length === 0) {
+			// reset recentlyPlayed
+			setRecentlyPlayed([{}]);
+			return;
+		}
+
+		const newRandomTrack = getRandomTrack(availableTracks);
+		setRandomTrack(newRandomTrack);
+
+		// set timeplayed and save it and track id to recentlyPlayed
+		const timestamp = Date.now();
+		setRecentlyPlayed(prev => [...prev, { id: newRandomTrack.id, timestamp }]);
+		console.log(recentlyPlayed);
 	};
 
 	useEffect(() => {
@@ -91,7 +112,7 @@ export default function Music({ playlistId }) {
 							</p>
 
 							<button
-								className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
+								className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-orange-400"
 								onClick={handleChangeSongClick}
 							>
 								Change Song <FiRefreshCw className="h-5 w-5" />

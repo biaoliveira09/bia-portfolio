@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FaAsterisk } from 'react-icons/fa';
 import { BiMusic } from 'react-icons/bi';
 
 export default function MusicAlert({ track_name, artists }) {
