@@ -23,19 +23,6 @@ export default function Bounce() {
 			<span></span>
 			<span></span>
 			<span></span>
-			{/* <span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span> */}
 		</div>
 	);
 }

@@ -74,7 +74,7 @@ export default function TechStack({ skills_heading }) {
 					<div className="category-buttons mb-4 flex items-baseline justify-between gap-2">
 						<button
 							id="all"
-							className={`border border-pink-700  px-2 py-1 uppercase ${
+							className={`flex items-center gap-1 border border-pink-700  px-2 py-1 uppercase ${
 								chosenCategory === 'all'
 									? 'bg-pink-700 text-stone-50 shadow'
 									: 'border-pink-700 bg-pink-100/30 text-pink-700 shadow'
