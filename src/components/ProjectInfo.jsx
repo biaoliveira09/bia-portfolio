@@ -8,7 +8,7 @@ export default function ProjectInfo({ project_info }) {
 	};
 	return (
 		<div className="join-vertical join  w-full">
-			<div className="collapse-arrow join-item collapse bg-translucentviolet">
+			<div className="collapse-arrow join-item collapse bg-violet-100/50">
 				<input
 					type="radio"
 					name="my-accordion-4"
@@ -31,7 +31,7 @@ export default function ProjectInfo({ project_info }) {
 				</div>
 			</div>
 
-			<div className="collapse-arrow join-item collapse bg-translucentviolet">
+			<div className="collapse-arrow join-item collapse bg-violet-100/50">
 				<input
 					type="radio"
 					name="my-accordion-4"

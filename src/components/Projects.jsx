@@ -25,9 +25,9 @@ export default function Projects() {
 		error,
 	} = useProjects();
 
-	if (isLoading) {
-		return <p>Loading...</p>;
-	}
+	// if (isLoading) {
+	// 	return <p>Loading...</p>;
+	// }
 
 	if (isError) {
 		return <p>Error: {error.message}</p>;

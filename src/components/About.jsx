@@ -3,7 +3,6 @@ import { getPostsData } from '../utilities/api';
 import { FaAsterisk } from 'react-icons/fa';
 import TechStack from './TechStack';
 import Reveal from '../utilities/Reveal';
-import Contact from './Contact';
 
 import { useAbout } from './../App';
 
@@ -20,9 +19,9 @@ export default function About() {
 	const interestsError = interestsQuery.error;
 	const aboutError = aboutQuery.error;
 
-	if (isLoading) {
-		return <div>Loading...</div>;
-	}
+	// if (isLoading) {
+	// 	return <div>Loading...</div>;
+	// }
 
 	if (isError) {
 		return (
@@ -39,31 +38,24 @@ export default function About() {
 			short_intro,
 			bio,
 			skills_heading,
-			more_about_me_heading,
 			more_about_me,
 			interests_heading,
-			contact_heading,
 		} = aboutQuery.data.acf;
 
 		return (
 			<section id="about" className="about z-30 mx-5 my-20  sm:mx-auto">
-				<div className="about-intro flex flex-col justify-center sm:min-w-full">
+				<div className="about-intro flex flex-col justify-center sm:min-w-full lg:my-40">
 					<Reveal>
 						<h1 className="mb-1 text-3xl font-bold">{short_intro}</h1>
 						<h2 className="text-md font-medium uppercase">{about_heading}</h2>
 						<p className="my-4">{bio}</p>
+						<p>{more_about_me}</p>
 					</Reveal>
 					<Reveal>
 						<TechStack skills_heading={skills_heading} />
 					</Reveal>
-				</div>
-				<div className="more-about-me-section my-20 flex flex-col gap-9 sm:min-w-full sm:gap-12">
 					<Reveal>
-						<h2 className="mb-1 text-2xl font-bold">{more_about_me_heading}</h2>
-						<p>{more_about_me}</p>
-					</Reveal>
-					<Reveal>
-						<h2 className="mb-1 text-2xl font-bold">{interests_heading}</h2>
+						<h2 className="mb-4  text-2xl font-bold">{interests_heading}</h2>
 						<ul className="flex flex-wrap gap-2">
 							{interestsData.map(interest => {
 								if (interest.interest_category.includes(8)) {
@@ -94,7 +86,6 @@ export default function About() {
 							})}
 						</ul>
 					</Reveal>
-					<Contact contact_heading={contact_heading} />
 				</div>
 			</section>
 		);

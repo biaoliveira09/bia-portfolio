@@ -3,13 +3,14 @@ import About from '../components/About';
 import Music from '../components/Music';
 import Reveal from '../utilities/Reveal';
 import { useAbout } from './../App';
+import Contact from '../components/Contact';
 
 export default function Home() {
 	const { isLoading, isError, isSuccess, data, error } = useAbout();
 
-	if (isLoading) {
-		return <p>Loading...</p>;
-	}
+	// if (isLoading) {
+	// 	return <p>Loading...</p>;
+	// }
 
 	if (isError) {
 		return <p>Error: {error.message}</p>;
@@ -23,6 +24,7 @@ export default function Home() {
 			linkedin_profile_link,
 			email_address,
 			playlist_id,
+			contact_heading,
 		} = data.acf;
 
 		return (
@@ -30,7 +32,7 @@ export default function Home() {
 				<main className="z-30 flex flex-col items-center overflow-hidden">
 					<Reveal>
 						<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-96 md:h-screen">
-							<h1 className="fade-in z-30 text-4xl font-bold lowercase sm:text-6xl md:text-7xl">
+							<h1 className="fade-in z-30 text-4xl font-bold lowercase sm:text-6xl md:text-7xl xl:text-8xl">
 								{name}
 							</h1>
 							<p className=" fade-in z-30 text-lg sm:text-xl md:text-2xl">
@@ -61,6 +63,7 @@ export default function Home() {
 					<div className="z-30 flex w-11/12 flex-col items-center sm:w-10/12 md:w-9/12 lg:w-7/12 xl:w-6/12">
 						<About />
 						<Music playlistId={playlist_id} />
+						<Contact contact_heading={contact_heading} />
 					</div>
 				</main>
 			</>

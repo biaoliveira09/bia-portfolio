@@ -53,9 +53,9 @@ export default function Music({ playlistId }) {
 		}
 	}, [randomTrack]);
 
-	if (isLoading) {
-		return <div>Loading...</div>;
-	}
+	// if (isLoading) {
+	// 	return <div>Loading...</div>;
+	// }
 
 	if (isError) {
 		return <div>Error: {error.message}</div>;
@@ -65,11 +65,14 @@ export default function Music({ playlistId }) {
 		return (
 			<>
 				<Reveal>
-					<section id="music" className="music mx-5 mb-20 h-5/6 sm:mx-auto">
+					<section
+						id="music"
+						className="music mx-5 mb-20 h-5/6 sm:mx-auto lg:mb-32"
+					>
 						<h2 className="pb-3 text-2xl font-bold">
 							Currently Listening To...
 						</h2>
-						<div className="rounded-xl bg-translucent px-7 pb-0 pt-8 shadow">
+						<div className="rounded-xl bg-stone-50/30 px-7 pb-0 pt-8 shadow">
 							<p>
 								Listen to one of my favourite tracks{' '}
 								<span className="font-bold">

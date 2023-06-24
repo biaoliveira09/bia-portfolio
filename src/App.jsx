@@ -6,7 +6,6 @@ import ProjectDetails from './pages/ProjectDetails';
 import Bounce from './components/Bounce';
 import Footer from './components/Footer';
 import { getPages } from './utilities/api';
-// import { useAbout } from './pages/Home';
 
 const ABOUT_PAGE_ID = 20;
 
@@ -36,9 +35,9 @@ export default function App() {
 		error,
 	} = useAbout();
 
-	if (isLoading) {
-		return <p>Loading...</p>;
-	}
+	// if (isLoading) {
+	// 	return <p>Loading...</p>;
+	// }
 
 	if (isError) {
 		return <p>Error: {error.message}</p>;

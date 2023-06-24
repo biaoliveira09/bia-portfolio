@@ -9,7 +9,7 @@ export default function Project({
 }) {
 	return (
 		<>
-			<article className="single-project z-30 flex h-96 w-96 flex-col items-center justify-center rounded-xl border-stone-100 bg-lesstranslucent shadow">
+			<article className="single-project z-30 flex h-96 w-96 flex-col items-center justify-center rounded-xl border-stone-100 bg-stone-50/30 shadow">
 				<Link to={`/projects/${project_id}`}>
 					{project_screenshot ? (
 						<img
@@ -41,7 +41,7 @@ export default function Project({
 					</ul>
 					<Link
 						to={`/projects/${project_id}`}
-						className="mt-3 w-56 rounded-lg px-2 py-1 text-center text-sm font-medium transition-colors hover:bg-translucentpink"
+						className="mt-3 w-64 rounded-lg px-2 py-1 text-center text-sm font-medium transition-colors hover:bg-pink-100/30"
 					>
 						Details
 					</Link>

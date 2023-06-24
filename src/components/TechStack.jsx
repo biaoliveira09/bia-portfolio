@@ -58,9 +58,9 @@ export default function TechStack({ skills_heading }) {
 		setDisplayTech(sortTechStack());
 	}, [chosenCategory]);
 
-	if (isLoading) {
-		return <p>Loading...</p>;
-	}
+	// if (isLoading) {
+	// 	return <p>Loading...</p>;
+	// }
 
 	if (isError) {
 		return <p>Error: {error.message}</p>;
@@ -77,7 +77,7 @@ export default function TechStack({ skills_heading }) {
 							className={`border border-pink-700  px-2 py-1 uppercase ${
 								chosenCategory === 'all'
 									? 'bg-pink-700 text-stone-50 shadow'
-									: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
+									: 'border-pink-700 bg-pink-100/30 text-pink-700 shadow'
 							}`}
 							onClick={handleCategoryClick}
 						>
@@ -88,7 +88,7 @@ export default function TechStack({ skills_heading }) {
 							className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
 								chosenCategory === DEV_CATEGORY.toString()
 									? 'bg-pink-700 text-stone-50 shadow'
-									: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
+									: 'border-pink-700 bg-pink-100/30 text-pink-700 shadow'
 							}`}
 							onClick={handleCategoryClick}
 						>
@@ -100,7 +100,7 @@ export default function TechStack({ skills_heading }) {
 							className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
 								chosenCategory === DESIGN_CATEGORY.toString()
 									? 'bg-pink-700 text-stone-50 shadow'
-									: 'border-pink-700 bg-translucentpink text-pink-700 shadow'
+									: 'border-pink-700 bg-pink-100/30 text-pink-700 shadow'
 							}`}
 							onClick={handleCategoryClick}
 						>
@@ -109,7 +109,7 @@ export default function TechStack({ skills_heading }) {
 						</button>
 					</div>
 				</div>
-				<div className="skills-container rounded-lg bg-translucent p-4 shadow">
+				<div className="skills-container rounded-lg bg-stone-50/30 p-4 shadow">
 					<ul className="flex flex-wrap gap-2">
 						{displayTech.map(tech => (
 							<li

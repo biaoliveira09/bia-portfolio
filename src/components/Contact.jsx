@@ -10,7 +10,7 @@ export default function Contact({ contact_heading }) {
 					<div className="flex justify-between">
 						<h2 className="mb-10 text-2xl font-bold">{contact_heading}</h2>
 					</div>
-					<div className="social-links mx-2 flex items-center justify-around">
+					<div className="social-links mx-2 flex items-center justify-between">
 						<a
 							href="https://www.linkedin.com/in/biaoliveira09/"
 							target="_blank"
