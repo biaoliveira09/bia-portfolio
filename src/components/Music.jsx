@@ -105,7 +105,7 @@ export default function Music({ playlistId }) {
 							</p>
 
 							<button
-								className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md transition-colors hover:bg-violet-500"
+								className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md transition-colors hover:bg-pink-700"
 								onClick={handleChangeSongClick}
 							>
 								Change Song <FiRefreshCw className="h-5 w-5" />

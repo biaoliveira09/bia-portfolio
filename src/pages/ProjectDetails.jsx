@@ -71,13 +71,13 @@ export default function ProjectDetails() {
 							<div className="project-links flex flex-wrap justify-center gap-2">
 								<a
 									href={github_repository_url}
-									className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md hover:bg-violet-400"
+									className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md hover:bg-pink-700"
 								>
 									GitHub Repository
 								</a>
 								<a
 									href={live_preview_url}
-									className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md  hover:bg-violet-400"
+									className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md  hover:bg-pink-700"
 								>
 									Live Site
 								</a>

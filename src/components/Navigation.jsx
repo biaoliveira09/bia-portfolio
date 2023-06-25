@@ -16,11 +16,11 @@ export default function Navigation({
 					<Link to="/">{name}</Link>
 				</div>
 				<nav className="site-nav fixed bottom-4 z-50 flex items-center gap-20 text-lg sm:bottom-auto sm:right-10 sm:top-6 sm:gap-16 sm:text-base ">
-					<a href="/#about" className="hover:text-amber-500">
-						About
-					</a>
-					<a href="/#projects" className="hover:text-amber-500">
+					<a href="/#projects" className="sm:hover:-translate-y-0.5">
 						Projects
+					</a>
+					<a href="/#about" className="sm:hover:-translate-y-0.5">
+						About
 					</a>
 				</nav>
 				<nav className="social-nav fixed hidden gap-5 sm:bottom-2 sm:right-10 sm:z-50 sm:flex sm:items-center">
