@@ -58,7 +58,9 @@ export default function Carousel() {
 											className="rounded-box mx-auto h-40 w-64 shadow-lg"
 										/>
 									)}
-									<h2 className="m-auto font-medium">{project_name}</h2>
+									<h2 className="m-auto pt-2 text-center font-medium">
+										{project_name}
+									</h2>
 								</Link>
 							</div>
 						);

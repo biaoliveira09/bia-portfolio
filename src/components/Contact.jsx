@@ -6,7 +6,7 @@ export default function Contact({ contact_heading }) {
 	return (
 		<>
 			<Reveal>
-				<section className="contact">
+				<section className="contact pt-20">
 					<div className="flex justify-between">
 						<h2 className="mb-10 text-2xl font-bold">{contact_heading}</h2>
 					</div>

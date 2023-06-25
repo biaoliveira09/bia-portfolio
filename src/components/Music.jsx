@@ -68,7 +68,6 @@ export default function Music({ playlistId }) {
 				...prev,
 				{ id: randomTrack.id, timestamp: Date.now() },
 			]);
-			console.log(recentlyPlayed);
 		}
 	}, [randomTrack]);
 
@@ -82,7 +81,7 @@ export default function Music({ playlistId }) {
 				<Reveal>
 					<section
 						id="music"
-						className="music mx-5 mb-20 h-5/6 sm:mx-auto lg:mb-32"
+						className="music mx-5 mb-20 h-5/6 sm:mx-auto sm:pt-32 lg:mb-32"
 					>
 						<h2 className="pb-3 text-2xl font-bold">
 							Currently Listening To...
@@ -106,7 +105,7 @@ export default function Music({ playlistId }) {
 							</p>
 
 							<button
-								className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md hover:bg-violet-400"
+								className="m-auto mb-4 mt-3 flex items-center gap-2 bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md transition-colors hover:bg-violet-500"
 								onClick={handleChangeSongClick}
 							>
 								Change Song <FiRefreshCw className="h-5 w-5" />

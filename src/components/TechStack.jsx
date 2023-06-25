@@ -64,7 +64,7 @@ export default function TechStack({ skills_heading }) {
 
 	if (isSuccess) {
 		return (
-			<section className="techstack-section mb-8 mt-10 lg:h-48">
+			<section className="techstack-section mb-8 mt-10 lg:mb-12 lg:h-48">
 				<div className="controls-container flex flex-col items-center justify-between lg:flex-row">
 					<h2 className="mb-4 text-2xl font-bold">{skills_heading}</h2>
 					<div className="category-buttons mb-4 flex items-baseline justify-between gap-2">

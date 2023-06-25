@@ -33,15 +33,15 @@ export default function Projects() {
 		return <p>Error: {error.message}</p>;
 	}
 
-	if (isSuccess) {
+	if (isSuccess && projects.length > 0) {
 		return (
 			<>
 				<section
 					id="projects"
-					className="projects-section z-30 flex h-fit flex-col items-center justify-center sm:min-w-full"
+					className="projects-section z-30 flex  h-fit flex-col items-center justify-center pt-20 sm:min-w-full"
 				>
 					<Reveal>
-						<h2 className="z-30 mb-3 text-2xl font-bold sm:mb-6 md:mb-10">
+						<h2 className="z-30 mb-3 text-3xl font-bold sm:mb-6 md:mb-10">
 							Projects
 						</h2>
 					</Reveal>

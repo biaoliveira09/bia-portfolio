@@ -43,7 +43,10 @@ export default function About() {
 		} = aboutQuery.data.acf;
 
 		return (
-			<section id="about" className="about z-30 mx-5 my-20  sm:mx-auto">
+			<section
+				id="about"
+				className="about z-30 mx-5 my-20 pt-20 sm:mx-auto lg:pt-8"
+			>
 				<div className="about-intro flex flex-col justify-center sm:min-w-full lg:my-40">
 					<Reveal>
 						<h1 className="mb-1 text-3xl font-bold">{short_intro}</h1>
@@ -67,7 +70,7 @@ export default function About() {
 											{interest.title.rendered}
 											<button
 												className="tooltip-primary tooltip tooltip-bottom"
-												data-tip="Pandemic hobby. The kind you neglect once things go back to normal."
+												data-tip="Pandemic hobby."
 											>
 												<FaAsterisk className="text-purple-600" />
 											</button>
