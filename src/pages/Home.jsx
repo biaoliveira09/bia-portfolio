@@ -32,10 +32,10 @@ export default function Home() {
 				<main className="z-30 flex flex-col items-center overflow-hidden">
 					<Reveal>
 						<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-96 md:h-screen">
-							<h1 className="fade-in z-30 text-4xl font-bold lowercase sm:text-6xl md:text-7xl xl:text-8xl">
+							<h1 className="z-30 text-4xl font-bold lowercase sm:text-6xl md:text-7xl xl:text-8xl">
 								{name}
 							</h1>
-							<p className=" fade-in z-30 text-lg sm:text-xl md:text-2xl">
+							<p className="z-30 text-lg uppercase tracking-wide sm:text-xl sm:tracking-wider">
 								{short_bio}
 							</p>
 							<div className="social-links z-30 m-2 flex gap-6 sm:hidden">
