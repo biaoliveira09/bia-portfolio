@@ -27,17 +27,7 @@ export const useAbout = () => {
 };
 
 export default function App() {
-	const {
-		isSuccess,
-		isError,
-		isLoading,
-		data: contactInfo,
-		error,
-	} = useAbout();
-
-	// if (isLoading) {
-	// 	return <p>Loading...</p>;
-	// }
+	const { isSuccess, isError, data: contactInfo, error } = useAbout();
 
 	if (isError) {
 		return <p>Error: {error.message}</p>;

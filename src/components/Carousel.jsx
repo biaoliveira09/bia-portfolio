@@ -5,17 +5,7 @@ import { useProjects } from './Projects';
 
 export default function Carousel() {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const {
-		// isLoading,
-		isSuccess,
-		isError,
-		error,
-		data: projects,
-	} = useProjects();
-
-	// if (isLoading) {
-	// 	return <div>Loading...</div>;
-	// }
+	const { isSuccess, isError, error, data: projects } = useProjects();
 
 	if (isError) {
 		return <div>Error: {error.message}</div>;

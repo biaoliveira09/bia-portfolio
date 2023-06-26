@@ -19,7 +19,6 @@ export default function TechStack({ skills_heading }) {
 
 	const {
 		isSuccess,
-		// isLoading,
 		isError,
 		data: techStackData,
 		error,
@@ -53,10 +52,6 @@ export default function TechStack({ skills_heading }) {
 	useEffect(() => {
 		setDisplayTech(sortTechStack());
 	}, [chosenCategory]);
-
-	// if (isLoading) {
-	// 	return <p>Loading...</p>;
-	// }
 
 	if (isError) {
 		return <p>Error: {error.message}</p>;

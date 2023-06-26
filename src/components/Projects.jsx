@@ -17,17 +17,7 @@ export const useProjects = () => {
 };
 
 export default function Projects() {
-	const {
-		// isLoading,
-		isError,
-		isSuccess,
-		data: projects,
-		error,
-	} = useProjects();
-
-	// if (isLoading) {
-	// 	return <p>Loading...</p>;
-	// }
+	const { isError, isSuccess, data: projects, error } = useProjects();
 
 	if (isError) {
 		return <p>Error: {error.message}</p>;

@@ -6,11 +6,7 @@ import { useAbout } from './../App';
 import Contact from '../components/Contact';
 
 export default function Home() {
-	const { isLoading, isError, isSuccess, data, error } = useAbout();
-
-	// if (isLoading) {
-	// 	return <p>Loading...</p>;
-	// }
+	const { isError, isSuccess, data, error } = useAbout();
 
 	if (isError) {
 		return <p>Error: {error.message}</p>;
@@ -39,15 +35,15 @@ export default function Home() {
 								{short_bio}
 							</p>
 							<div className="social-links z-30 m-2 flex gap-6 sm:hidden">
-								<a href={github_profile_link} target="_blank" rel="noreferrer">
-									GitHub
-								</a>
 								<a
 									href={linkedin_profile_link}
 									target="_blank"
 									rel="noreferrer"
 								>
 									LinkedIn
+								</a>
+								<a href={github_profile_link} target="_blank" rel="noreferrer">
+									GitHub
 								</a>
 								<a
 									href={`mailto:${email_address}`}

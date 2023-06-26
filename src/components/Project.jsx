@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import placeholder from './../assets/placeholder.png';
+import { BsArrowRightCircle } from 'react-icons/bs';
 
 export default function Project({
 	project_name,
@@ -25,7 +26,7 @@ export default function Project({
 						/>
 					)}
 				</Link>
-				<div className="project-info my-2 flex h-24 w-72 flex-col items-center gap-2">
+				<div className="my-2 flex h-24 w-72 flex-col items-center gap-2">
 					<h2 className="text-lg font-medium">{project_name}</h2>
 					<ul className="flex flex-wrap justify-center gap-1">
 						{tech_stack.map(tech => {
@@ -41,9 +42,10 @@ export default function Project({
 					</ul>
 					<Link
 						to={`/projects/${project_id}`}
-						className="mt-3 w-64 rounded-lg px-2 py-1 text-center text-sm font-medium transition-colors hover:bg-pink-100/30"
+						className="mt-3 flex items-center justify-center gap-3 px-1 text-center text-sm font-medium hover:translate-x-0.5 hover:bg-pink-100"
 					>
 						Details
+						{/* <BsArrowRightCircle /> */}
 					</Link>
 				</div>
 			</article>

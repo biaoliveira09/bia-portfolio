@@ -10,7 +10,6 @@ export default function ProjectDetails() {
 	const { project_id } = useParams();
 
 	const {
-		isLoading,
 		isError,
 		isSuccess,
 		data: project,
@@ -19,10 +18,6 @@ export default function ProjectDetails() {
 		queryKey: ['project', project_id],
 		queryFn: () => getProjectData(project_id),
 	});
-
-	if (isLoading) {
-		return <p>Loading...</p>;
-	}
 
 	if (isError) {
 		return <p>Error: {error.message}</p>;

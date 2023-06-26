@@ -13,15 +13,10 @@ export default function About() {
 		queryFn: () => getPostsData('interests'),
 	});
 
-	// const isLoading = aboutQuery.isLoading || interestsQuery.isLoading;
 	const isError = aboutQuery.isError || interestsQuery.isError;
 	const isSuccess = aboutQuery.isSuccess && interestsQuery.isSuccess;
 	const interestsError = interestsQuery.error;
 	const aboutError = aboutQuery.error;
-
-	// if (isLoading) {
-	// 	return <div>Loading...</div>;
-	// }
 
 	if (isError) {
 		return (
@@ -38,6 +33,7 @@ export default function About() {
 			short_intro,
 			bio,
 			skills_heading,
+			about_me,
 			more_about_me,
 			interests_heading,
 		} = aboutQuery.data.acf;
@@ -52,7 +48,8 @@ export default function About() {
 						<h1 className="mb-1 text-3xl font-bold">{short_intro}</h1>
 						<h2 className="text-md font-medium uppercase">{about_heading}</h2>
 						<p className="my-4">{bio}</p>
-						<p>{more_about_me}</p>
+						<p className="my-4">{about_me}</p>
+						<p className="my-4">{more_about_me}</p>
 					</Reveal>
 					<Reveal>
 						<TechStack skills_heading={skills_heading} />

@@ -6,9 +6,10 @@ export default function ProjectInfo({ project_info }) {
 	const handleToggle = index => {
 		setOpenItem(openItem === index ? null : index);
 	};
+
 	return (
-		<div className="join-vertical join  w-full bg-violet-100/50">
-			<div className="collapse-arrow join-item collapse">
+		<div className="project-info join-vertical join w-full">
+			<div className="collapse-arrow join-item collapse border border-pink-700">
 				<input
 					type="radio"
 					name="my-accordion-4"
@@ -23,15 +24,13 @@ export default function ProjectInfo({ project_info }) {
 				>
 					{highlights}
 				</label>
-				<div className="collapse-content">
-					{highlights_text} Lorem ipsum dolor sit amet consectetur adipisicing
-					elit. Nihil, sint recusandae, doloremque at tenetur neque beatae
-					doloribus magnam atque explicabo, possimus quisquam aliquam facilis
-					non. Deleniti cupiditate consequatur non officia.
-				</div>
+				<div
+					className="collapse-content"
+					dangerouslySetInnerHTML={{ __html: highlights_text }}
+				></div>
 			</div>
 
-			<div className="collapse-arrow join-item collapse">
+			<div className="collapse-arrow join-item collapse border border-pink-700">
 				<input
 					type="radio"
 					name="my-accordion-4"
@@ -46,7 +45,10 @@ export default function ProjectInfo({ project_info }) {
 				>
 					{process}
 				</label>
-				<div className="collapse-content">{process_text}</div>
+				<div
+					className="collapse-content"
+					dangerouslySetInnerHTML={{ __html: process_text }}
+				></div>
 			</div>
 		</div>
 	);

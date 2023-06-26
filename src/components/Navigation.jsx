@@ -26,27 +26,27 @@ export default function Navigation({
 				<nav className="social-nav fixed hidden gap-5 sm:bottom-2 sm:right-10 sm:z-50 sm:flex sm:items-center">
 					<a
 						href={linkedin_profile_link}
-						className="hover:text-amber-500"
+						className="hover:text-pink-600"
 						target="_blank"
 						rel="noreferrer"
 					>
-						<BsLinkedin className="h-5 w-5" />
+						<BsLinkedin className="h-5 w-5 hover:-translate-y-0.5" />
 					</a>
 					<a
 						href={github_profile_link}
-						className="hover:text-amber-500"
+						className="hover:text-pink-600"
 						target="_blank"
 						rel="noreferrer"
 					>
-						<BsGithub className="h-5 w-5" />
+						<BsGithub className="h-5 w-5 hover:-translate-y-0.5" />
 					</a>
 					<a
 						href={`mailto:${email_address}`}
-						className="flex gap-1 hover:text-amber-500"
+						className="flex gap-1 hover:text-pink-600"
 						target="_blank"
 						rel="noreferrer"
 					>
-						<MdEmail className="h-6 w-6" />
+						<MdEmail className="h-6 w-6 hover:-translate-y-0.5" />
 					</a>
 				</nav>
 			</header>
