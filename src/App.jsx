@@ -6,6 +6,7 @@ import ProjectDetails from './pages/ProjectDetails';
 import Bounce from './components/Bounce';
 import Footer from './components/Footer';
 import { getPages } from './utilities/api';
+import { APP_FOLDER_NAME } from './globals';
 
 const ABOUT_PAGE_ID = 20;
 
@@ -38,7 +39,7 @@ export default function App() {
 		return (
 			<>
 				<Bounce />
-				<Router>
+				<Router basename={`/${APP_FOLDER_NAME}`}>
 					<Navigation
 						name={name}
 						email_address={email_address}

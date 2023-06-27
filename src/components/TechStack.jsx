@@ -71,7 +71,7 @@ export default function TechStack({ skills_heading }) {
 							className={`flex items-center gap-1 border border-pink-700  px-2 py-1 uppercase ${
 								chosenCategory === 'all'
 									? 'bg-pink-700 text-stone-50 shadow'
-									: 'border-pink-700 bg-pink-100/30 text-pink-700 shadow'
+									: 'shadow-md transition-colors hover:bg-pink-700 hover:text-stone-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800'
 							}`}
 							onClick={handleCategoryClick}
 						>
@@ -81,8 +81,8 @@ export default function TechStack({ skills_heading }) {
 							id={DEV_CATEGORY}
 							className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
 								chosenCategory === DEV_CATEGORY.toString()
-									? 'bg-pink-700 text-stone-50 shadow'
-									: 'border-pink-700 bg-pink-100/30 text-pink-700 shadow'
+									? 'bg-pink-700 text-stone-50'
+									: 'shadow-md transition-colors hover:bg-pink-700 hover:text-stone-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800'
 							}`}
 							onClick={handleCategoryClick}
 						>
@@ -94,7 +94,7 @@ export default function TechStack({ skills_heading }) {
 							className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
 								chosenCategory === DESIGN_CATEGORY.toString()
 									? 'bg-pink-700 text-stone-50 shadow'
-									: 'border-pink-700 bg-pink-100/30 text-pink-700 shadow'
+									: 'shadow-md transition-colors hover:bg-pink-700 hover:text-stone-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800'
 							}`}
 							onClick={handleCategoryClick}
 						>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import placeholder from './../assets/placeholder.png';
 import { BsArrowUpRightCircle } from 'react-icons/bs';
-import { ImArrowUpRight2 } from 'react-icons/im';
 
 export default function Project({
 	project_name,
@@ -9,11 +9,20 @@ export default function Project({
 	project_screenshot,
 	tech_stack,
 }) {
+	useEffect(() => {
+		const img = new Image();
+		if (project_screenshot && project_screenshot.url) {
+			img.src = project_screenshot.url;
+		} else {
+			img.src = placeholder;
+		}
+	}, [project_screenshot]);
+
 	return (
 		<>
 			<article className="single-project z-30 flex h-80 w-80 flex-col items-center justify-center rounded-xl border-stone-100 bg-stone-50/30 shadow sm:h-80 sm:w-96">
 				<Link to={`/projects/${project_id}`}>
-					{project_screenshot ? (
+					{project_screenshot && project_screenshot.url ? (
 						<img
 							src={project_screenshot.url}
 							alt={project_screenshot.alt}
@@ -34,7 +43,6 @@ export default function Project({
 					>
 						<h2 className="text-xl font-medium">{project_name}</h2>
 						<BsArrowUpRightCircle className="h-5 w-5 hover:-translate-y-0.5" />
-						{/* <ImArrowUpRight2 className="h-4 w-4 hover:-translate-y-0.5" /> */}
 					</Link>
 					<ul className="flex flex-wrap justify-center gap-1">
 						{tech_stack.map(tech => {
