@@ -98,7 +98,7 @@ export default function ProjectDetails() {
 						</Reveal>
 						<Reveal>
 							<section className="other-projects z-30 flex flex-col items-center">
-								<h2 className="text-md m-4 font-bold sm:text-lg lg:text-xl">
+								<h2 className="text-md my-6 font-bold sm:text-lg lg:text-xl">
 									View All Projects
 								</h2>
 								<Carousel />
