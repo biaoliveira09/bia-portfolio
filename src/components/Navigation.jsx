@@ -29,24 +29,36 @@ export default function Navigation({
 						className="hover:text-pink-600"
 						target="_blank"
 						rel="noreferrer"
+						aria-label="LinkedIn profile"
 					>
-						<BsLinkedin className="h-5 w-5 hover:-translate-y-0.5" />
+						<BsLinkedin
+							className="h-5 w-5 hover:-translate-y-0.5"
+							aria-label="LinkedIn icon"
+						/>
 					</a>
 					<a
 						href={github_profile_link}
 						className="hover:text-pink-600"
 						target="_blank"
 						rel="noreferrer"
+						aria-label="Github profile"
 					>
-						<BsGithub className="h-5 w-5 hover:-translate-y-0.5" />
+						<BsGithub
+							className="h-5 w-5 hover:-translate-y-0.5"
+							aria-label="GitHub icon"
+						/>
 					</a>
 					<a
 						href={`mailto:${email_address}`}
 						className="flex gap-1 hover:text-pink-600"
 						target="_blank"
 						rel="noreferrer"
+						aria-label="Send email to bia@biaoliveira.com"
 					>
-						<MdEmail className="h-6 w-6 hover:-translate-y-0.5" />
+						<MdEmail
+							className="h-6 w-6 hover:-translate-y-0.5"
+							aria-label="Email icon"
+						/>
 					</a>
 				</nav>
 			</header>

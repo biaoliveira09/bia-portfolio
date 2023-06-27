@@ -43,6 +43,11 @@ export default function Projects() {
 								project_screenshot,
 								tech_stack,
 							} = project.acf;
+
+							// console.log(project.slug);
+
+							const project_slug = project.slug;
+
 							return (
 								<Reveal key={project.id}>
 									<Project
@@ -52,6 +57,7 @@ export default function Projects() {
 										project_id={project.id}
 										project_screenshot={project_screenshot}
 										tech_stack={tech_stack}
+										project_slug={project_slug}
 									/>
 								</Reveal>
 							);

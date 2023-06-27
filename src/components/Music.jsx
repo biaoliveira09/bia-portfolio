@@ -120,6 +120,7 @@ export default function Music({ playlistId }) {
 									allowFullScreen=""
 									allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 									loading="lazy"
+									title={`Spotify Embed of ${randomTrack.name}}`}
 								></iframe>
 							)}
 						</div>

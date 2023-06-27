@@ -1,8 +1,6 @@
 /**
  * Get access token from Spotify API
  * https://developer.spotify.com/documentation/web-api/tutorials/getting-started
- *
- *
  */
 async function getToken() {
 	const r = await fetch('https://accounts.spotify.com/api/token', {

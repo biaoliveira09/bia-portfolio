@@ -1,13 +1,14 @@
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { getProjectData } from '../utilities/api';
+import { useEffect } from 'react';
 import ProjectInfoAccordion from '../components/ProjectInfoAccordion';
 import placeholder from './../assets/placeholder.png';
 import Carousel from '../components/Carousel';
 import Reveal from '../utilities/Reveal';
 
 export default function ProjectDetails() {
-	const { project_id } = useParams();
+	const { project_slug } = useParams();
 
 	const {
 		isError,
@@ -15,9 +16,18 @@ export default function ProjectDetails() {
 		data: project,
 		error,
 	} = useQuery({
-		queryKey: ['project', project_id],
-		queryFn: () => getProjectData(project_id),
+		queryKey: ['project', project_slug],
+		queryFn: () => getProjectData(project_slug),
 	});
+
+	useEffect(() => {
+		const img = new Image();
+		if (project?.acf?.project_screenshot?.url) {
+			img.src = project.acf.project_screenshot.url;
+		} else {
+			img.src = placeholder;
+		}
+	}, [project]);
 
 	if (isError) {
 		return <p>Error: {error.message}</p>;

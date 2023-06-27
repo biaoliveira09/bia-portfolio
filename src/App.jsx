@@ -48,7 +48,7 @@ export default function App() {
 					/>
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="projects/:project_id" element={<ProjectDetails />} />
+						<Route path="projects/:project_slug" element={<ProjectDetails />} />
 					</Routes>
 				</Router>
 				<Footer name={name} />

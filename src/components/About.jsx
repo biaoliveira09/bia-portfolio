@@ -70,6 +70,7 @@ export default function About() {
 											<button
 												className="tooltip-primary tooltip tooltip-bottom"
 												data-tip="Pandemic hobby."
+												aria-label="Pandemic hobby disclaimer label"
 											>
 												<FaAsterisk className="text-purple-600" />
 											</button>

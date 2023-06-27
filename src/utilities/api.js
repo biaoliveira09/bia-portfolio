@@ -30,13 +30,13 @@ export const getPostsData = async type => {
 	}
 };
 
-export const getProjectData = async id => {
+export const getProjectData = async slug => {
 	try {
 		const response = await fetch(
-			`${API_URL}projects/${id}/?acf_format=standard`
+			`${API_URL}projects/?slug=${slug}&acf_format=standard`
 		);
 		const projects = await response.json();
-		return projects;
+		return projects[0]; // Assuming the response is an array, return the first project
 	} catch (error) {
 		throw new Error('Failed to retrieve project details');
 	}

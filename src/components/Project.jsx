@@ -8,6 +8,7 @@ export default function Project({
 	project_id,
 	project_screenshot,
 	tech_stack,
+	project_slug,
 }) {
 	useEffect(() => {
 		const img = new Image();
@@ -17,11 +18,12 @@ export default function Project({
 			img.src = placeholder;
 		}
 	}, [project_screenshot]);
+	console.log(project_slug);
 
 	return (
 		<>
 			<article className="single-project z-30 flex h-80 w-80 flex-col items-center justify-center rounded-xl border-stone-100 bg-stone-50/30 shadow sm:h-80 sm:w-96">
-				<Link to={`/projects/${project_id}`}>
+				<Link to={`/projects/${project_slug}`}>
 					{project_screenshot && project_screenshot.url ? (
 						<img
 							src={project_screenshot.url}
@@ -38,7 +40,7 @@ export default function Project({
 				</Link>
 				<div className="my-2 flex w-72 flex-col items-center gap-3">
 					<Link
-						to={`/projects/${project_id}`}
+						to={`/projects/${project_slug}`}
 						className="flex items-center gap-2 hover:-translate-y-0.5"
 					>
 						<h2 className="text-xl font-medium">{project_name}</h2>
