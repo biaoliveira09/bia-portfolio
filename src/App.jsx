@@ -50,7 +50,7 @@ export default function App() {
 						<Route path="projects/:project_id" element={<ProjectDetails />} />
 					</Routes>
 				</Router>
-				<Footer />
+				<Footer name={name} />
 			</>
 		);
 	}

@@ -9,13 +9,13 @@ export default function Project({
 }) {
 	return (
 		<>
-			<article className="single-project z-30 flex h-96 w-96 flex-col items-center justify-center rounded-xl border-stone-100 bg-stone-50/30 shadow">
+			<article className="single-project z-30 flex h-80 w-80 flex-col items-center justify-center rounded-xl border-stone-100 bg-stone-50/30 shadow sm:h-96 sm:w-96">
 				<Link to={`/projects/${project_id}`}>
 					{project_screenshot ? (
 						<img
 							src={project_screenshot.url}
 							alt={project_screenshot.alt}
-							className="mx-auto h-48 w-80 rounded-lg bg-violet-100 shadow-md transition-transform hover:-translate-y-0.5 hover:shadow-lg"
+							className="mx-auto w-72 rounded-lg bg-violet-100 shadow-md transition-transform hover:-translate-y-0.5 hover:shadow-lg sm:h-48 sm:w-80"
 						/>
 					) : (
 						<img
@@ -25,14 +25,14 @@ export default function Project({
 						/>
 					)}
 				</Link>
-				<div className="my-2 flex h-24 w-72 flex-col items-center gap-2">
+				<div className="my-2 flex w-72 flex-col items-center gap-2">
 					<h2 className="text-lg font-medium">{project_name}</h2>
 					<ul className="flex flex-wrap justify-center gap-1">
 						{tech_stack.map(tech => {
 							return (
 								<li
 									key={tech}
-									className=" bg-orange-100 px-0.5 py-0.5 text-sm uppercase"
+									className=" rounded-md bg-orange-100 px-1.5 py-0.5 text-sm uppercase"
 								>
 									{tech}
 								</li>

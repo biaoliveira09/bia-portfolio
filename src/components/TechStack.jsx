@@ -8,6 +8,7 @@ export default function TechStack({ skills_heading }) {
 	const [techStack, setTechStack] = useState([]);
 	const [displayTech, setDisplayTech] = useState([]);
 	const [chosenCategory, setChosenCategory] = useState('all');
+	const [animateTech, setAnimateTech] = useState(false);
 
 	const DEV_CATEGORY = 5;
 	const DESIGN_CATEGORY = 6;
@@ -15,6 +16,8 @@ export default function TechStack({ skills_heading }) {
 	function handleCategoryClick(e) {
 		const category = e.target.id;
 		setChosenCategory(category);
+		setAnimateTech(true);
+		setTimeout(() => setAnimateTech(false), 800);
 	}
 
 	const {
@@ -62,7 +65,7 @@ export default function TechStack({ skills_heading }) {
 			<section className="techstack-section mb-8 mt-10 lg:mb-12 lg:h-48">
 				<div className="controls-container flex flex-col items-center justify-between lg:flex-row">
 					<h2 className="mb-4 text-2xl font-bold">{skills_heading}</h2>
-					<div className="category-buttons mb-4 flex items-baseline justify-between gap-2">
+					<div className="category-buttons mb-4 flex items-baseline justify-between gap-1 sm:gap-2">
 						<button
 							id="all"
 							className={`flex items-center gap-1 border border-pink-700  px-2 py-1 uppercase ${
@@ -108,7 +111,9 @@ export default function TechStack({ skills_heading }) {
 									tech.tech_category.includes(DESIGN_CATEGORY)
 										? 'bg-orange-100'
 										: 'bg-violet-100'
-								} px-2 py-1 uppercase`}
+								} ${
+									animateTech ? 'animate-fade-in-up' : ''
+								} rounded-md px-1.5 py-1 uppercase`}
 								key={tech.id}
 							>
 								{tech.title.rendered}

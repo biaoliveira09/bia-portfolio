@@ -6,7 +6,7 @@ export default function Contact({ contact_heading }) {
 	return (
 		<>
 			<Reveal>
-				<section className="contact pt-20">
+				<section className="contact pb-20 pt-16 sm:pt-0">
 					<div className="flex justify-between">
 						<h2 className="mb-10 text-2xl font-bold">{contact_heading}</h2>
 					</div>
@@ -16,21 +16,21 @@ export default function Contact({ contact_heading }) {
 							target="_blank"
 							rel="noreferrer"
 						>
-							<BsLinkedin className="h-8 w-8 transition-transform hover:-translate-y-0.5 hover:text-orange-400" />
+							<BsLinkedin className="h-8 w-8 text-pink-700 transition-transform hover:-translate-y-0.5 hover:text-pink-600" />
 						</a>
 						<a
 							href="https://github.com/biaoliveira09"
 							target="_blank"
 							rel="noreferrer"
 						>
-							<BsGithub className="h-8 w-8 transition-transform hover:-translate-y-0.5 hover:text-orange-400" />
+							<BsGithub className="h-8 w-8 text-pink-700 transition-transform hover:-translate-y-0.5 hover:text-pink-600" />
 						</a>
 						<a
 							href="mailto:bia@biaoliveira.com"
 							target="_blank"
 							rel="noreferrer"
 						>
-							<MdEmail className="h-8 w-8 transition-transform hover:-translate-y-0.5 hover:text-orange-400" />
+							<MdEmail className="h-8 w-8 text-pink-700 transition-transform hover:-translate-y-0.5 hover:text-pink-600" />
 						</a>
 					</div>
 				</section>

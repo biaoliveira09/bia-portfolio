@@ -11,8 +11,8 @@ export default function Navigation({
 }) {
 	return (
 		<>
-			<header className="relative flex h-14 justify-around sm:justify-around sm:p-4">
-				<div className="fixed z-50 h-10 w-full px-6 py-2 sm:px-8">
+			<header className="relative flex h-14 justify-around sm:justify-around sm:p-5">
+				<div className="fixed z-50 h-10 w-full px-6 py-1 sm:px-8">
 					<Link to="/">{name}</Link>
 				</div>
 				<nav className="site-nav fixed bottom-4 z-50 flex items-center gap-20 text-lg sm:bottom-auto sm:right-10 sm:top-6 sm:gap-16 sm:text-base ">

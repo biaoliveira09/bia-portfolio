@@ -45,24 +45,26 @@ export default function About() {
 			>
 				<div className="about-intro flex flex-col justify-center sm:min-w-full lg:my-40">
 					<Reveal>
-						<h1 className="mb-1 text-3xl font-bold">{short_intro}</h1>
-						<h2 className="text-md font-medium uppercase">{about_heading}</h2>
-						<p className="my-4">{bio}</p>
-						<p className="my-4">{about_me}</p>
-						<p className="my-4">{more_about_me}</p>
+						<h1 className="mx-2 mb-1 text-3xl font-bold">{short_intro}</h1>
+						<h2 className="text-md mx-2 font-medium uppercase">
+							{about_heading}
+						</h2>
+						<p className="mx-3 my-4">{bio}</p>
+						<p className="mx-3 my-4">{about_me}</p>
+						<p className="mx-3 my-4">{more_about_me}</p>
 					</Reveal>
 					<Reveal>
 						<TechStack skills_heading={skills_heading} />
 					</Reveal>
 					<Reveal>
 						<h2 className="mb-4  text-2xl font-bold">{interests_heading}</h2>
-						<ul className="flex flex-wrap gap-2">
+						<ul className="flex flex-wrap gap-1 sm:gap-2">
 							{interestsData.map(interest => {
 								if (interest.interest_category.includes(8)) {
 									return (
 										<li
 											key={interest.id}
-											className="flex items-center gap-2 rounded-full border border-pink-700 px-3 py-1"
+											className="flex items-center gap-2 rounded-full border border-pink-700 px-2 py-1 sm:px-3"
 										>
 											{interest.title.rendered}
 											<button
@@ -77,7 +79,7 @@ export default function About() {
 									return (
 										<li
 											key={interest.id}
-											className="flex items-center rounded-full border border-pink-700 px-3 py-1"
+											className="flex items-center rounded-full border border-pink-700 px-2 py-1"
 										>
 											{interest.title.rendered}
 										</li>
