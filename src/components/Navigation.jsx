@@ -12,7 +12,7 @@ export default function Navigation({
 	return (
 		<>
 			<header className="relative flex h-14 justify-around sm:justify-around sm:p-5">
-				<div className="fixed z-50 h-10 w-full px-6 py-1 sm:px-8">
+				<div className="fixed z-50 h-10 w-full px-6 py-3 sm:px-8 sm:py-1">
 					<Link to="/">{name}</Link>
 				</div>
 				<nav className="site-nav fixed bottom-4 z-50 flex items-center gap-20 text-lg sm:bottom-auto sm:right-10 sm:top-6 sm:gap-16 sm:text-base ">
@@ -62,7 +62,7 @@ export default function Navigation({
 					</a>
 				</nav>
 			</header>
-			<div className="fixed left-0 right-0 top-0 z-40 h-11 w-full border-t bg-white sm:h-16 sm:w-full"></div>
+			<div className="fixed left-0 right-0 top-0 z-40 h-12 w-full border-t bg-white sm:h-16 sm:w-full"></div>
 			<div className="border-left fixed left-0 top-0 z-40 h-full w-6 bg-white sm:w-8"></div>
 			<div className="border-right fixed right-0 top-0 z-40 h-full w-6 bg-white sm:w-8"></div>
 			<div className="border-bottom fixed bottom-0 left-0 right-0 z-40 h-14 bg-white sm:h-10"></div>
