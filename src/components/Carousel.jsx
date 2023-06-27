@@ -33,13 +33,16 @@ export default function Carousel() {
 					{projects.slice(currentIndex, currentIndex + 2).map(project => {
 						const { project_name, project_screenshot } = project.acf;
 						return (
-							<div className="carousel-item" key={project.id}>
+							<div
+								className="carousel-item hover:-translate-y-0.5"
+								key={project.id}
+							>
 								<Link to={`/projects/${project.id}`}>
 									{project_screenshot ? (
 										<img
 											src={project_screenshot.url}
 											alt={project_screenshot.alt}
-											className="rounded-box mx-auto h-40 w-64 bg-violet-100 shadow-lg"
+											className="rounded-box mx-auto h-40 w-64 bg-violet-100 shadow-lg hover:bg-orange-100"
 										/>
 									) : (
 										<img

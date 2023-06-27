@@ -15,7 +15,7 @@ export default function Project({
 						<img
 							src={project_screenshot.url}
 							alt={project_screenshot.alt}
-							className="mx-auto w-72 rounded-lg bg-violet-100 shadow-md transition-transform hover:-translate-y-0.5 hover:shadow-lg sm:h-48 sm:w-80"
+							className="mx-auto w-72 rounded-lg bg-violet-100 shadow-md transition-transform hover:-translate-y-0.5  hover:shadow-lg sm:h-48 sm:w-80"
 						/>
 					) : (
 						<img
