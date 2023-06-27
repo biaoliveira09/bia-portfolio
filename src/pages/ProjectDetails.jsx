@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { getProjectData } from '../utilities/api';
-import ProjectInfo from '../components/ProjectInfo';
+import ProjectInfoAccordion from '../components/ProjectInfoAccordion';
 import placeholder from './../assets/placeholder.png';
 import Carousel from '../components/Carousel';
 import Reveal from '../utilities/Reveal';
@@ -49,7 +49,7 @@ export default function ProjectDetails() {
 								<img
 									src={project_screenshot.url}
 									alt={project_screenshot.alt}
-									className="w-64 rounded bg-violet-50 shadow-lg sm:w-96 md:w-9/12 lg:w-11/12"
+									className="w-64 rounded bg-violet-100 shadow-lg sm:w-96 md:w-9/12 lg:w-11/12"
 								/>
 							) : (
 								<img
@@ -94,7 +94,7 @@ export default function ProjectDetails() {
 							</div>
 						</Reveal>
 						<Reveal>
-							<ProjectInfo project_info={project_info} />
+							<ProjectInfoAccordion project_info={project_info} />
 						</Reveal>
 						<Reveal>
 							<section className="other-projects z-30 flex flex-col items-center">

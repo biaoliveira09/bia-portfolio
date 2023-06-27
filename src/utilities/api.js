@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8888/bia-portfolio/wp-json/wp/v2/';
+const API_URL = 'https://biaoliveira.com/bia-portfolio/wp-json/wp/v2/';
 
 export const getPages = async id => {
 	try {

@@ -1,9 +1,8 @@
 /**
  * Get access token from Spotify API
+ * https://developer.spotify.com/documentation/web-api/tutorials/getting-started
  *
- * @see https://developer.spotify.com/documentation/web-api/tutorials/getting-started
  *
- * @returns {object}
  */
 async function getToken() {
 	const r = await fetch('https://accounts.spotify.com/api/token', {
@@ -22,10 +21,8 @@ async function getToken() {
 
 /**
  * Get artist by id
- *
- * @param {string} id
- * @returns {object}
  */
+
 export async function getPlaylist(id) {
 	const { access_token } = await getToken();
 	const r = await fetch(`https://api.spotify.com/v1/playlists/${id}`, {

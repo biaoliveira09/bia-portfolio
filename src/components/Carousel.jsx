@@ -39,7 +39,7 @@ export default function Carousel() {
 										<img
 											src={project_screenshot.url}
 											alt={project_screenshot.alt}
-											className="rounded-box mx-auto h-40 w-64 bg-violet-50 shadow-lg"
+											className="rounded-box mx-auto h-40 w-64 bg-violet-100 shadow-lg"
 										/>
 									) : (
 										<img

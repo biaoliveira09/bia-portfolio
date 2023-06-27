@@ -106,7 +106,7 @@ export default function TechStack({ skills_heading }) {
 							<li
 								className={`${
 									tech.tech_category.includes(DESIGN_CATEGORY)
-										? 'bg-amber-100'
+										? 'bg-orange-100'
 										: 'bg-violet-100'
 								} px-2 py-1 uppercase`}
 								key={tech.id}
