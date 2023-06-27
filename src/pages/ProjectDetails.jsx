@@ -6,6 +6,8 @@ import ProjectInfoAccordion from '../components/ProjectInfoAccordion';
 import placeholder from './../assets/placeholder.png';
 import Carousel from '../components/Carousel';
 import Reveal from '../utilities/Reveal';
+import { BsGlobe2 } from 'react-icons/bs';
+import { BsGithub } from 'react-icons/bs';
 
 export default function ProjectDetails() {
 	const { project_slug } = useParams();
@@ -70,32 +72,34 @@ export default function ProjectDetails() {
 							)}
 						</Reveal>
 						<Reveal>
-							<p className="max-w-prose">{project_overview}</p>
-						</Reveal>
-						<Reveal>
 							<div className="project-links flex flex-wrap justify-center gap-2">
 								<a
 									href={github_repository_url}
-									className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md transition-colors hover:-translate-y-0.5 hover:bg-pink-700 hover:text-stone-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800"
+									className="flex items-center gap-2 bg-pink-600 px-3 py-1 text-stone-50 shadow-md transition-colors hover:-translate-y-0.5 hover:bg-pink-700 hover:text-stone-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800"
 								>
 									GitHub Repository
+									<BsGithub className="h-4 w-4" />
 								</a>
 								<a
 									href={live_preview_url}
-									className="bg-pink-600 px-3 py-1 text-stone-50 shadow-md transition-colors hover:-translate-y-0.5 hover:bg-pink-700 hover:text-stone-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800"
+									className="flex items-center gap-2 bg-pink-600 px-3 py-1 text-stone-50 shadow-md transition-colors hover:-translate-y-0.5 hover:bg-pink-700 hover:text-stone-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800 "
 								>
 									Live Site
+									<BsGlobe2 className="h-4 w-4" />
 								</a>
 							</div>
 						</Reveal>
 						<Reveal>
-							<div className="tech-used flex">
+							<p className="max-w-prose">{project_overview}</p>
+						</Reveal>
+						<Reveal>
+							<div className="tech-used flex gap-3">
 								<ul className="flex flex-wrap justify-center gap-2">
 									{tech_stack &&
 										tech_stack.map(tech => (
 											<li
 												key={tech}
-												className="bg-orange-100 px-2 py-1 text-sm uppercase"
+												className="rounded bg-orange-100 px-2 py-1 text-sm uppercase"
 											>
 												{tech}
 											</li>

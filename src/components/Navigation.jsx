@@ -1,7 +1,7 @@
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
 
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Navigation({
 	name,
@@ -13,15 +13,24 @@ export default function Navigation({
 		<>
 			<header className="relative flex h-14 justify-around sm:justify-around sm:p-5">
 				<div className="fixed z-50 h-10 w-full px-6 py-3 sm:px-8 sm:py-1">
-					<Link to="/">{name}</Link>
+					<HashLink smooth to="/#" className="sm:hover:-translate-y-0.5">
+						{name}
+					</HashLink>
 				</div>
 				<nav className="site-nav fixed bottom-4 z-50 flex items-center gap-20 text-lg sm:bottom-auto sm:right-10 sm:top-6 sm:gap-16 sm:text-base ">
-					<a href="/#projects" className="sm:hover:-translate-y-0.5">
+					{/* <a href="/#projects" className="sm:hover:-translate-y-0.5">
 						Projects
-					</a>
-					<a href="/#about" className="sm:hover:-translate-y-0.5">
+					</a> */}
+					<HashLink
+						smooth
+						to="/#projects"
+						className="sm:hover:-translate-y-0.5"
+					>
+						Projects
+					</HashLink>
+					<HashLink smooth to="/#about" className="sm:hover:-translate-y-0.5">
 						About
-					</a>
+					</HashLink>
 				</nav>
 				<nav className="social-nav fixed hidden gap-5 sm:bottom-2 sm:right-10 sm:z-50 sm:flex sm:items-center">
 					<a

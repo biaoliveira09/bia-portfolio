@@ -86,7 +86,7 @@ export default function Music({ playlistId }) {
 						<h2 className="pb-3 text-2xl font-bold">
 							Currently Listening To...
 						</h2>
-						<div className="rounded-xl bg-stone-50/30 px-7 pb-0 pt-8 shadow">
+						<div className="rounded-xl bg-stone-50/30 px-7 pb-7 pt-8 shadow">
 							<p>
 								Listen to one of my favourite tracks{' '}
 								<span className="font-bold">
@@ -112,10 +112,13 @@ export default function Music({ playlistId }) {
 							</button>
 							{randomTrack && (
 								<iframe
-									style={{ borderRadius: '12px' }}
+									style={{
+										borderRadius: '12px',
+										backgroundColor: 'transparent',
+									}}
 									src={EMBEDDABLE_URL + randomTrack.id}
+									height="240"
 									width="100%"
-									height="200"
 									frameBorder="0"
 									allowFullScreen=""
 									allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
