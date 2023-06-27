@@ -37,7 +37,7 @@ export default function Carousel() {
 								className="carousel-item hover:-translate-y-0.5"
 								key={project.id}
 							>
-								<Link to={`/projects/${project.id}`}>
+								<Link to={`/projects/${project.slug}`}>
 									{project_screenshot ? (
 										<img
 											src={project_screenshot.url}
