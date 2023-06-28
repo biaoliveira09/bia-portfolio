@@ -28,7 +28,7 @@ export default function Projects() {
 			<>
 				<section
 					id="projects"
-					className="projects-section z-30 flex  h-fit flex-col items-center justify-center pt-20 sm:min-w-full"
+					className="projects-section z-30 flex h-fit flex-col items-center justify-center py-28 sm:min-w-full lg:pt-40"
 				>
 					<Reveal>
 						<h2 className="z-30 mb-3 text-3xl font-bold sm:mb-6 md:mb-10">
@@ -43,8 +43,6 @@ export default function Projects() {
 								project_screenshot,
 								tech_stack,
 							} = project.acf;
-
-							// console.log(project.slug);
 
 							const project_slug = project.slug;
 

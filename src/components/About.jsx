@@ -43,7 +43,7 @@ export default function About() {
 				id="about"
 				className="about z-30 mx-5 my-20 pt-20 sm:mx-auto lg:pt-8"
 			>
-				<div className="about-intro flex flex-col justify-center sm:min-w-full lg:my-40">
+				<div className="about-intro flex flex-col justify-center sm:min-w-full lg:my-20">
 					<Reveal>
 						<h1 className="mx-2 mb-1 text-3xl font-bold">{short_intro}</h1>
 						<h2 className="text-md mx-2 font-medium uppercase">
@@ -70,7 +70,7 @@ export default function About() {
 											<button
 												className="tooltip-primary tooltip tooltip-bottom"
 												data-tip="Pandemic hobby."
-												aria-label="Pandemic hobby disclaimer label"
+												aria-label="Pandemic hobby disclaimer."
 											>
 												<FaAsterisk className="text-purple-600" />
 											</button>

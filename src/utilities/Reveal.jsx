@@ -26,7 +26,7 @@ export default function Reveal({ children }) {
 						opacity: 1,
 						y: 0,
 						transition: {
-							duration: 0.9,
+							duration: 0.75,
 							ease: 'easeInOut',
 							delay: 0.1,
 						},

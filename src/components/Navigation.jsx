@@ -18,9 +18,6 @@ export default function Navigation({
 					</HashLink>
 				</div>
 				<nav className="site-nav fixed bottom-4 z-50 flex items-center gap-20 text-lg sm:bottom-auto sm:right-10 sm:top-6 sm:gap-16 sm:text-base ">
-					{/* <a href="/#projects" className="sm:hover:-translate-y-0.5">
-						Projects
-					</a> */}
 					<HashLink
 						smooth
 						to="/#projects"

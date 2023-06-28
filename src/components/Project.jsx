@@ -5,7 +5,6 @@ import { BsArrowUpRightCircle } from 'react-icons/bs';
 
 export default function Project({
 	project_name,
-	project_id,
 	project_screenshot,
 	tech_stack,
 	project_slug,
@@ -28,13 +27,13 @@ export default function Project({
 						<img
 							src={project_screenshot.url}
 							alt={project_screenshot.alt}
-							className="mx-auto mb-3 w-72 rounded-lg bg-violet-100 shadow-md  hover:-translate-y-0.5 hover:shadow-lg sm:h-48 sm:w-80"
+							className="mx-auto mb-3 w-72 rounded-xl bg-violet-100 shadow-md  hover:-translate-y-0.5 hover:shadow-lg sm:h-48 sm:w-80"
 						/>
 					) : (
 						<img
 							src={placeholder}
 							alt="placeholder"
-							className="mx-auto mb-3 h-48 w-80 rounded-lg shadow-md hover:-translate-y-0.5 hover:shadow-lg"
+							className="mx-auto mb-3 h-48 w-80 rounded-xl shadow-md hover:-translate-y-0.5 hover:shadow-lg"
 						/>
 					)}
 				</Link>
@@ -58,12 +57,6 @@ export default function Project({
 							);
 						})}
 					</ul>
-					{/* <Link
-						to={`/projects/${project_id}`}
-						className="mt-3 flex items-center justify-center gap-3 px-1 text-center text-sm font-medium hover:-translate-y-0.5 hover:bg-pink-100"
-					>
-						Details
-					</Link> */}
 				</div>
 			</article>
 		</>

@@ -103,7 +103,7 @@ export default function TechStack({ skills_heading }) {
 						</button>
 					</div>
 				</div>
-				<div className="skills-container rounded-lg bg-stone-50/30 p-4 shadow">
+				<div className="skills-container rounded-xl bg-stone-50/30 p-4 shadow">
 					<ul className="flex flex-wrap gap-2">
 						{displayTech.map(tech => (
 							<li
