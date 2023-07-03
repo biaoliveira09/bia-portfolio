@@ -39,16 +39,23 @@ export default function Home() {
 									href={linkedin_profile_link}
 									target="_blank"
 									rel="noreferrer"
+									aria-label="Bia Oliveira LinkedIn Profile"
 								>
 									LinkedIn
 								</a>
-								<a href={github_profile_link} target="_blank" rel="noreferrer">
+								<a
+									href={github_profile_link}
+									target="_blank"
+									rel="noreferrer"
+									aria-label="Bia Oliveira GitHub profile"
+								>
 									GitHub
 								</a>
 								<a
 									href={`mailto:${email_address}`}
 									target="_blank"
 									rel="noreferrer"
+									aria-label="Send email to bia@biaoliveira.com"
 								>
 									Email
 								</a>

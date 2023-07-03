@@ -21,7 +21,10 @@ export default function Project({
 
 	return (
 		<>
-			<article className="single-project z-30 flex h-80 w-80 flex-col items-center justify-center rounded-xl border-stone-100 bg-stone-50/30 shadow sm:h-80 sm:w-96">
+			<article
+				id="main"
+				className="single-project z-30 flex h-80 w-80 flex-col items-center justify-center rounded-xl border-stone-100 bg-stone-50/30 shadow sm:h-80 sm:w-96"
+			>
 				<Link to={`/projects/${project_slug}`}>
 					{project_screenshot && project_screenshot.url ? (
 						<img
@@ -33,7 +36,7 @@ export default function Project({
 						<img
 							src={placeholder}
 							alt="placeholder"
-							className="mx-auto mb-3 h-48 w-80 rounded-xl shadow-md hover:-translate-y-0.5 hover:shadow-lg"
+							className="mx-auto mb-3 w-72 rounded-xl shadow-md hover:-translate-y-0.5 hover:shadow-lg"
 						/>
 					)}
 				</Link>

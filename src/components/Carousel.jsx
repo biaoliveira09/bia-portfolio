@@ -16,7 +16,9 @@ export default function Carousel() {
 	};
 
 	const handleNextClick = () => {
-		setCurrentIndex(prevIndex => Math.min(prevIndex + 1, projects.length - 2));
+		setCurrentIndex(prevIndex =>
+			prevIndex < projects.length - 2 ? prevIndex + 1 : 0
+		);
 	};
 
 	if (isSuccess) {
@@ -86,7 +88,7 @@ export default function Carousel() {
 						</span>
 					</button>
 				)}
-				{currentIndex < projects.length - 2 && (
+				{projects.length > 1 && (
 					<button
 						type="button"
 						className="group absolute right-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
