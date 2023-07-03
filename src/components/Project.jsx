@@ -17,7 +17,6 @@ export default function Project({
 			img.src = placeholder;
 		}
 	}, [project_screenshot]);
-	console.log(project_slug);
 
 	return (
 		<>

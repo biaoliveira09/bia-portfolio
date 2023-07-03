@@ -4,10 +4,11 @@ import { getProjectData } from '../utilities/api';
 import { useEffect } from 'react';
 import ProjectInfoAccordion from '../components/ProjectInfoAccordion';
 import placeholder from './../assets/placeholder.png';
-import Carousel from '../components/Carousel';
+// import Carousel from '../components/Carousel2';
 import Reveal from '../utilities/Reveal';
 import { BsGlobe2 } from 'react-icons/bs';
 import { BsGithub } from 'react-icons/bs';
+import ResponsiveCarousel from '../components/ResponsiveCarousel';
 
 export default function ProjectDetails() {
 	const { project_slug } = useParams();
@@ -118,9 +119,10 @@ export default function ProjectDetails() {
 						<Reveal>
 							<section className="other-projects z-30 flex flex-col items-center">
 								<h2 className="text-md my-6 font-bold sm:text-lg lg:text-xl">
-									View All Projects
+									View More Projects
 								</h2>
-								<Carousel />
+								{/* <Carousel /> */}
+								<ResponsiveCarousel currentProject={project_slug} />
 							</section>
 						</Reveal>
 					</div>
