@@ -6,6 +6,7 @@ import ProjectDetails from './pages/ProjectDetails';
 import Bounce from './components/Bounce';
 import Footer from './components/Footer';
 import { getPages } from './utilities/api';
+import SkipToContentLink from './components/SkipToContentLink';
 
 const ABOUT_PAGE_ID = 20;
 
@@ -39,11 +40,7 @@ export default function App() {
 			<>
 				<Bounce />
 				<Router>
-					<div className="skip">
-						<a className="skip-link" href="#main">
-							Skip to content{' '}
-						</a>
-					</div>
+					<SkipToContentLink />
 					<Navigation
 						name={name}
 						email_address={email_address}
