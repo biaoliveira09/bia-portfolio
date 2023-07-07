@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import placeholder from './../assets/placeholder.png';
 import { useProjects } from './Projects';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Carousel({ currentProject }) {
 	const carouselRef = useRef(null);
@@ -47,7 +47,7 @@ export default function Carousel({ currentProject }) {
 						const { project_name, project_screenshot } = project.acf;
 						return (
 							<div key={project.id} className="carousel-item">
-								<Link to={`/projects/${project.slug}`}>
+								<HashLink smooth to={`/projects/${project.slug}/#`}>
 									{project_screenshot ? (
 										<img
 											src={project_screenshot.url}
@@ -64,7 +64,7 @@ export default function Carousel({ currentProject }) {
 									<h2 className="m-auto pt-2 text-center font-medium">
 										{project_name}
 									</h2>
-								</Link>
+								</HashLink>
 							</div>
 						);
 					})}

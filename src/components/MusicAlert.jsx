@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BiMusic } from 'react-icons/bi';
+import { HashLink } from 'react-router-hash-link';
 
 export default function MusicAlert({ track_name, artists }) {
 	const [expanded, setExpanded] = useState(false);
@@ -13,7 +14,7 @@ export default function MusicAlert({ track_name, artists }) {
 	};
 
 	return (
-		<a href="/#music">
+		<HashLink smooth to="/#music">
 			<div
 				className={`fixed bottom-16 right-0 z-30 hidden h-20 max-w-sm cursor-pointer rounded-full bg-pink-700 transition-all duration-700 md:flex ${
 					expanded ? 'hover:bg-pink-300 md:w-1/3 lg:w-1/4' : 'md:w-28'
@@ -34,6 +35,6 @@ export default function MusicAlert({ track_name, artists }) {
 					)}
 				</div>
 			</div>
-		</a>
+		</HashLink>
 	);
 }
