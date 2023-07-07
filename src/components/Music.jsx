@@ -74,14 +74,9 @@ export default function Music({ playlistId }) {
 	}, [randomTrack]);
 
 	useEffect(() => {
-		window.onSpotifyIframeApiReady = IFrameAPI => {
-			const options = {
-				// width: 400,
-				// height: 400,
-				uri: `spotify:track:${randomTrack.id}`,
-			};
-			const callback = EmbedController => {};
-			IFrameAPI.createController(iframeRef.current, options, callback);
+		window.onSpotifyIframeApiReady = function () {
+			const embed = new Spotify.EmbedController('spotify-embed');
+			embed.loadUri(`spotify:track:${randomTrack.id}`);
 		};
 
 		return () => {
