@@ -100,29 +100,32 @@ export default function Music({ playlistId }) {
 							Currently Listening To...
 						</h2>
 						<div className="rounded-xl bg-stone-50/30 px-7 pb-7 pt-8 shadow">
-							<p>
-								Listen to one of my favourite tracks{' '}
-								<span className="font-bold">
-									{randomTrack && randomTrack.name}
-								</span>{' '}
-								by {artists} randomly selected from my playlist{' '}
-								<a
-									href={playlistExternalUrls.spotify}
-									className="underline hover:text-orange-500"
-									target="_blank"
-									rel="noreferrer"
-								>
-									{playlistName}
-								</a>{' '}
-								using the Spotify API.
-							</p>
+							<div className="flex h-[140px] flex-col justify-between sm:h-[135px]">
+								<p>
+									Listen to one of my favourite tracks{' '}
+									<span className="font-bold">
+										{randomTrack && randomTrack.name}
+									</span>{' '}
+									by {artists} randomly selected from my playlist{' '}
+									<a
+										href={playlistExternalUrls.spotify}
+										className="underline hover:text-orange-500"
+										target="_blank"
+										rel="noreferrer"
+									>
+										{playlistName}
+									</a>{' '}
+									using the Spotify API.
+								</p>
 
-							<button
-								className="m-auto mb-4 mt-3 flex items-center gap-2 rounded bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md transition-colors hover:-translate-y-0.5 hover:bg-pink-700 hover:shadow-lg hover:duration-75 focus:outline-none focus:ring-4 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800"
-								onClick={handleChangeSongClick}
-							>
-								Change Song <FiRefreshCw className="h-5 w-5" />
-							</button>
+								<button
+									className="m-auto mb-4 mt-3 flex items-center gap-2 rounded bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md transition-colors hover:-translate-y-0.5 hover:bg-pink-700 hover:shadow-lg hover:duration-75 focus:outline-none focus:ring-4 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800"
+									onClick={handleChangeSongClick}
+								>
+									Change Song <FiRefreshCw className="h-5 w-5" />
+								</button>
+							</div>
+
 							{randomTrack && (
 								<div id="embed-iframe" ref={iframeRef}>
 									<iframe
