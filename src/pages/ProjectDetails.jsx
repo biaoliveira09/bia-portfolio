@@ -8,7 +8,6 @@ import Carousel from '../components/Carousel';
 import Reveal from '../utilities/Reveal';
 import { BsGlobe2 } from 'react-icons/bs';
 import { BsGithub } from 'react-icons/bs';
-// import ResponsiveCarousel from '../components/ResponsiveCarousel';
 
 export default function ProjectDetails() {
 	const { project_slug } = useParams();
@@ -121,8 +120,7 @@ export default function ProjectDetails() {
 								<h2 className="text-md my-6 font-bold sm:text-lg lg:text-xl">
 									View More Projects
 								</h2>
-								<Carousel />
-								{/* <ResponsiveCarousel currentProject={project_slug} /> */}
+								<Carousel currentProject={project_slug} />
 							</section>
 						</Reveal>
 					</div>
