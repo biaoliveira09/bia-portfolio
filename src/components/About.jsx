@@ -31,10 +31,8 @@ export default function About() {
 		const {
 			about_heading,
 			short_intro,
-			bio,
 			skills_heading,
 			about_me,
-			more_about_me,
 			interests_heading,
 		} = aboutQuery.data.acf;
 
@@ -49,9 +47,10 @@ export default function About() {
 						<h3 className="text-md mx-2 font-medium uppercase">
 							{about_heading}
 						</h3>
-						<p className="mx-3 my-4">{bio}</p>
-						<p className="mx-3 my-4">{about_me}</p>
-						<p className="mx-3 my-4">{more_about_me}</p>
+						<div
+							dangerouslySetInnerHTML={{ __html: about_me }}
+							className="about-paragraphs mx-3 my-4"
+						></div>
 					</Reveal>
 					<Reveal>
 						<TechStack skills_heading={skills_heading} />

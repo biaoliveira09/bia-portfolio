@@ -294,3 +294,9 @@ body {
 	list-style-type: disc;
 	margin-left: 2.25rem;
 }
+
+@layer components {
+	.about-paragraphs p {
+		@apply py-2;
+	}
+}

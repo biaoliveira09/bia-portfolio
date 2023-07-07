@@ -106,7 +106,7 @@ export default function Music({ playlistId }) {
 									<span className="font-bold">
 										{randomTrack && randomTrack.name}
 									</span>{' '}
-									by {artists} randomly selected from my playlist{' '}
+									by {artists}, randomly selected from my playlist{' '}
 									<a
 										href={playlistExternalUrls.spotify}
 										className="underline hover:text-orange-500"
