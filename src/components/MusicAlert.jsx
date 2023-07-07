@@ -22,16 +22,15 @@ export default function MusicAlert({ track_name, artists }) {
 				onMouseLeave={handleMouseLeave}
 			>
 				<div className="flex items-center overflow-hidden">
-					<a href="/#music" aria-label="Go to Music section">
-						<BiMusic className="mx-5 h-10 w-10 text-stone-50 transition-transform hover:scale-105 hover:text-pink-600 active:text-pink-700" />
-					</a>
+					{/* <a href="/#music" aria-label="Go to Music section"> */}
+					<BiMusic className="mx-5 h-10 w-10 text-stone-50 transition-transform hover:scale-105 hover:text-pink-600 active:text-pink-700" />
+					{/* </a> */}
 					{expanded && (
 						<div className="track-info">
 							<p className="mx-auto text-xs md:w-8/12 lg:w-11/12 lg:p-1 lg:pr-8 xl:text-sm">
 								Currently listening to{' '}
-								<a href="/#music" className="underline">
-									<span className="font-bold">{track_name}</span> by {artists}
-								</a>
+								<span className="font-bold underline">{track_name}</span> by{' '}
+								{artists}
 							</p>
 						</div>
 					)}

@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { FiRefreshCw } from 'react-icons/fi';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { getPlaylist } from '../utilities/spotify';
 import { getRandomTrack, getTrackArtists } from '../utilities/utils';
 import MusicAlert from './MusicAlert';
@@ -9,6 +9,8 @@ import Reveal from '../utilities/Reveal';
 const EMBEDDABLE_URL = 'https://open.spotify.com/embed/track/';
 
 export default function Music({ playlistId }) {
+	const iframeRef = useRef(null);
+
 	const [randomTrack, setRandomTrack] = useState([]);
 	const [artists, setArtists] = useState('');
 	const [tracks, setTracks] = useState([]);
@@ -71,6 +73,22 @@ export default function Music({ playlistId }) {
 		}
 	}, [randomTrack]);
 
+	useEffect(() => {
+		window.onSpotifyIframeApiReady = IFrameAPI => {
+			const options = {
+				// width: 400,
+				// height: 400,
+				uri: `spotify:track:${randomTrack.id}`,
+			};
+			const callback = EmbedController => {};
+			IFrameAPI.createController(iframeRef.current, options, callback);
+		};
+
+		return () => {
+			window.onSpotifyIframeApiReady = null;
+		};
+	}, [randomTrack]);
+
 	if (isError) {
 		return;
 	}
@@ -105,26 +123,28 @@ export default function Music({ playlistId }) {
 							</p>
 
 							<button
-								className="m-auto mb-4 mt-3 flex items-center gap-2 rounded bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md transition-colors hover:-translate-y-0.5 hover:bg-pink-700 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800"
+								className="m-auto mb-4 mt-3 flex items-center gap-2 rounded bg-pink-600 px-3 py-1 text-lg text-stone-100 shadow-md transition-colors hover:-translate-y-0.5 hover:bg-pink-700 hover:shadow-lg hover:duration-75 focus:outline-none focus:ring-4 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800"
 								onClick={handleChangeSongClick}
 							>
 								Change Song <FiRefreshCw className="h-5 w-5" />
 							</button>
 							{randomTrack && (
-								<iframe
-									style={{
-										borderRadius: '12px',
-										backgroundColor: 'transparent',
-									}}
-									src={EMBEDDABLE_URL + randomTrack.id}
-									height="240"
-									width="100%"
-									frameBorder="0"
-									allowFullScreen=""
-									allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-									loading="lazy"
-									title={`Spotify Embed of ${randomTrack.name}}`}
-								></iframe>
+								<div id="embed-iframe" ref={iframeRef}>
+									<iframe
+										style={{
+											borderRadius: '12px',
+											backgroundColor: 'transparent',
+										}}
+										src={EMBEDDABLE_URL + randomTrack.id}
+										height="240"
+										width="100%"
+										frameBorder="0"
+										allowFullScreen=""
+										allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+										loading="lazy"
+										title={`Spotify Embed of ${randomTrack.name}}`}
+									></iframe>
+								</div>
 							)}
 						</div>
 					</section>

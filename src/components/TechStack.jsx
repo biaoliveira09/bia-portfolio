@@ -107,11 +107,7 @@ export default function TechStack({ skills_heading }) {
 					<ul className="flex flex-wrap gap-2">
 						{displayTech.map(tech => (
 							<li
-								className={`${
-									tech.tech_category.includes(DESIGN_CATEGORY)
-										? 'bg-orange-100'
-										: 'bg-violet-100'
-								} ${
+								className={`bg-purple-100 ${
 									animateTech ? 'animate-fade-in-up' : ''
 								} rounded-md px-1.5 py-1 uppercase`}
 								key={tech.id}
