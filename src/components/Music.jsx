@@ -100,7 +100,7 @@ export default function Music({ playlistId }) {
 							Currently Listening To...
 						</h2>
 						<div className="rounded-xl bg-stone-50/30 px-7 pb-7 pt-8 shadow">
-							<div className="flex h-[160px] flex-col justify-between sm:h-[135px]">
+							<div className="flex h-[185px] flex-col justify-between sm:h-[135px]">
 								<p>
 									Listen to one of my favourite tracks{' '}
 									<span className="font-bold">
