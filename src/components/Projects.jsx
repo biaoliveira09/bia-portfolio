@@ -35,7 +35,7 @@ export default function Projects() {
 							Projects
 						</h2>
 					</Reveal>
-					<div className="projects-wrapper flex flex-col flex-wrap items-center justify-center gap-4 sm:mx-10 md:flex-row">
+					<div className="projects-wrapper flex flex-col flex-wrap items-center justify-center gap-6 sm:mx-10 sm:gap-4 md:flex-row">
 						{projects.map(project => {
 							const {
 								project_name,

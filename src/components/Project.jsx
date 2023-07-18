@@ -20,13 +20,13 @@ export default function Project({
 
 	return (
 		<>
-			<article className="single-project z-30 flex h-80 w-80 flex-col items-center justify-center rounded-xl border-stone-100 bg-stone-50/30 shadow sm:h-80 sm:w-96">
+			<article className="single-project z-30 flex h-80 w-80 flex-col items-center justify-center rounded-xl border-stone-50/30 bg-stone-50/30 shadow sm:h-80 sm:w-[340px]">
 				<Link to={`/projects/${project_slug}`}>
 					{project_screenshot && project_screenshot.url ? (
 						<img
 							src={project_screenshot.url}
 							alt={project_screenshot.alt}
-							className="mx-auto mb-3 w-72 rounded-xl bg-violet-100 shadow-md  hover:-translate-y-0.5 hover:shadow-lg sm:h-48 sm:w-80"
+							className="mx-auto mb-3 w-72 rounded-xl bg-violet-100 shadow-md  hover:-translate-y-0.5 hover:shadow-lg sm:h-48"
 						/>
 					) : (
 						<img
@@ -49,7 +49,7 @@ export default function Project({
 							return (
 								<li
 									key={tech}
-									className=" rounded-md bg-orange-100 px-1.5 py-0.5 text-sm uppercase"
+									className="rounded-md bg-orange-100 px-1.5 py-0.5 text-sm uppercase"
 								>
 									{tech}
 								</li>
