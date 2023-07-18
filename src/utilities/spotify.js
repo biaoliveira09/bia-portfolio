@@ -20,7 +20,6 @@ async function getToken() {
 /**
  * Get artist by id
  */
-
 export async function getPlaylist(id) {
 	const { access_token } = await getToken();
 	const r = await fetch(`https://api.spotify.com/v1/playlists/${id}`, {
