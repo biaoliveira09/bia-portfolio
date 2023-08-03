@@ -30,7 +30,7 @@ export default function Home() {
 					className="z-30 flex flex-col items-center overflow-hidden"
 				>
 					<Reveal>
-						<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-96 md:h-[39rem]">
+						<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-96 md:h-screen">
 							<h1 className="z-30 text-4xl font-bold sm:text-6xl md:text-7xl xl:text-8xl">
 								{name}
 							</h1>
