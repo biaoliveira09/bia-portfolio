@@ -7,6 +7,7 @@ import Bounce from './components/Bounce';
 import Footer from './components/Footer';
 import { getPages } from './utilities/api';
 import SkipToContentLink from './components/SkipToContentLink';
+import TabMenu from './components/TabMenu';
 
 const ABOUT_PAGE_ID = 20;
 
@@ -47,6 +48,7 @@ export default function App() {
 						github_profile_link={github_profile_link}
 						linkedin_profile_link={linkedin_profile_link}
 					/>
+					<TabMenu />
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="projects/:project_slug" element={<ProjectDetails />} />
