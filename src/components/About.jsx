@@ -39,7 +39,7 @@ export default function About() {
 		return (
 			<section
 				id="about"
-				className="about z-30 mx-5 my-20 pt-20 sm:mx-auto lg:pt-8"
+				className="about z-30 mx-5 my-1 pt-20 sm:mx-auto sm:my-20 lg:pt-8"
 			>
 				<div className="about-intro flex flex-col justify-center sm:min-w-full lg:my-20">
 					<Reveal>
