@@ -34,7 +34,7 @@ export default function Carousel({ currentProject }) {
 		return (
 			<div
 				ref={carouselRef}
-				className="carousel-center carousel rounded-box space-x-4 bg-stone-50/90 p-4"
+				className="carousel-center carousel rounded-box space-x-3 bg-stone-50/90 p-4 sm:space-x-4"
 				style={{
 					display: 'flex',
 					overflowX: 'auto',
