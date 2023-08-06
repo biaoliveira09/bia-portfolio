@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import { getPages } from './utilities/api';
 import SkipToContentLink from './components/SkipToContentLink';
 import TabMenu from './components/TabMenu';
+import ProjectsPage from './pages/ProjectsPage';
 
 const ABOUT_PAGE_ID = 20;
 
@@ -39,7 +40,6 @@ export default function App() {
 			contactInfo.acf;
 		return (
 			<>
-				<Bounce />
 				<Router>
 					<SkipToContentLink />
 					<Navigation
@@ -52,9 +52,11 @@ export default function App() {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="projects/:project_slug" element={<ProjectDetails />} />
+						<Route path="projects" element={<ProjectsPage />} />
 					</Routes>
 				</Router>
 				<Footer name={name} />
+				<Bounce />
 			</>
 		);
 	}

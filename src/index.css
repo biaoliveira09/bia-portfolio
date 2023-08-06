@@ -41,6 +41,7 @@ body {
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	opacity: 0.4;
+	z-index: 1;
 }
 
 .background span:nth-child(0) {
@@ -299,4 +300,8 @@ body {
 	.about-paragraphs p {
 		@apply py-2;
 	}
+}
+
+.projects-page {
+	z-index: 90;
 }

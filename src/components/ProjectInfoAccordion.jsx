@@ -7,6 +7,7 @@ export default function ProjectInfoAccordion({ project_info }) {
 	const handleToggle = index => {
 		setOpenItem(openItem === index ? null : index);
 	};
+	console.log(process_text);
 
 	return (
 		<section className="project-accordion flex flex-col items-center">

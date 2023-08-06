@@ -39,7 +39,7 @@ export default function About() {
 		return (
 			<section
 				id="about"
-				className="about z-30 mx-5 my-1 pt-20 sm:mx-auto sm:my-20 lg:pt-8"
+				className="about z-30 mx-5 my-1 pt-8 sm:mx-auto sm:my-20 sm:pt-20 lg:pt-8"
 			>
 				<div className="about-intro flex flex-col justify-center sm:min-w-full lg:my-20">
 					<Reveal>
@@ -56,7 +56,7 @@ export default function About() {
 						<TechStack skills_heading={skills_heading} />
 					</Reveal>
 					<Reveal>
-						<h3 className="mb-4  text-2xl font-bold">{interests_heading}</h3>
+						<h3 className="mb-4 text-2xl font-bold">{interests_heading}</h3>
 						<ul className="flex flex-wrap gap-1 sm:gap-2">
 							{interestsData.map(interest => {
 								if (interest.interest_category.includes(8)) {
