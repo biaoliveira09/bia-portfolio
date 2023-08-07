@@ -1,28 +1,8 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
-const TabMenu = () => {
+const App = () => {
 	const [activeTab, setActiveTab] = useState('home');
-
-	useLayoutEffect(() => {
-		const observer = new IntersectionObserver(
-			entries => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						setActiveTab(entry.target.id);
-					}
-				});
-			},
-			{ threshold: 0.2 }
-		);
-
-		const sections = document.querySelectorAll('section');
-		sections.forEach(section => observer.observe(section));
-
-		return () => {
-			sections.forEach(section => observer.unobserve(section));
-		};
-	}, []);
 
 	const handleTabClick = tab => {
 		setActiveTab(tab);
@@ -78,4 +58,4 @@ const TabMenu = () => {
 	);
 };
 
-export default TabMenu;
+export default App;

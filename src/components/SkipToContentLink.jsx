@@ -3,7 +3,7 @@ export default function SkipToContentLink() {
 		<div className="skip relative">
 			<a
 				className="skip-link absolute -top-16 left-1/2 -translate-x-1/2 transform bg-pink-600 p-2 text-white transition-transform duration-300 focus:top-0 focus:z-50"
-				href="#home"
+				href="#main"
 			>
 				Skip to content
 			</a>

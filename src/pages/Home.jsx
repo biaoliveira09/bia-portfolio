@@ -26,7 +26,7 @@ export default function Home() {
 		return (
 			<>
 				<main
-					id="home"
+					id="main"
 					className="z-30 flex flex-col items-center overflow-hidden"
 				>
 					<Reveal>
