@@ -32,7 +32,7 @@ export default function Projects() {
 			<>
 				<section
 					id="projects"
-					className="projects-section z-30 flex h-5/6 flex-col items-center justify-center py-10 sm:min-w-full sm:py-28 lg:pt-40"
+					className="projects-section z-30 flex h-fit flex-col items-center justify-center py-28 sm:min-w-full lg:pt-40"
 				>
 					<Reveal>
 						<h2 className="z-30 mb-3 text-3xl font-bold sm:mb-6 md:mb-10">

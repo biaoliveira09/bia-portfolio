@@ -1,5 +1,6 @@
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
+
 import { HashLink } from 'react-router-hash-link';
 
 export default function Navigation({
@@ -10,7 +11,7 @@ export default function Navigation({
 }) {
 	return (
 		<>
-			<header className="relative hidden h-12 justify-around sm:flex sm:justify-around sm:p-5">
+			<header className="relative flex h-14 justify-around sm:justify-around sm:p-5">
 				<div className="fixed z-50 h-10 w-full px-6 py-3 sm:px-8 sm:py-1">
 					<HashLink smooth to="/#" className="sm:hover:-translate-y-0.5">
 						{name}
@@ -67,10 +68,10 @@ export default function Navigation({
 					</a>
 				</nav>
 			</header>
-			<div className="fixed left-0 right-0 top-0 z-40 hidden h-10 w-full border-t bg-white sm:block sm:h-16 sm:w-full"></div>
-			<div className="border-left fixed left-0 top-0 z-40 hidden h-full w-3 bg-white sm:block sm:w-8"></div>
-			<div className="border-right fixed right-0 top-0 z-40 hidden h-full w-3 bg-white sm:block sm:w-8"></div>
-			<div className="border-bottom fixed bottom-0 left-0 right-0 z-40 hidden h-14 bg-white sm:block sm:h-10"></div>
+			<div className="fixed left-0 right-0 top-0 z-40 h-12 w-full border-t bg-white sm:h-16 sm:w-full"></div>
+			<div className="border-left fixed left-0 top-0 z-40 h-full w-6 bg-white sm:w-8"></div>
+			<div className="border-right fixed right-0 top-0 z-40 h-full w-6 bg-white sm:w-8"></div>
+			<div className="border-bottom fixed bottom-0 left-0 right-0 z-40 h-14 bg-white sm:h-10"></div>
 		</>
 	);
 }
