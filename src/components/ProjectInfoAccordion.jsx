@@ -7,11 +7,10 @@ export default function ProjectInfoAccordion({ project_info }) {
 	const handleToggle = index => {
 		setOpenItem(openItem === index ? null : index);
 	};
-	console.log(process_text);
 
 	return (
 		<section className="project-accordion flex flex-col items-center">
-			<div className="project-info join-vertical join w-4/5 bg-stone-50/50 lg:w-5/6 xl:w-4/6">
+			<div className="project-info join-vertical join w-[320px] bg-stone-50/50 sm:w-[550px] lg:w-5/6 xl:w-4/6">
 				<div className="collapse-arrow join-item collapse border border-pink-700">
 					<input
 						type="radio"
