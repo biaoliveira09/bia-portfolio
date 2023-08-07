@@ -11,7 +11,7 @@ export default function ProjectPage() {
 	if (isSuccess) {
 		return (
 			<Reveal>
-				<main className="projects-page z-30 flex h-5/6 flex-col items-center justify-center py-10 sm:min-w-full sm:py-28 lg:pt-40">
+				<main className="projects-page z-30 flex h-5/6 min-w-full flex-col items-center justify-center py-10 sm:py-28 lg:pt-40">
 					<h2 className="z-30 mb-3 text-3xl font-bold sm:mb-6 md:mb-10">
 						All Projects
 					</h2>

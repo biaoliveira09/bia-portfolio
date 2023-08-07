@@ -50,7 +50,7 @@ export default function ProjectDetails() {
 			<>
 				<main
 					id="main"
-					className="project-details m-7 mb-12 flex flex-col items-center sm:m-20"
+					className="project-details flex flex-col items-center sm:m-20"
 				>
 					<div className="project-container z-20 flex flex-col items-center gap-7 rounded-2xl bg-stone-50/30 p-6 md:p-10 lg:w-8/12">
 						<Reveal>
@@ -95,7 +95,7 @@ export default function ProjectDetails() {
 							</div>
 						</Reveal>
 						<Reveal>
-							<p className="max-w-prose">{project_overview}</p>
+							<p className="mx-2 sm:max-w-prose">{project_overview}</p>
 						</Reveal>
 						<Reveal>
 							<div className="tech-used flex gap-3">
