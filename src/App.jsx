@@ -7,6 +7,7 @@ import Bounce from './components/Bounce';
 import Footer from './components/Footer';
 import { getPages } from './utilities/api';
 import SkipToContentLink from './components/SkipToContentLink';
+import ProjectsPage from './pages/ProjectsPage';
 
 const ABOUT_PAGE_ID = 20;
 
