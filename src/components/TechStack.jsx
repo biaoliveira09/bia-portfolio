@@ -68,7 +68,7 @@ export default function TechStack({ skills_heading }) {
 					<div className="category-buttons mb-4 flex items-baseline justify-between gap-1 sm:gap-2">
 						<button
 							id="all"
-							className={`flex items-center gap-1 border border-pink-700  px-2 py-1 uppercase ${
+							className={`flex items-center gap-1 rounded border border-pink-700 px-2 py-1 uppercase ${
 								chosenCategory === 'all'
 									? 'bg-pink-700 text-stone-50 shadow'
 									: 'shadow-md transition-colors hover:bg-pink-700 hover:text-stone-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800'
@@ -79,7 +79,7 @@ export default function TechStack({ skills_heading }) {
 						</button>
 						<button
 							id={DEV_CATEGORY}
-							className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
+							className={`flex items-center gap-1 rounded border border-pink-700 px-2 py-1 uppercase ${
 								chosenCategory === DEV_CATEGORY.toString()
 									? 'bg-pink-700 text-stone-50'
 									: 'shadow-md transition-colors hover:bg-pink-700 hover:text-stone-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800'
@@ -91,7 +91,7 @@ export default function TechStack({ skills_heading }) {
 						</button>
 						<button
 							id={DESIGN_CATEGORY}
-							className={`flex items-center gap-1 border border-pink-700 px-2 py-1 uppercase ${
+							className={`flex items-center gap-1 rounded border border-pink-700 px-2 py-1 uppercase ${
 								chosenCategory === DESIGN_CATEGORY.toString()
 									? 'bg-pink-700 text-stone-50 shadow'
 									: 'shadow-md transition-colors hover:bg-pink-700 hover:text-stone-50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 active:bg-pink-800'
