@@ -4,6 +4,7 @@ import Music from '../components/Music';
 import Reveal from '../utilities/Reveal';
 import { useAbout } from './../App';
 import Contact from '../components/Contact';
+import Notice from '../components/Notice';
 
 export default function Home() {
 	const { isError, isSuccess, data, error } = useAbout();
@@ -29,6 +30,7 @@ export default function Home() {
 					id="main"
 					className="z-30 flex flex-col items-center overflow-hidden"
 				>
+					<Notice />
 					<Reveal>
 						<section className="intro-section z-30 flex h-72 flex-col items-center justify-center sm:h-96 md:h-screen">
 							<h1 className="z-30 text-4xl font-bold sm:text-6xl md:text-7xl xl:text-8xl">
