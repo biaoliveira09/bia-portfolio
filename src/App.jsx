@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import { getPages } from './utilities/api';
 import SkipToContentLink from './components/SkipToContentLink';
 import ProjectsPage from './pages/ProjectsPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const ABOUT_PAGE_ID = 20;
 
@@ -51,6 +52,7 @@ export default function App() {
 						<Route path="/" element={<Home />} />
 						<Route path="projects/:project_slug" element={<ProjectDetails />} />
 						<Route path="projects" element={<ProjectsPage />} />
+						<Route path="*" element={<NotFoundPage />} />
 					</Routes>
 				</Router>
 				<Footer name={name} />

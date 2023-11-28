@@ -31,27 +31,28 @@ export default function ProjectInfoAccordion({ project_info }) {
 						dangerouslySetInnerHTML={{ __html: highlights_text }}
 					></div>
 				</div>
-
-				<div className="collapse-arrow join-item collapse border border-pink-700">
-					<input
-						type="radio"
-						name="my-accordion-4"
-						id="my-accordion-1"
-						checked={openItem === 1}
-						readOnly
-					/>
-					<label
-						htmlFor="my-accordion-1"
-						className="collapse-title cursor-pointer text-xl font-medium"
-						onClick={() => handleToggle(1)}
-					>
-						{process}
-					</label>
-					<div
-						className="collapse-content"
-						dangerouslySetInnerHTML={{ __html: process_text }}
-					></div>
-				</div>
+				{process_text && (
+					<div className="collapse-arrow join-item collapse border border-pink-700">
+						<input
+							type="radio"
+							name="my-accordion-4"
+							id="my-accordion-1"
+							checked={openItem === 1}
+							readOnly
+						/>
+						<label
+							htmlFor="my-accordion-1"
+							className="collapse-title cursor-pointer text-xl font-medium"
+							onClick={() => handleToggle(1)}
+						>
+							{process}
+						</label>
+						<div
+							className="collapse-content"
+							dangerouslySetInnerHTML={{ __html: process_text }}
+						></div>
+					</div>
+				)}
 			</div>
 		</section>
 	);
