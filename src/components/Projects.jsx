@@ -33,11 +33,11 @@ export default function Projects() {
 					id="projects"
 					className="projects-section z-30 flex h-fit flex-col items-center justify-center py-28 sm:min-w-full lg:pt-40"
 				>
-					<Reveal>
-						<h2 className="z-30 mb-3 text-3xl font-bold sm:mb-6 md:mb-10">
-							Featured Projects
-						</h2>
-					</Reveal>
+					{/* <Reveal> */}
+					<h2 className="z-30 mb-3 text-3xl font-bold sm:mb-6 md:mb-10">
+						Featured Projects
+					</h2>
+					{/* </Reveal> */}
 					<div className="projects-wrapper flex flex-col flex-wrap items-center justify-center gap-6 sm:mx-10 sm:gap-4 md:flex-row">
 						{firstThreeItems.map(project => {
 							const {
@@ -50,29 +50,29 @@ export default function Projects() {
 							const project_slug = project.slug;
 
 							return (
-								<Reveal key={project.id}>
-									<Project
-										key={project.id}
-										project_name={project_name}
-										project_overview={project_overview}
-										project_id={project.id}
-										project_screenshot={project_screenshot}
-										tech_stack={tech_stack}
-										project_slug={project_slug}
-									/>
-								</Reveal>
+								// <Reveal key={project.id}>
+								<Project
+									key={project.id}
+									project_name={project_name}
+									project_overview={project_overview}
+									project_id={project.id}
+									project_screenshot={project_screenshot}
+									tech_stack={tech_stack}
+									project_slug={project_slug}
+								/>
+								// </Reveal>
 							);
 						})}
 					</div>
-					<Reveal>
-						<HashLink
-							smooth
-							to={`/projects#`}
-							className="mt-10 flex items-center gap-2 text-lg  hover:-translate-y-0.5"
-						>
-							See All Projects <BsArrowRightCircle />
-						</HashLink>
-					</Reveal>
+					{/* <Reveal> */}
+					<HashLink
+						smooth
+						to={`/projects#`}
+						className="mt-10 flex items-center gap-2 text-lg  hover:-translate-y-0.5"
+					>
+						See All Projects <BsArrowRightCircle />
+					</HashLink>
+					{/* </Reveal> */}
 				</section>
 			</>
 		);

@@ -71,7 +71,12 @@ export default function Home() {
 					<div className="z-30 flex w-11/12 flex-col items-center sm:w-10/12 md:w-9/12 lg:w-7/12 xl:w-6/12">
 						<About />
 						<Music playlistId={playlist_id} />
-						<Contact contact_heading={contact_heading} />
+						<Contact
+							contact_heading={contact_heading}
+							github_profile_link={github_profile_link}
+							linkedin_profile_link={linkedin_profile_link}
+							email_address={email_address}
+						/>
 					</div>
 				</main>
 			</>

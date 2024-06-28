@@ -28,7 +28,7 @@ export default function Reveal({ children }) {
 						transition: {
 							duration: 0.75,
 							ease: 'easeInOut',
-							delay: 0.1,
+							delay: 0.05,
 						},
 					},
 				}}
